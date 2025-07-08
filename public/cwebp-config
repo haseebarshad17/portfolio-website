@@ -1,0 +1,8 @@
+find . -type f \( -iname "*.png" -o -iname "*.jpg" -o -iname "*.jpeg" \) -exec sh -c '
+  for img; do
+    webp="${img%.*}.webp"
+    if ./cwebp -q 100 -alpha_q 100 "$img" -o "$webp"; then
+      rm "$img"
+    fi
+  done
+' sh {} +

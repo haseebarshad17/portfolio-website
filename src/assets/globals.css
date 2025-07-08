@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* genric base stylex  */
+
+@layer base {
+    *,
+    *::before,
+    *::after {
+        @apply box-border m-0 p-0;
+    }
+    html {
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+    }
+    body {
+        @apply font-RalewayFont overflow-x-hidden max-w-[100vw]
+    }
+}
+
+
+/* generic styles  */
+
+@layer components {
+    .jarallax {
+        @apply p-0 m-0 h-max min-h-[70dvh]
+    }
+    .container {
+        @apply max-w-[1170px] md:px-4 px-2 mx-auto
+    }
+    .section-padding {
+        @apply py-[70px]
+    }
+
+    .heading {
+        @apply text-[40px] font-medium
+    }
+    .heading-description {
+        @apply text-[40px] font-medium
+    }
+    .no-scrollbar {
+        scrollbar-width: 0px;
+        -ms-overflow-style: none;
+    }
+    .no-scrollbar::-webkit-scrollbar {
+        @apply hidden w-0 h-0 opacity-0
+    }
+    .theme-scrollbar::-webkit-scrollbar {
+       @apply w-[5px]
+    }
+    .theme-scrollbar::-webkit-scrollbar-thumb {
+        @apply bg-theme-primary rounded-full
+    }
+    .theme-scrollbar::-webkit-scrollbar-track {
+        @apply bg-deep-gray;
+    }
+}
+
+
+/* font - utilities  */
+
+@layer utilities {
+    /* karla */
+    .font-karla-12-300 {
+        font-size: 12px;
+        font-weight: 300;
+        font-family: var(--font-karla);
+    }
+    .font-karla-12-500 {
+        font-size: 12px;
+        font-weight: 500;
+        font-family: var(--font-karla);
+    }
+    .font-karla-14-300 {
+        font-size: 14px;
+        font-weight: 300;
+        font-family: var(--font-karla);
+    }
+    .font-karla-14-500 {
+        font-size: 14px;
+        font-weight: 500;
+        font-family: var(--font-karla);
+    }
+    .font-karla-16-300 {
+        font-size: 16px;
+        font-weight: 300;
+        font-family: var(--font-karla);
+    }
+    .font-karla-16-500 {
+        font-size: 16px;
+        font-weight: 500;
+        font-family: var(--font-karla);
+    }
+    /* syne */
+    .font-syne-12-300 {
+        font-size: 12px;
+        font-weight: 400;
+        font-family: var(--font-syne);
+    }
+    .font-syne-12-500 {
+        font-size: 12px;
+        font-weight: 500;
+        font-family: var(--font-syne);
+    }
+    .font-syne-14-300 {
+        font-size: 14px;
+        font-weight: 400;
+        font-family: var(--font-syne);
+    }
+    .font-syne-14-500 {
+        font-size: 14px;
+        font-weight: 500;
+        font-family: var(--font-syne);
+    }
+    .font-syne-16-300 {
+        font-size: 16px;
+        font-weight: 400;
+        font-family: var(--font-syne);
+    }
+    .font-syne-16-500 {
+        font-size: 16px;
+        font-weight: 500;
+        font-family: var(--font-syne);
+    }
+    /* raleway */
+    .font-raleway-12-300 {
+        font-size: 12px;
+        font-weight: 300;
+        font-family: var(--font-raleway);
+    }
+    .font-raleway-12-500 {
+        font-size: 12px;
+        font-weight: 500;
+        font-family: var(--font-raleway);
+    }
+    .font-raleway-14-300 {
+        font-size: 14px;
+        font-weight: 300;
+        font-family: var(--font-raleway);
+    }
+    .font-raleway-14-500 {
+        font-size: 14px;
+        font-weight: 500;
+        font-family: var(--font-raleway);
+    }
+    .font-raleway-16-300 {
+        font-size: 16px;
+        font-weight: 300;
+        font-family: var(--font-raleway);
+    }
+    .font-raleway-16-500 {
+        font-size: 16px;
+        font-weight: 500;
+        font-family: var(--font-raleway);
+    }
+}
+
