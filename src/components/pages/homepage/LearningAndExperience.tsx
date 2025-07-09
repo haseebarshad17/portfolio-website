@@ -30,15 +30,15 @@ const LearningAndExperience = ({
   return (
     <>
       <div className="flex justify-center text-center">
-        <h2 className="heading text-white leading-none font-SyneFont font-medium relative">
+        <h3 className="heading text-white leading-none font-SyneFont font-medium relative [text-shadow:2px_2px_7px_rgba(0,_0,_0,_0.25)]">
           Rooted in Learning <br />
           <div className="flex">
             <span className="pr-2 text-white">Evolved</span>
-            <span className="font-light text-theme-primary">
+            <span className="font-light text-theme-primary [text-shadow:none]">
               through Experience.
             </span>
           </div>
-        </h2>
+        </h3>
       </div>
 
       <div className={cn("pt-12 grid grid-cols-2 gap-5 text-black", className)}>
@@ -46,7 +46,7 @@ const LearningAndExperience = ({
           learningAndExperienceData.map((lxDataItem, idx) => (
             <div
               className={cn(
-                "p-5 bg-light-gray/30 backdrop-blur-md shadow-sm h-max relative",
+                "p-5 bg-light-gray/30 backdrop-blur-md shadow-md h-max relative",
                 idx == 1 && "mt-[60px]"
               )}
               key={idx}
@@ -59,17 +59,17 @@ const LearningAndExperience = ({
               </h4>
               {lxDataItem.data.length &&
                 lxDataItem.data.map((item, idxx) => (
-                  <div key={idxx} className="capitalize pt-4">
+                  <div key={idxx} className="capitalize pt-4 text-black">
                     <h6 className="font-KarlaFont text-lg font-medium leading-none">
                       {item.title}
                     </h6>
-                    <label className="font-syne-14-500 block">
+                    <label className="font-syne-14-500 block text-black/90">
                       {item.institute}
                     </label>
                     <p className="font-raleway-14-500 py-2 text-black/70">
                       {item.description}
                     </p>
-                    <strong className="block font-karla-14-500">
+                    <strong className="block font-karla-14-500 text-black">
                       {item.date}
                     </strong>
 
@@ -85,16 +85,9 @@ const LearningAndExperience = ({
               <Button
                 size="md"
                 href="/"
-                variant="secondary"
+                variant="primary"
                 children="complete resume"
-                rightEl={
-                  <ChevronRight
-                    strokeWidth={1.5}
-                    size={14}
-                    className="translate-y-px"
-                  />
-                }
-                className="px-5 w-max rounded-xs mt-6 font-raleway-12-500 gap-1 shadow-md"
+                className="px-5 w-max rounded-xs mt-6 font-syne-12-500"
               />
             </div>
           ))}

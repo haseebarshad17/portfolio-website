@@ -56,9 +56,15 @@ const config: Config = {
 
       boxShadow: {
         xs: "1px 2px 18px 1px rgba(0, 0, 0, 0.05)",
-        sm: "1px 2px 18px 1px rgba(0, 0, 0, 0.1)",
-        md: "1px 2px 18px 1px rgba(0, 0, 0, 0.15)",
-        lg: "1px 2px 18px 1px rgba(0, 0, 0, 0.2)",
+        sm: "1px 2px 15px 1px rgba(0, 0, 0, 0.05)",
+        md: "1px 2px 10px 1px rgba(0, 0, 0, 0.05)",
+        lg: "1px 2px 7px 1px rgba(0, 0, 0, 0.05)",
+      },
+      textShadow: {
+        xs: "2px 2px 7px rgba(0, 0, 0, 0.1)",
+        sm: "2px 2px 7px rgba(0, 0, 0, 0.2)",
+        md: "2px 2px 7px rgba(0, 0, 0, 0.3)",
+        lg: "2px 2px 7px rgba(0, 0, 0, 0.4)",
       },
 
       animation: {

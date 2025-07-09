@@ -13,6 +13,7 @@ import {
 import HeroSection from "@/components/pages/homepage/HeroSection";
 import AboutSection from "@/components/pages/homepage/AboutSection";
 import LearningAndExperience from "@/components/pages/homepage/LearningAndExperience";
+import InfoAndSkills from "@/components/pages/homepage/InfoAndSkills";
 const Jarallax = dynamic(() => import("@/components/generic/Jarallax"), {
   ssr: false,
 });
@@ -54,11 +55,8 @@ const HomePage = () => {
           />
         </main>
       </section>
-      <section className="section-padding bg-section-light-white">
-        <div className="container">
-          <main className="grid grid-col-2"></main>
-        </div>
-      </section>
+
+      <InfoAndSkills />
     </>
   );
 };

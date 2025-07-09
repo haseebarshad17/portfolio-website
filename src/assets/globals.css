@@ -34,7 +34,7 @@
     }
 
     .heading {
-        @apply text-[40px] font-medium
+        @apply font-medium text-[32px]
     }
     .heading-description {
         @apply text-[40px] font-medium
