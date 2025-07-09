@@ -74,7 +74,6 @@ export const Input = ({
             {...props}
           />
           <Button
-            type="submit"
             style={{
               width: submitButtonSize + "px",
               height: submitButtonSize + "px",
