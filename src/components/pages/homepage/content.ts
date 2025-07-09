@@ -85,3 +85,12 @@ export const experienceDetails: learningAndExperienceType = {
     },
   ],
 };
+
+export const personalInfoDetails = [
+  { label: "Name", value: process.env.NEXT_PUBLIC_NAME },
+  { label: "Email", value: process.env.NEXT_PUBLIC_EMAIL },
+  { label: "age", value: `${process.env.NEXT_PUBLIC_AGE}yo` },
+  { label: "Phone", value: process.env.NEXT_PUBLIC_PHONE },
+  { label: "Location", value: "Lahore, Pakistan" },
+  { label: "freelance", value: "available" },
+];

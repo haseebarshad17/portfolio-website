@@ -34,15 +34,17 @@ const AboutSection = ({
             </div>
           </div>
 
-          <div>
+          <div className="py-5">
             <div>
-              <h3 className="font-RalewayFont capitalize leading-[1.2] pb-3">
-                <span className="heading text-theme-primary block font-semibold">
-                  the best
+              <h3 className="font-SyneFont leading-[1.2] pb-3 heading text-theme-primary font-medium">
+                Delivering
+                <br /> fast &
+                <span className="heading text-section-light-white pl-2 font-light font-RalewayFont">
+                  Best Websites
                 </span>
-                <span className="heading text-white">websites</span>
               </h3>
-              <p className="font-syne-16-300 text-regular-gray/80">
+
+              <p className="font-syne-14-300 text-regular-gray">
                 ensure seamless cross-browser compatibility and responsive
                 design, delivering optimal user experiences across all devices.
                 We prioritize accessibility and usability, guaranteeing that
@@ -53,13 +55,14 @@ const AboutSection = ({
               </p>
             </div>
 
-            <div className="flex flex-col gap-5 pt-10">
+            <div className="flex flex-col gap-4 pt-10">
               {aboutProgressContent.length &&
                 aboutProgressContent.map((item, i) => (
                   <ProgressBar
                     key={i}
                     progress={item.progress}
                     title={item.title}
+                    progressbarStyle="h-2 rounded-none"
                   />
                 ))}
             </div>
