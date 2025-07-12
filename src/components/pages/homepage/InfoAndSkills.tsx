@@ -13,7 +13,7 @@ import Tooltip from "@/components/ui/tooltip";
 import { personalInfoDetails } from "./content";
 import CustomMarquee from "@/components/generic/CustomMarquee";
 
-export default function InfoSection() {
+const InfoAndSkills = () => {
   return (
     <section className="w-full bg-white text-black section-padding">
       <main className="grid grid-cols-2 gap-10 container">
@@ -121,4 +121,6 @@ export default function InfoSection() {
       </div>
     </section>
   );
-}
+};
+
+export default InfoAndSkills;
