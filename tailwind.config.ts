@@ -18,15 +18,16 @@ const config: Config = {
         RalewayFont: "var(--font-raleway)",
       },
       colors: {
+        white: "#FFFFFF",
+        black: "#000000",
+
         "theme-primary": primary,
         "theme-secondary": secondary,
         "deep-oreange": "rgb(255, 60, 0)",
 
-        white: "#FFFFFF",
         "section-light-white": "#F0F0F0",
         "section-deep-white": "#E2E2E2",
 
-        black: "#000000",
         "light-gray": "#E2E2E2",
         "regular-gray": "#C0C0C0",
         "deep-gray": "#242424",
@@ -69,11 +70,29 @@ const config: Config = {
 
       animation: {
         "carret-blink": "carret-blink 1s infinite",
+        "marquee-left": "marquee-left linear infinite",
+        "marquee-right": "marquee-right linear infinite",
       },
       keyframes: {
         "carret-blink": {
           "0%, 100%": { opacity: "1" },
           "50%": { opacity: "0" },
+        },
+        "marquee-left": {
+          "0%": {
+            transform: "translateX(0%)",
+          },
+          "100%": {
+            transform: "translateX(-50%)",
+          },
+        },
+        "marquee-right": {
+          "0%": {
+            transform: "translateX(-50%)",
+          },
+          "100%": {
+            transform: "translateX(0%)",
+          },
         },
       },
     },

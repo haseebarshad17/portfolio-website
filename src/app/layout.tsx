@@ -3,7 +3,7 @@ import { ReactElement, ReactNode } from "react";
 import { KarlaFont, RalewayFont, SyneFont } from "@/assets/font";
 import { LayoutMeta } from "@/assets/meta";
 import { cn } from "@/lib/utils/clsxUtils";
-import LayoutWrapper from "@/components/generic/LayoutWrapper";
+import LayoutWrapper from "@/components/layout/LayoutWrapper";
 import "@/assets/globals.css";
 
 type RootLayoutPropType = {

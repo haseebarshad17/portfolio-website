@@ -18,13 +18,13 @@ const AboutSection = ({
       <section className={cn("section-padding", className)}>
         <main className="container grid grid-cols-2 gap-10">
           <div className="border border-white p-5 flex flex-col justify-between h-full">
-            <div>
+            <div className="text-white">
               <h2 className="font-KarlaFont font-semibold text-[150px] leading-none drop-shadow-lg">
                 3<sup className="inline-block font-light">+</sup>
               </h2>
             </div>
 
-            <div className="flex flex-col items-end justify-end">
+            <div className="flex flex-col items-end justify-end text-white">
               <span className="font-raleway-16-300">years</span>
               <span className="font-raleway-16-300">experience</span>
               <div className="flex items-center">

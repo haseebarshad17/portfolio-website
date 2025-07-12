@@ -38,11 +38,15 @@ const HomePage = () => {
   return (
     <>
       <Jarallax speed={0.4} className="min-h-[80dvh]">
-        <JarallaxImage src="/images/main.jpg" alt="background" priority />
+        <JarallaxImage
+          src="/images/main.jpg"
+          alt="hero-background-image"
+          priority
+        />
         <HeroSection animatedText={animatedText} />
       </Jarallax>
       <Jarallax speed={0.4} className="jarallax">
-        <JarallaxImage src="/images/about.webp" alt="about-background" />
+        <JarallaxImage src="/images/about.webp" alt="about-background-image" />
         <Overlay color="#000000" alpha={40} gradientType="x">
           <AboutSection aboutProgressContent={aboutProgress} />
         </Overlay>
@@ -55,7 +59,6 @@ const HomePage = () => {
           />
         </main>
       </section>
-
       <InfoAndSkills />
     </>
   );

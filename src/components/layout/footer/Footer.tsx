@@ -15,7 +15,7 @@ const Footer = () => {
       <footer className="bg-black section-padding" id="contact">
         <div className="container">
           <main className="flex gap-20">
-            <div className="w-[380px]">
+            <div className="max-w-[380px] w-full">
               <Logo width={90} height={90} className="pb-8" />
               <form className="flex flex-col gap-3">
                 <label className="font-raleway-14-300 italic text-section-light-white">
@@ -59,9 +59,9 @@ const Footer = () => {
                 <LinkMap
                   linkData={socialLinks}
                   linkStyle="inline-flex items-center justify-center duration-300 ease-out group-hover:-translate-y-2"
-                  className="flex gap-3"
+                  className="flex gap-3 text-white"
                 />
-                <p className="font-syne-14-300 capitalize">
+                <p className="font-syne-14-300 capitalize text-white">
                   @copyright 2022 haseeb-arshad all right reserved
                 </p>
               </div>
