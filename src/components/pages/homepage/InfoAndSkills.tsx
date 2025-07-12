@@ -11,35 +11,36 @@ import {
 import Image from "next/image";
 import Tooltip from "@/components/ui/tooltip";
 import { personalInfoDetails } from "./content";
+import CustomMarquee from "@/components/generic/CustomMarquee";
 
 export default function InfoSection() {
   return (
-    <section className="w-full bg-white text-gray-900 py-20 px-4">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-start">
-        {/* LEFT — TEXT */}
-        <div className="space-y-5">
-          <h1 className="heading leading-tight font-SyneFont">
-            Building intuitive <br />
-            <span className="text-neutral-700">frontend experiences.</span>
+    <section className="w-full bg-white text-black section-padding">
+      <main className="grid grid-cols-2 gap-10 container">
+        <div className="space-y-4">
+          <h1 className="heading leading-[1.2] font-SyneFont text-deep-gray/85">
+            Building intuitive
+            <br /> frontend
+            <span className="text-theme-primary heading font-SyneFont font-thin pl-[5px]">
+              experiences.
+            </span>
           </h1>
-          <p className="text-gray-700 text-base">
+          <p className="text-gray-700 font-raleway-16-500">
             I’m <strong>Haseeb Arshad</strong>, a frontend developer with over 3
             years of experience building clean, scalable, and accessible UIs. I
             focus on delivering thoughtful, responsive design implementations
             using modern web technologies.
           </p>
-          <p className="text-gray-600 text-sm">
+          <p className="text-gray-600 font-raleway-14-500">
             I enjoy solving real-world problems through code, crafting
             responsive layouts, and writing maintainable components. Skilled in
             HTML5, CSS3, JavaScript, TypeScript, React, SCSS, and Git.
           </p>
         </div>
 
-        {/* RIGHT — IMAGE + TABLE */}
-        <div className="w-full max-w-xl rounded-2xl border border-neutral-200 bg-white overflow-hidden">
-          <div className="grid grid-cols-1 sm:grid-cols-2 items-center">
-            {/* Image Side */}
-            <div className="bg-neutral-100 p-6 flex items-center justify-center h-full">
+        <div className="rounded-sm border border-neutral-200 bg-white overflow-hidden h-max">
+          <div className="grid grid-cols-2 items-center">
+            <div className="bg-neutral-100 flex items-center justify-center h-full p-4">
               <div className="w-36 h-36 overflow-hidden rounded-xl ring-1 ring-neutral-300">
                 <Image
                   src="/images/main.jpg"
@@ -51,7 +52,6 @@ export default function InfoSection() {
               </div>
             </div>
 
-            {/* Info Table Side */}
             <div className="px-4 py-5">
               <h3 className="font-RalewayFont text-lg font-medium text-gray-800 pb-2">
                 Personal Infos
@@ -89,7 +89,7 @@ export default function InfoSection() {
             </div>
           </div>
         </div>
-      </div>
+      </main>
 
       {/* SKILLS SECTION */}
       <div className="mt-24 px-2">
@@ -97,9 +97,14 @@ export default function InfoSection() {
           My Core Tech Stack
         </h2>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-8 place-items-center">
-          {/* Lucide Icons — bold, grayscale on hover colorful */}
-          {[
+        <CustomMarquee
+          speedInSecond={120}
+          itemsPerSlide={5}
+          direction="left"
+          disableOnInteraction
+          itemInteractionEffect
+          slideEffect
+          content={[
             { name: "HTML", icon: FileType2 },
             { name: "CSS", icon: FileCode2 },
             { name: "JavaScript", icon: FileJson },
@@ -107,15 +112,12 @@ export default function InfoSection() {
             { name: "React", icon: FileType },
             { name: "Git", icon: GitBranch },
           ].map(({ name, icon: Icon }, index) => (
-            <div
-              key={index}
-              className="group flex flex-col items-center transition-all duration-300 hover:scale-110"
-            >
-              <Icon className="w-10 h-10 text-gray-400 group-hover:text-blue-600 transition-colors duration-300" />
+            <div key={index}>
+              <Icon className="w-10 h-10 text-blue-600" />
               <span className="text-sm text-gray-600 mt-2">{name}</span>
             </div>
           ))}
-        </div>
+        />
       </div>
     </section>
   );

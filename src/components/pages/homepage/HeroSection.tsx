@@ -10,10 +10,10 @@ export const HeroSection = ({ animatedText }: { animatedText: string }) => {
               <span className="font-RalewayFont text-theme-primary">
                 Howdy,
               </span>
-              <span className="font-SyneFont pl-[7px]">I'm</span>
+              <span className="font-SyneFont pl-[7px] text-white">I'm</span>
             </div>
 
-            <div className="relative pr-[12px] w-max leading-none">
+            <div className="relative pr-[12px] w-max leading-none text-white">
               <span className="inline-flex select-none pointer-events-none leading-none w-0 overflow-hidden">
                 placeholder
               </span>
@@ -24,7 +24,7 @@ export const HeroSection = ({ animatedText }: { animatedText: string }) => {
               />
             </div>
           </h1>
-          <p className="font-RalewayFont font-thin text-[21px] pt-2">
+          <p className="font-RalewayFont font-thin text-[21px] pt-2 text-white">
             frontend developer - UI/UX Expert
           </p>
         </div>

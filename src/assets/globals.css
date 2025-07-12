@@ -32,7 +32,6 @@
     .section-padding {
         @apply py-[70px]
     }
-
     .heading {
         @apply font-medium text-[32px]
     }
@@ -55,7 +54,7 @@
     .theme-scrollbar::-webkit-scrollbar-track {
         @apply bg-deep-gray;
     }
-}
+} 
 
 
 /* font - utilities  */
@@ -155,4 +154,3 @@
         font-family: var(--font-raleway);
     }
 }
-

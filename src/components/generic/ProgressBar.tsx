@@ -17,7 +17,7 @@ const ProgressBar = ({
 }: ProgressBarProptype) => {
   return (
     <>
-      <div className={cn(className)}>
+      <div className={cn("text-white", className)}>
         <label
           className={cn(
             "flex items-center justify-between font-raleway-14-300",

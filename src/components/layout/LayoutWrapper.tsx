@@ -1,6 +1,6 @@
 "use client";
 import { ThemeProvider } from "next-themes";
-import { ReactElement, ReactNode, Suspense, useRef } from "react";
+import { LegacyRef, ReactElement, ReactNode, Suspense, useRef } from "react";
 import { useScroll } from "@/hooks/useScroll";
 import Header from "@/components/layout/header/Header";
 import Footer from "@/components/layout/footer/Footer";
@@ -12,7 +12,7 @@ type LayoutWrapperProptype = {
 };
 
 const LayoutWrapper = ({ children }: LayoutWrapperProptype) => {
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const scrollContainerRef = useRef<HTMLDivElement | null>(null);
   const { getScrollPercent } = useScroll();
 
   const scrollProgress = getScrollPercent({
@@ -24,13 +24,13 @@ const LayoutWrapper = ({ children }: LayoutWrapperProptype) => {
     <ThemeProvider
       attribute="class"
       defaultTheme="system"
-      enableSystem={true}
-      disableTransitionOnChange={true}
+      enableSystem
+      disableTransitionOnChange
     >
       <Suspense fallback={<Fallback />}>
         <CustomScrollbar
-          scrollProgress={scrollProgress}
-          ref={scrollContainerRef}
+          scrollProgress={scrollProgress as string}
+          ref={scrollContainerRef as LegacyRef<HTMLDivElement> | undefined}
         >
           <Header />
           {children}

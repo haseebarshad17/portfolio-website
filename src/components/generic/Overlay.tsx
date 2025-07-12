@@ -43,14 +43,11 @@ const Overlay = ({
     color.startsWith("rgba");
 
   const isCssVar = color.startsWith("var(") || color.startsWith("--");
-
-  // fallback for color opacity when color is hex (convert to rgba)
   let colorWithAlpha = color;
 
   if (color.startsWith("#")) {
     colorWithAlpha = hexToRgba(color, clampedAlpha);
   } else if (color.startsWith("rgb") && !color.startsWith("rgba")) {
-    // convert rgb to rgba by injecting alpha
     colorWithAlpha = color
       .replace("rgb(", "rgba(")
       .replace(")", `, ${clampedAlpha})`);
@@ -58,7 +55,6 @@ const Overlay = ({
     colorWithAlpha = `var(${color})`;
   }
 
-  // Transparent version of color (alpha = 0)
   let transparentColor = color;
   if (color.startsWith("#")) {
     transparentColor = hexToRgba(color, 0);
@@ -68,9 +64,7 @@ const Overlay = ({
     transparentColor = `var(${color})`;
   }
 
-  // Build gradient CSS
   let backgroundImage = "";
-
   if (gradientType === "radial") {
     backgroundImage = `radial-gradient(circle, ${colorWithAlpha}, ${transparentColor})`;
   } else if (gradientType === "x") {
@@ -78,9 +72,6 @@ const Overlay = ({
   } else if (gradientType === "y") {
     backgroundImage = `linear-gradient(to bottom, ${colorWithAlpha}, ${transparentColor})`;
   }
-
-  // If gradientType is provided and custom color, use inline backgroundImage
-  // else fallback to Tailwind classes for non-custom colors without gradient
 
   return (
     <div
