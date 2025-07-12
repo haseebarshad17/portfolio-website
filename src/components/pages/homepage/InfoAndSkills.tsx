@@ -12,7 +12,7 @@ import Image from "next/image";
 import Tooltip from "@/components/ui/tooltip";
 import { personalInfoDetails } from "./content";
 
-export default function InfoSection() {
+const InfoAndSkills = () => {
   return (
     <section className="w-full bg-white text-gray-900 py-20 px-4">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-start">
@@ -119,4 +119,6 @@ export default function InfoSection() {
       </div>
     </section>
   );
-}
+};
+
+export default InfoAndSkills;
