@@ -28,7 +28,7 @@ const Header = () => {
     <>
       <header
         className={cn(
-          "fixed z-30 top-0 left-0 right-0 w-full h-max px-10 py-5",
+          "fixed z-30 top-0 left-0 right-0 w-full h-max px-10 py-5 duration-300 ease-out",
           isMenuTriggered
             ? "translate-y-0 opacity-100 bg-transparent backdrop-blur-none shadow-none"
             : [
