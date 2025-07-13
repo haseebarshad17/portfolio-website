@@ -72,9 +72,8 @@ const Button = ({
 const buttonVariants = tv({
   base: `
     relative inline-flex items-center justify-center rounded-md transition-all
-    duration-150 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-ring
-    focus-visible:ring-offset-2 active:scale-[0.95] ring-offset-background
-    disabled:pointer-events-none disabled:opacity-50 min-w-max
+    duration-150 ease-out focus:outline-none active:scale-[0.95] disabled:pointer-events-none 
+    disabled:opacity-50 min-w-max border-none outline-none
   `,
   variants: {
     variant: {
