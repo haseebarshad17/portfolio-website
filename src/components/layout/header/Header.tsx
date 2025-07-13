@@ -38,8 +38,8 @@ const Header = () => {
                 scrollbarThumbDirection === "down"
                   ? "duration-700 ease-out"
                   : "translate-y-0 opacity-100 duration-500 ease-out",
-              ],
-          "hidden"
+              ]
+          // "hidden"
         )}
       >
         <div className="flex items-center justify-between">
