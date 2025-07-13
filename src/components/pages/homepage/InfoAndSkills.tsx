@@ -1,16 +1,7 @@
-"use client";
 import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
-import {
-  FileType2,
-  FileCode2,
-  FileJson,
-  FileText,
-  FileType,
-  GitBranch,
-} from "lucide-react";
 import Image from "next/image";
 import Tooltip from "@/components/ui/tooltip";
-import { personalInfoDetails } from "./content";
+import { personalInfoDetails, personalSkills } from "./content";
 import CustomMarquee from "@/components/generic/CustomMarquee";
 
 const InfoAndSkills = () => {
@@ -91,34 +82,32 @@ const InfoAndSkills = () => {
         </div>
       </main>
 
-      {/* SKILLS SECTION */}
-      <div className="mt-24 px-2">
-        <h2 className="text-center text-xl font-semibold mb-10 text-gray-800">
+      <main className="container pt-20 flex flex-col items-left gap-10">
+        <h4 className="text-lg font-SyneFont font-semibold text-gray-800">
           My Core Tech Stack
-        </h2>
+        </h4>
 
         <CustomMarquee
-          speedInSecond={120}
-          itemsPerSlide={5}
+          speedInSecond={50}
+          itemsPerSlide={10}
           direction="left"
           disableOnInteraction
-          itemInteractionEffect
+          itemInteractionEffect={false}
           slideEffect
-          content={[
-            { name: "HTML", icon: FileType2 },
-            { name: "CSS", icon: FileCode2 },
-            { name: "JavaScript", icon: FileJson },
-            { name: "TypeScript", icon: FileText },
-            { name: "React", icon: FileType },
-            { name: "Git", icon: GitBranch },
-          ].map(({ name, icon: Icon }, index) => (
-            <div key={index}>
-              <Icon className="w-10 h-10 text-blue-600" />
-              <span className="text-sm text-gray-600 mt-2">{name}</span>
+          content={personalSkills.map((item, idx) => (
+            <div key={idx} className="w-max h-max text-center">
+              <Image
+                src={item.image}
+                alt={item.label}
+                width={50}
+                height={50}
+                className="w-[50px] h-auto inline-block"
+              />
+              <p className="font-syne-12-500 pt-2">{item.label}</p>
             </div>
           ))}
         />
-      </div>
+      </main>
     </section>
   );
 };

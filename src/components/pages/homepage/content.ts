@@ -94,3 +94,98 @@ export const personalInfoDetails = [
   { label: "Location", value: "Lahore, Pakistan" },
   { label: "freelance", value: "available" },
 ];
+
+export const personalSkills = [
+  {
+    label: "html5",
+    image: "/logo/html.svg",
+  },
+  {
+    label: "css3",
+    image: "/logo/css.svg",
+  },
+  {
+    label: "javascript es6",
+    image: "/logo/js.svg",
+  },
+  {
+    label: "typescript",
+    image: "/logo/ts.svg",
+  },
+  {
+    label: "jquery",
+    image: "/logo/jquery.svg",
+  },
+  {
+    label: "react js",
+    image: "/logo/react.svg",
+  },
+  {
+    label: "next js",
+    image: "/logo/next.svg",
+  },
+  {
+    label: "scss",
+    image: "/logo/scss.svg",
+  },
+  {
+    label: "tailwind",
+    image: "/logo/tailwind.svg",
+  },
+  {
+    label: "github",
+    image: "/logo/github.svg",
+  },
+  {
+    label: "git",
+    image: "/logo/git.svg",
+  },
+  {
+    label: "vercel",
+    image: "/logo/vercel.svg",
+  },
+  {
+    label: "redux",
+    image: "/logo/redux.svg",
+  },
+  {
+    label: "zustand",
+    image: "/logo/zustand.png",
+  },
+  {
+    label: "gulp",
+    image: "/logo/gulp.svg",
+  },
+  {
+    label: "jira",
+    image: "/logo/jira.svg",
+  },
+  {
+    label: "figma conversion",
+    image: "/logo/figma.svg",
+  },
+  {
+    label: "frammer-motion",
+    image: "/logo/framer.png",
+  },
+  {
+    label: "aos-js",
+    image: "/logo/aos.png",
+  },
+  {
+    label: "scroll reveal",
+    image: "/logo/reveal.png",
+  },
+  {
+    label: "json",
+    image: "/logo/json.svg",
+  },
+  {
+    label: "i18n",
+    image: "/logo/i18n.png",
+  },
+  {
+    label: "slack",
+    image: "/logo/slack.svg",
+  },
+];
