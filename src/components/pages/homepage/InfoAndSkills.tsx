@@ -83,8 +83,9 @@ const InfoAndSkills = () => {
       </main>
 
       <main className="container pt-20 flex flex-col items-left gap-10">
-        <h4 className="text-lg font-SyneFont font-semibold text-gray-800">
+        <h4 className="font-syne-16-500 text-gray-800">
           My Core Tech Stack
+          <span className="-translate-y-0.5 pl-2 inline-block">👉🏻</span>
         </h4>
 
         <CustomMarquee
