@@ -15,9 +15,15 @@ const MenuToggleButton = ({
   return (
     <div
       onClick={() => setIsMenuTriggered((prev) => !prev)}
-      className={cn("w-max h-max", className)}
+      className={cn(
+        "rounded-full overflow-hidden cursor-pointer w-11 h-11",
+        className
+      )}
     >
-      <MenuIcon isMenuTriggered={isMenuTriggered} />
+      <MenuIcon
+        className="w-full h-full pointer-events-none"
+        isMenuTriggered={isMenuTriggered}
+      />
     </div>
   );
 };
