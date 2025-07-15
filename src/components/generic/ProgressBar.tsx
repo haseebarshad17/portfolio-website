@@ -15,16 +15,18 @@ const ProgressBar = ({
   titleStyle,
   progressbarStyle,
 }: ProgressBarProptype) => {
+  const safeProgress = Math.min(100, Math.max(0, Number(progress)));
+
   return (
     <>
       <div className={cn("text-white", className)}>
         <label
           className={cn(
-            "flex items-center justify-between font-raleway-14-300",
+            "flex items-center justify-between font-karla-14-300",
             titleStyle
           )}
         >
-          {title} <span className="font-karla-14-300">{progress}%</span>
+          {title} <span className="font-karla-14-300">{safeProgress}%</span>
         </label>
         <div
           className={cn(
@@ -34,7 +36,7 @@ const ProgressBar = ({
         >
           <div
             className="h-full bg-theme-primary transition-all duration-300"
-            style={{ width: `${progress}%` }}
+            style={{ width: `${safeProgress}%` }}
           />
         </div>
       </div>

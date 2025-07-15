@@ -9,13 +9,13 @@ const InfoAndSkills = () => {
     <section className="w-full bg-white text-black section-padding">
       <main className="grid grid-cols-2 gap-10 container">
         <div className="space-y-4">
-          <h1 className="heading leading-[1.2] font-SyneFont text-deep-gray/85">
+          <h4 className="heading leading-none font-medium font-SyneFont text-deep-gray/85 tracking-tight">
             Building intuitive
-            <br /> frontend
-            <span className="text-theme-primary heading font-SyneFont font-thin pl-[5px]">
-              experiences.
+            <br />
+            <span className="text-theme-primary heading-break">
+              frontend experiences
             </span>
-          </h1>
+          </h4>
           <p className="text-gray-700 font-raleway-16-500">
             I’m <strong>Haseeb Arshad</strong>, a frontend developer with over 3
             years of experience building clean, scalable, and accessible UIs. I
@@ -44,7 +44,7 @@ const InfoAndSkills = () => {
             </div>
 
             <div className="px-4 py-5">
-              <h3 className="font-RalewayFont text-lg font-medium text-gray-800 pb-2">
+              <h3 className="w-max font-RalewayFont text-lg font-medium leading-none text-gray-800 pb-4">
                 Personal Infos
               </h3>
               <Table className="text-sm w-full">
@@ -53,12 +53,12 @@ const InfoAndSkills = () => {
                     personalInfoDetails.map((item, i) => (
                       <TableRow
                         key={i}
-                        className="border-none w-max min-w-0 flex items-center hover:bg-transparent"
+                        className="border-none w-max min-w-0 flex items-center hover:bg-transparent pb-1"
                       >
-                        <TableCell className="font-medium text-gray-700 p-1 py-0 pb-1 font-raleway-14-500">
+                        <TableCell className="font-medium text-gray-700 p-0 font-syne-14-500">
                           {item.label} :
                         </TableCell>
-                        <TableCell className="text-gray-900 p-1 py-0 pb-1 cursor-help select-text font-karla-14-300">
+                        <TableCell className="text-gray-900 p-0 pl-1 cursor-help select-text font-karla-14-300 leading-none">
                           <Tooltip
                             pointerTouch={
                               item.label.toLocaleLowerCase().includes("email")
@@ -83,11 +83,7 @@ const InfoAndSkills = () => {
       </main>
 
       <main className="container pt-20 flex flex-col items-left gap-10">
-        <h4 className="font-syne-16-500 text-gray-800">
-          My Core Tech Stack
-          <span className="-translate-y-0.5 pl-2 inline-block">👉🏻</span>
-        </h4>
-
+        <h4 className="font-syne-14-500 text-gray-800">Technologies I Use</h4>
         <CustomMarquee
           speedInSecond={50}
           itemsPerSlide={10}

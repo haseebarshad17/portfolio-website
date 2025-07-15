@@ -29,16 +29,30 @@ const LearningAndExperience = ({
 
   return (
     <>
-      <div className="flex justify-center text-center">
-        <h3 className="heading text-white leading-none font-SyneFont font-medium relative [text-shadow:2px_2px_7px_rgba(0,_0,_0,_0.25)]">
-          Rooted in Learning <br />
-          <div className="flex">
-            <span className="pr-2 text-white">Evolved</span>
-            <span className="font-light text-theme-primary [text-shadow:none]">
-              through Experience.
+      <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
+        <div>
+          <h3 className="heading font-SyneFont text-white leading-none tracking-tight">
+            Exploring Learning <br />
+            <span className="text-theme-primary heading-break">
+              And Growing
             </span>
-          </div>
-        </h3>
+          </h3>
+          <p className="heading-description">
+            Every step forward is backed by constant learning and meaningful
+            experience — shaping who I am as a creative and a professional.
+          </p>
+        </div>
+
+        <Button
+          variant="transparent"
+          className="text-theme-primary font-raleway-14-500 capitalize gap-2 group hover:underline"
+        >
+          Download CV
+          <ChevronRight
+            size={18}
+            className="text-theme-primary group-hover:translate-x-1 transition-transform"
+          />
+        </Button>
       </div>
 
       <div className={cn("pt-12 grid grid-cols-2 gap-5 text-black", className)}>
@@ -52,8 +66,8 @@ const LearningAndExperience = ({
               key={idx}
             >
               <h4
-                className="absolute top-0 left-5 -translate-y-1/2 heading font-RalewayFont
-                leading-none bg-gradient-to-r from-theme-primary to-white  bg-clip-text text-transparent"
+                className="absolute top-0 left-5 -translate-y-1/2 text-3xl font-RalewayFont
+                leading-none font-medium bg-gradient-to-r from-theme-primary to-white  bg-clip-text text-transparent"
               >
                 {lxDataItem.heading}
               </h4>
