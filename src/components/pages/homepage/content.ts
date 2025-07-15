@@ -15,15 +15,15 @@ export interface learningAndExperienceType {
 
 export const aboutProgress: aboutProgressType = [
   {
-    title: "Mobile | Responsive design",
+    title: "Mobile Responsive designs",
     progress: 98,
   },
   {
-    title: "Cross-browser compatibility",
+    title: "Cross browser compatibility",
     progress: 92,
   },
   {
-    title: "Artistic Fusion of UI/UX",
+    title: "Artistic Fusion UI/UX",
     progress: 99,
   },
   {
