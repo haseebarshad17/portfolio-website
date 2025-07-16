@@ -4,24 +4,24 @@ import { ArrowUpRight } from "lucide-react";
 
 type WorkCardProptype = {
   className?: string;
-  title?: string;
-  subtitle?: string;
-  image?: string;
-  src?: string;
+  title: string;
+  subtitle: string;
+  imageSrc: string;
+  workLink: string;
 };
 
 const WorkCard = ({
   className,
-  image = "/works/2.webp",
+  imageSrc = "/works/2.webp",
   title = "Project Title",
   subtitle = "Branding",
-  src = "/",
+  workLink = "/",
 }: WorkCardProptype) => {
   return (
     <a
-      href={src ?? "/"}
+      href={workLink ?? "/"}
       className={cn(
-        "group w-full rounded-md transition-all duration-300 cursor-pointer",
+        "group w-full rounded-md transition-all duration-300",
         className
       )}
     >
@@ -29,14 +29,14 @@ const WorkCard = ({
         <div className="relative w-full h-56 overflow-hidden rounded-sm">
           <Image
             fill
-            src={image}
+            src={imageSrc}
             alt={title}
             className="object-cover rounded-sm"
           />
         </div>
       </div>
 
-      <div className="flex items-center justify-between gap-10 px-3 pt-6">
+      <div className="flex items-center justify-between gap-5 px-3 pt-6">
         <div>
           <span
             className="inline-block bg-transparent text-black font-syne-12-500 px-3 py-1 
