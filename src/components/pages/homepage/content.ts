@@ -189,3 +189,42 @@ export const personalSkills = [
     image: "/logo/slack.svg",
   },
 ];
+
+export const worksShowCase = [
+  {
+    href: "/",
+    imgSrc: "/works/2.webp",
+    subtitle: "Branding",
+    title: "projext title is getting bigger i size due to lorem ispusm dollar",
+  },
+  {
+    href: "/",
+    imgSrc: "/works/2.webp",
+    subtitle: "Branding",
+    title: "projext title is getting bigger i size due to lorem ispusm dollar",
+  },
+  {
+    href: "/",
+    imgSrc: "/works/2.webp",
+    subtitle: "Branding",
+    title: "projext title is getting bigger i size due to lorem ispusm dollar",
+  },
+  {
+    href: "/",
+    imgSrc: "/works/2.webp",
+    subtitle: "Branding",
+    title: "projext title is getting bigger i size due to lorem ispusm dollar",
+  },
+  {
+    href: "/",
+    imgSrc: "/works/2.webp",
+    subtitle: "Branding",
+    title: "projext title is getting bigger i size due to lorem ispusm dollar",
+  },
+  {
+    href: "/",
+    imgSrc: "/works/2.webp",
+    subtitle: "Branding",
+    title: "projext title is getting bigger i size due to lorem ispusm dollar",
+  },
+];
