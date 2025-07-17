@@ -9,13 +9,13 @@ const InfoAndSkills = () => {
     <section className="w-full bg-white text-black section-padding">
       <main className="grid grid-cols-2 gap-10 container">
         <div className="space-y-4">
-          <h4 className="heading leading-none font-medium font-SyneFont text-deep-gray/85 tracking-tight">
+          <h3 className="heading leading-none font-medium font-SyneFont text-deep-gray/85 tracking-tight">
             Building intuitive
             <br />
-            <span className="text-theme-primary heading-break">
+            <span className="text-theme-primary heading-break font-RalewayFont font-normal">
               frontend experiences
             </span>
-          </h4>
+          </h3>
           <p className="text-gray-700 font-raleway-16-500">
             I’m <strong>Haseeb Arshad</strong>, a frontend developer with over 3
             years of experience building clean, scalable, and accessible UIs. I

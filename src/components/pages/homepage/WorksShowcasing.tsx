@@ -17,13 +17,13 @@ const WorksShowcasing = ({ className }: WorksShowcasingProptype) => {
         <div className="container mx-auto">
           <div className="flex items-end justify-between w-full">
             <div>
-              <h2 className="font-SyneFont heading leading-none font-medium tracking-tight text-black">
+              <h3 className="font-SyneFont heading leading-none font-medium tracking-tight text-black">
                 Designing a
                 <br />
-                <span className="text-black/70 font-RalewayFont heading-break">
+                <span className="text-black/70 font-RalewayFont heading-break font-normal">
                   better world today
                 </span>
-              </h2>
+              </h3>
               <p className="heading-description">
                 Meaningful design meets purposeful development. Explore recent
                 projects where creativity and function shape user-focused

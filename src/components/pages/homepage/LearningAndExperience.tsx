@@ -31,10 +31,10 @@ const LearningAndExperience = ({
     <>
       <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
         <div>
-          <h3 className="heading font-SyneFont text-white leading-none tracking-tight">
+          <h3 className="heading font-SyneFont text-white leading-none tracking-tight font-medium">
             Exploring Learning <br />
-            <span className="text-theme-primary heading-break">
-              And Growing
+            <span className="text-theme-primary heading-break font-normal">
+              and growing
             </span>
           </h3>
           <p className="heading-description">
