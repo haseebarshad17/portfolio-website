@@ -1,6 +1,8 @@
 // app/page.tsx || hompage
 
 "use client";
+import "swiper/css";
+import "swiper/css/navigation";
 import dynamic from "next/dynamic";
 import JarallaxImage from "@/components/generic/JaralaxImage";
 import { useTextLengthAnimation } from "@/hooks/useTextLengthAnimation";
@@ -15,6 +17,7 @@ import AboutSection from "@/components/pages/homepage/AboutSection";
 import LearningAndExperience from "@/components/pages/homepage/LearningAndExperience";
 import InfoAndSkills from "@/components/pages/homepage/InfoAndSkills";
 import WorksShowcasing from "@/components/pages/homepage/WorksShowcasing";
+import TestimonialsSection from "@/components/pages/homepage/TestimonialsSection";
 const Jarallax = dynamic(() => import("@/components/generic/Jarallax"), {
   ssr: false,
 });
@@ -66,6 +69,8 @@ const HomePage = () => {
 
       <InfoAndSkills />
       <WorksShowcasing />
+
+      <TestimonialsSection />
     </>
   );
 };
