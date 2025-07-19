@@ -1,4 +1,4 @@
-// app/page.tsx || hompage
+// app/page.tsx | hompage
 
 "use client";
 import "swiper/css";
@@ -18,6 +18,7 @@ import LearningAndExperience from "@/components/pages/homepage/LearningAndExperi
 import InfoAndSkills from "@/components/pages/homepage/InfoAndSkills";
 import WorksShowcasing from "@/components/pages/homepage/WorksShowcasing";
 import TestimonialsSection from "@/components/pages/homepage/TestimonialsSection";
+import CTASection from "@/components/pages/homepage/CTASection";
 const Jarallax = dynamic(() => import("@/components/generic/Jarallax"), {
   ssr: false,
 });
@@ -71,6 +72,7 @@ const HomePage = () => {
       <WorksShowcasing />
 
       <TestimonialsSection />
+      <CTASection />
     </>
   );
 };

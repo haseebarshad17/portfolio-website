@@ -60,8 +60,8 @@ const LearningAndExperience = ({
           learningAndExperienceData.map((lxDataItem, idx) => (
             <div
               className={cn(
-                "p-5 bg-light-gray/30 backdrop-blur-md shadow-md h-max relative",
-                idx == 1 && "mt-[60px]"
+                "p-5 bg-light-gray/30 backdrop-blur-md shadow-md h-max relative rounded-xs"
+                // idx == 1 && "mt-[60px]"
               )}
               key={idx}
             >
@@ -80,7 +80,7 @@ const LearningAndExperience = ({
                     <label className="font-syne-14-500 block text-black/90">
                       {item.institute}
                     </label>
-                    <p className="font-raleway-14-500 py-2 text-black/70">
+                    <p className="font-raleway-14-500 py-2 text-black/70 italic">
                       {item.description}
                     </p>
                     <strong className="block font-karla-14-500 text-black">

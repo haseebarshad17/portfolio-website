@@ -228,3 +228,62 @@ export const worksShowCase = [
     title: "projext title is getting bigger i size due to lorem ispusm dollar",
   },
 ];
+
+export const testimonials = [
+  {
+    name: "Aria Bennett",
+    role: "Creative Director, Figma",
+    text: "This platform unlocked a new level of collaboration for our team. Fast, elegant, and built for designers.",
+    image: "https://i.pravatar.cc/300?img=47",
+  },
+  {
+    name: "Luna Vasquez",
+    role: "Brand Designer, Canva",
+    text: "Aesthetically flawless and functionally brilliant. It empowers our entire creative process.",
+    image: "https://i.pravatar.cc/300?img=58",
+  },
+  {
+    name: "Zara Levine",
+    role: "Community Manager, Discord",
+    text: "From onboarding to full adoption — smooth, smart, and stylish. It’s a must-have tool.",
+    image: "https://i.pravatar.cc/300?img=60",
+  },
+  {
+    name: "Nina Kapoor",
+    role: "Marketing Lead, Notion",
+    text: "Everything feels designed with intention. Speed, polish, and personality — love it.",
+    image: "https://i.pravatar.cc/300?img=69",
+  },
+
+  {
+    name: "Chloe Zhang",
+    role: "Product Strategist, Asana",
+    text: "We moved faster, aligned better, and shipped smarter. Honestly, this changed how we build products.",
+    image: "https://i.pravatar.cc/300?img=65",
+  },
+  {
+    name: "Isla Moreau",
+    role: "UX Researcher, Airbnb",
+    text: "Every click, every detail — clearly made by a team who understands real user needs.",
+    image: "https://i.pravatar.cc/300?img=68",
+  },
+
+  {
+    name: "Maya Sinclair",
+    role: "Growth Designer, Pinterest",
+    text: "It elevated our storytelling and design sprints — super sleek and powerful!",
+    image: "https://i.pravatar.cc/300?img=49",
+  },
+  {
+    name: "Sofia Hart",
+    role: "Interaction Designer, Google",
+    text: "What a difference good tooling makes. From chaos to clarity in weeks.",
+    image: "https://i.pravatar.cc/300?img=45",
+  },
+  {
+    name: "Elena Garcia",
+    role: "Design Ops Manager, Atlassian",
+    text: "We’ve never had design and engineering in better sync. Bravo.",
+    image: "https://i.pravatar.cc/300?img=5",
+  },
+];
