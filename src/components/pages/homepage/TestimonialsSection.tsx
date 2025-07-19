@@ -1,143 +1,85 @@
-"use client";
-import { useRef, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import type { Swiper as SwiperType } from "swiper";
-import { ArrowLeft, ArrowRight } from "lucide-react";
-import clsx from "clsx";
+import CustomSwiper from "@/components/generic/CustomSwiper";
+import { testimonials } from "@/components/pages/homepage/content";
+import Image from "next/image";
+import Quotes from "@/assets/svg/Quotes";
 
-const testimonials = [
-  {
-    id: 1,
-    name: "Sarah Ahmed",
-    role: "Marketing Manager",
-    text: "This platform transformed our approach to digital communication. It's fast, intuitive, and our customers love it.",
-    image: "https://i.pravatar.cc/300?img=32",
-  },
-  {
-    id: 2,
-    name: "Ali Raza",
-    role: "CEO, Raza Corp",
-    text: "A truly innovative product that delivered great results for our team. The support is also top-notch!",
-    image: "https://i.pravatar.cc/300?img=45",
-  },
-  {
-    id: 3,
-    name: "Mehak Khan",
-    role: "Product Designer",
-    text: "I’ve used several tools, but this one stands out with its elegant UI and practical features.",
-    image: "https://i.pravatar.cc/300?img=12",
-  },
-];
-
-const TestimonialsSection = () => {
-  const swiperRef = useRef<SwiperType | null>(null);
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  const handlePrev = () => {
-    if (swiperRef.current) {
-      swiperRef.current.slidePrev();
-    }
-  };
-
-  const handleNext = () => {
-    if (swiperRef.current) {
-      swiperRef.current.slideNext();
-    }
-  };
-
+export default function TestimonialsSection() {
   return (
     <section className="bg-section-deep-white">
-      <div className="container relative">
+      <div className="container">
         <main className="section-padding">
-          {/* Heading */}
-          <h3 className="heading font-SyneFont font-medium tracking-tight text-black text-left">
-            Customer voices
-            <br />
-            <span className="heading-break font-RalewayFont text-black/80 inline-block">
-              hear what they say!
-            </span>
-          </h3>
+          <div className="text-left max-w-4xl">
+            <h3 className="heading font-SyneFont font-medium tracking-tight text-black leading-none">
+              Customer voices
+              <br />
+              <span className="heading-break font-RalewayFont text-black/80 inline-block">
+                hear what they say!
+              </span>
+            </h3>
 
-          <div className="pt-14 relative">
-            {/* Navigation Buttons */}
-            {activeIndex > 0 && (
-              <button
-                onClick={handlePrev}
-                className={clsx(
-                  "absolute top-1/2 -translate-y-1/2 left-0 z-10",
-                  "border border-black text-black rounded-full w-11 h-11 flex items-center justify-center",
-                  "hover:bg-black hover:text-white transition-colors duration-200"
-                )}
-                aria-label="Previous"
-              >
-                <ArrowLeft className="w-5 h-5" />
-              </button>
-            )}
+            <p className="heading-description">
+              From product design to development support, our partners share
+              their experience working with our team across fast-moving
+              industries and platforms.
+            </p>
+          </div>
 
-            {activeIndex < testimonials.length - 1 && (
-              <button
-                onClick={handleNext}
-                className={clsx(
-                  "absolute top-1/2 -translate-y-1/2 right-0 z-10",
-                  "border border-black text-black rounded-full w-11 h-11 flex items-center justify-center",
-                  "hover:bg-black hover:text-white transition-colors duration-200"
-                )}
-                aria-label="Next"
-              >
-                <ArrowRight className="w-5 h-5" />
-              </button>
-            )}
-
-            {/* Swiper */}
-            <Swiper
-              modules={[Navigation]}
-              spaceBetween={30}
-              slidesPerView={1}
-              onSwiper={(swiper) => (swiperRef.current = swiper)}
-              onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
-              className="w-full px-6"
+          <div className="pt-16">
+            <CustomSwiper
+              navigation
+              className="w-full"
+              speed={350}
+              pagination={false}
+              slideSpacing={32}
+              // navigationStyle="border-theme-secondary text-black bg-theme-secondary hover:bg-theme-secondary hover:text-black"
+              // navigationStyle="border-theme-primary text-white bg-theme-primary hover:bg-theme-primary hover:text-white"
+              breakpoints={{
+                0: {
+                  slidesPerView: 1,
+                  spaceBetween: 24,
+                },
+              }}
             >
-              {testimonials.map((testimonial) => (
-                <SwiperSlide key={testimonial.id}>
-                  <div className="flex flex-col sm:flex-row gap-6 items-start sm:items-center max-w-5xl mx-auto">
-                    {/* Avatar */}
-                    <div className="flex-shrink-0 max-h-[200px] h-full">
-                      <img
-                        src={testimonial.image}
-                        alt={testimonial.name}
-                        className="w-32 h-full max-h-[200px] rounded-xl object-cover"
-                      />
-                    </div>
+              {testimonials.map((item, i) => (
+                <div
+                  key={i}
+                  role="group"
+                  className="flex items-center gap-12 w-[calc(100%_-_250px)] m-auto h-full"
+                >
+                  <div className="flex-shrink-0 overflow-hidden rounded-lg">
+                    <Image
+                      src={item.image}
+                      alt={item.name}
+                      width={200}
+                      height={200}
+                      className="w-[200px] h-auto object-cover"
+                    />
+                  </div>
 
-                    {/* Content */}
-                    <div className="flex flex-col justify-center">
-                      <p className="text-gray-800 text-lg mb-4 leading-relaxed max-w-xl">
-                        “{testimonial.text}”
-                      </p>
+                  <div className="py-4">
+                    <p className="text-gray-800 text-lg leading-relaxed max-w-xl relative italic">
+                      “{item.text}”
+                      <Quotes className="w-12 h-16 absolute top-0 left-0 -translate-y-1/2 -translate-x-1/2" />
+                    </p>
 
-                      <div className="flex items-center gap-4 mt-4">
-                        <div className="w-24 h-[2px] bg-black" />
-                        <p className="text-black font-semibold text-lg">
-                          {testimonial.name}
+                    <div className="pt-10">
+                      <div className="flex items-center gap-4">
+                        <div className="w-[70px] h-[2px] bg-black" />
+                        <p className="text-black font-semibold font-syne-16-500">
+                          {item.name}
                         </p>
                       </div>
-
-                      <p className="text-sm text-gray-500 mt-1">
-                        {testimonial.role}
+                      <p className="font-raleway-14-500 italic text-gray-500">
+                        {item.role}
                       </p>
                     </div>
                   </div>
-                </SwiperSlide>
+                </div>
               ))}
-            </Swiper>
+            </CustomSwiper>
           </div>
         </main>
       </div>
     </section>
   );
-};
-
-export default TestimonialsSection;
+}
