@@ -4,9 +4,20 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
+        hostname: "**",
+      },
+      {
+        protocol: "http",
+        hostname: "**",
+      },
+      {
+        protocol: "https",
         hostname: "i.pravatar.cc",
       },
     ],
+    dangerouslyAllowSVG: true,
+    contentSecurityPolicy:
+      "default-src 'self'; script-src 'self'; img-src 'self' data: https:;",
   },
 };
 
