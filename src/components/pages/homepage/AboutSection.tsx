@@ -18,7 +18,7 @@ const AboutSection = ({
   return (
     <>
       <section className={cn("section-padding", className)}>
-        <main className="container grid grid-cols-2 gap-10">
+        <main className="container grid lg:grid-cols-2 grid-cols-1 gap-10">
           {/* <div className="border border-white p-5 flex flex-col justify-between h-full">
             <div className="text-white">
               <h2 className="font-KarlaFont font-semibold text-[100px] md:text-[150px] leading-none drop-shadow-lg">
@@ -64,7 +64,10 @@ const AboutSection = ({
             </div>
           </div> */}
 
-          <div className="bg-white/5 border border-white/10 rounded-md p-6 flex flex-col justify-between h-full text-white">
+          <div
+            className="bg-white/5 border border-white/10 rounded-md p-6 flex flex-col justify-between 
+            h-full text-white min-h-[320px]"
+          >
             <div>
               <h4 className="text-2xl font-semibold font-SyneFont pb-2">
                 Creative Developer

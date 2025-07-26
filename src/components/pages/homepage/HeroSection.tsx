@@ -5,7 +5,7 @@ export const HeroSection = ({ animatedText }: { animatedText: string }) => {
     <>
       <div className="container">
         <div className="pt-[220px] w-full">
-          <h1 className="w-max text-[80px] font-medium font-SyneFont h-max ">
+          <h1 className="w-max xl:text-[80px] md:text-[60px] text-[45px] font-medium font-SyneFont h-max">
             <div className="flex items-center">
               <span className="font-RalewayFont text-theme-primary">
                 Howdy,
@@ -24,6 +24,7 @@ export const HeroSection = ({ animatedText }: { animatedText: string }) => {
               />
             </div>
           </h1>
+
           <p className="font-RalewayFont font-thin text-[21px] pt-2 text-white">
             frontend developer - UI/UX Expert
           </p>

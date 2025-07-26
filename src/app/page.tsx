@@ -27,13 +27,13 @@ const HomePage = () => {
   const animatedText = useTextLengthAnimation({
     TextArray: [
       "Haseeb Arshad",
-      "Frontend Dev",
-      "UI/UX Specialist",
-      "React Expert",
-      "Next Engineer",
-      "Creative Coder",
-      "Interface Architect",
-      "Programming Pro",
+      "Frontend Dev..",
+      "React 18+ Expert",
+      "Next 15+ Pro",
+      "UI Engineer",
+      "JS Dev..",
+      "TS Coder",
+      "Pixel-Perfect",
     ],
     typingSpeed: 150,
     deletingSpeed: 150,
@@ -48,12 +48,10 @@ const HomePage = () => {
           alt="hero-background-image"
           priority
         />
-
         <HeroSection animatedText={animatedText} />
       </Jarallax>
       <Jarallax speed={0.4} className="jarallax">
         <JarallaxImage src="/images/about.webp" alt="about-background-image" />
-
         <Overlay color="#000000" alpha={40} gradientType="x">
           <AboutSection aboutProgressContent={aboutProgress} />
         </Overlay>
@@ -70,7 +68,6 @@ const HomePage = () => {
 
       <InfoAndSkills />
       <WorksShowcasing />
-
       <TestimonialsSection />
       <CTASection />
     </>

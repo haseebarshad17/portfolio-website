@@ -47,7 +47,7 @@ const CTASection = ({ className }: CTASectionProptype) => {
             </Button>
           </div>
 
-          <ul className="pt-4 flex flex-wrap gap-4 font-syne-14-300 text-gray-600">
+          <ul className="pt-4 flex items-center flex-wrap gap-4 font-syne-14-300 text-gray-600">
             <li>✓ Free consultation</li>
             <li>✓ Fast delivery</li>
             <li>✓ Custom design & development</li>

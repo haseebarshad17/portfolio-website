@@ -44,7 +44,7 @@ export default function TestimonialsSection() {
                 <div
                   key={i}
                   role="group"
-                  className="flex items-center gap-12 w-[calc(100%_-_250px)] m-auto h-full"
+                  className="flex items-center gap-12 md:w-[calc(100%_-_250px)] w-[calc(100%_-_100px)] m-auto h-full"
                 >
                   <div className="flex-shrink-0 overflow-hidden rounded-lg">
                     <Image
@@ -52,7 +52,7 @@ export default function TestimonialsSection() {
                       alt={item.name}
                       width={200}
                       height={200}
-                      className="w-[200px] h-auto object-cover"
+                      className="md:w-[200px] w-[120px] h-auto object-cover"
                     />
                   </div>
 
