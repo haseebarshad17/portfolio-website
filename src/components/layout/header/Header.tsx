@@ -44,8 +44,12 @@ const Header = () => {
       >
         <div className="flex items-center justify-between">
           <nav className="flex items-center">
-            <Logo width={90} height={90} className="ease duration-300" />
-            <div className="flex items-center gap-[15px] pl-[100px]">
+            <Logo
+              width={90}
+              height={90}
+              className="ease duration-300 xl:w-[90px] w-[75px] h-auto"
+            />
+            <div className="hidden lg:flex items-center gap-[15px] pl-[100px]">
               <Link
                 href={`tel:${phone}`}
                 className="font-karla-16-300 flex items-center gap-[5px] relative before:w-0

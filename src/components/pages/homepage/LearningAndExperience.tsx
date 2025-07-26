@@ -55,7 +55,12 @@ const LearningAndExperience = ({
         </Button>
       </div>
 
-      <div className={cn("pt-12 grid grid-cols-2 gap-5 text-black", className)}>
+      <div
+        className={cn(
+          "pt-12 grid lg:grid-cols-2 grid-cols-1 gap-5 text-black",
+          className
+        )}
+      >
         {learningAndExperienceData.length &&
           learningAndExperienceData.map((lxDataItem, idx) => (
             <div

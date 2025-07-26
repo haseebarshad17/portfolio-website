@@ -284,6 +284,6 @@ export const testimonials = [
     name: "Elena Garcia",
     role: "Design Ops Manager, Atlassian",
     text: "We’ve never had design and engineering in better sync. Bravo.",
-    image: "https://i.pravatar.cc/300?img=5",
+    image: "https://i.pravatar.cc/300?img=10",
   },
 ];

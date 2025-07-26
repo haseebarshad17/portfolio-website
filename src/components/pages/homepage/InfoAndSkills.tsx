@@ -7,7 +7,7 @@ import CustomMarquee from "@/components/generic/CustomMarquee";
 const InfoAndSkills = () => {
   return (
     <section className="w-full bg-white text-black section-padding">
-      <main className="grid grid-cols-2 gap-10 container">
+      <main className="grid lg:grid-cols-2 grid-cols-1 gap-10 container">
         <div className="space-y-4">
           <h3 className="heading leading-none font-medium font-SyneFont text-deep-gray/85 tracking-tight">
             Building intuitive
