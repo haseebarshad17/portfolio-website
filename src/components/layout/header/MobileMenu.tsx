@@ -21,7 +21,7 @@ const MobileMenu = ({
   useScrollLock(isMenuTriggered);
 
   return (
-    <div className="fixed inset-0 z-full pointer-events-none pr-[150px]">
+    <div className="fixed inset-0 z-full pointer-events-none">
       <AnimatePresence>
         {isMenuTriggered && (
           <motion.div
@@ -30,7 +30,7 @@ const MobileMenu = ({
             animate={{ x: 0 }}
             exit={{ x: "-100%" }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="bg-deep-gray w-full h-screen pointer-events-auto shadow-lg 
+            className="bg-deep-gray w-[85vw] h-screen pointer-events-auto shadow-xl 
              pl-20 pt-16 flex flex-col"
           >
             <Logo width={90} height={90} className="-translate-x-1/2" />

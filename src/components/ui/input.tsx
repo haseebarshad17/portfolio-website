@@ -40,6 +40,7 @@ export interface InputProps
   extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "size">,
     VariantProps<typeof inputVariants> {
   className?: string;
+  inputStyle?: string;
   leftEl?: React.ReactElement;
   rightEl?: React.ReactElement;
   isSubmitButtonInside?: boolean;
@@ -51,6 +52,7 @@ export const Input = ({
   rightEl,
   leftEl,
   className,
+  inputStyle,
   variant,
   isSubmitButtonInside,
   submitButtonIcon,
@@ -69,7 +71,8 @@ export const Input = ({
             style={{ height: submitButtonSize + "px" }}
             className={cn(
               inputVariants({ variant }),
-              "z-10 w-full py-1 box-content"
+              "z-10 w-full py-1 box-content",
+              inputStyle
             )}
             {...props}
           />

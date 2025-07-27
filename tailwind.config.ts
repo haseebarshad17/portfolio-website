@@ -11,6 +11,14 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      xs: "480px",
+      sm: "640px",
+      md: "768px",
+      lg: "992px",
+      xl: "1170px",
+    },
+
     extend: {
       fontFamily: {
         SyneFont: "var(--font-syne)",
@@ -31,13 +39,6 @@ const config: Config = {
         "light-gray": "#E2E2E2",
         "regular-gray": "#C0C0C0",
         "deep-gray": "#242424",
-      },
-      screens: {
-        xs: "480px",
-        sm: "640px",
-        md: "768px",
-        lg: "992px",
-        xl: "1170px",
       },
       borderRadius: {
         xs: "3px",

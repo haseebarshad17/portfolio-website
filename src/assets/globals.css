@@ -30,16 +30,16 @@
         @apply max-w-[1170px] md:px-4 px-2 mx-auto
     }
     .section-padding {
-        @apply py-[70px]
+        @apply md:py-[70px] sm:py-[50px] py-10
     }
     .heading {
-        @apply font-medium text-5xl
+        @apply font-medium text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-none md:leading-normal
     }
     .heading-break {
-        @apply italic pl-2 heading font-normal
+        @apply italic md:pl-2 heading font-normal
     }
     .heading-description {
-       @apply font-raleway-14-500 text-gray-600 max-w-xl leading-relaxed pt-4
+       @apply md:font-raleway-14-500 font-raleway-12-500 text-gray-600 max-w-xl leading-relaxed pt-4
     }
     .no-scrollbar {
         scrollbar-width: 0px;

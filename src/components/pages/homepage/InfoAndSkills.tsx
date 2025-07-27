@@ -3,8 +3,12 @@ import Image from "next/image";
 import Tooltip from "@/components/ui/tooltip";
 import { personalInfoDetails, personalSkills } from "./content";
 import CustomMarquee from "@/components/generic/CustomMarquee";
+import { useBreakpoint } from "@/hooks/useBreakpoint";
 
 const InfoAndSkills = () => {
+  const isLgUp = useBreakpoint("lg", "up");
+  const isSmUp = useBreakpoint("sm", "up");
+
   return (
     <section className="w-full bg-white text-black section-padding">
       <main className="grid lg:grid-cols-2 grid-cols-1 gap-10 container">
@@ -16,23 +20,23 @@ const InfoAndSkills = () => {
               frontend experiences
             </span>
           </h3>
-          <p className="text-gray-700 font-raleway-16-500">
+          <p className="text-gray-700 md:font-raleway-16-500 font-raleway-14-500">
             I’m <strong>Haseeb Arshad</strong>, a frontend developer with over 3
             years of experience building clean, scalable, and accessible UIs. I
             focus on delivering thoughtful, responsive design implementations
             using modern web technologies.
           </p>
-          <p className="text-gray-600 font-raleway-14-500">
+          <p className="text-gray-600 md:font-raleway-14-500 font-raleway-12-500">
             I enjoy solving real-world problems through code, crafting
             responsive layouts, and writing maintainable components. Skilled in
             HTML5, CSS3, JavaScript, TypeScript, React, SCSS, and Git.
           </p>
         </div>
 
-        <div className="rounded-sm border border-neutral-200 bg-white overflow-hidden h-max">
-          <div className="grid grid-cols-2 items-center">
-            <div className="bg-neutral-100 flex items-center justify-center h-full p-4">
-              <div className="w-36 h-36 overflow-hidden rounded-xl ring-1 ring-neutral-300">
+        <div className="rounded-sm border border-neutral-200 bg-white overflow-hidden h-max max-w-[550px] lg:justify-self-end">
+          <div className="grid sm:grid-cols-2 grid-cols-1 items-center">
+            <div className="bg-neutral-100 flex items-center sm:justify-center h-full p-4">
+              <div className="sm:w-36 w-[50dvw] h-36 overflow-hidden rounded-xl ring-1 ring-neutral-300">
                 <Image
                   src="/images/main.jpg"
                   alt="Haseeb Arshad"
@@ -44,7 +48,7 @@ const InfoAndSkills = () => {
             </div>
 
             <div className="px-4 py-5">
-              <h3 className="w-max font-RalewayFont text-lg font-medium leading-none text-gray-800 pb-4">
+              <h3 className="w-max font-RalewayFont sm:text-lg text-[16px] font-medium leading-none text-gray-800 sm:pb-4 pb-2">
                 Personal Infos
               </h3>
               <Table className="text-sm w-full">
@@ -53,12 +57,12 @@ const InfoAndSkills = () => {
                     personalInfoDetails.map((item, i) => (
                       <TableRow
                         key={i}
-                        className="border-none w-max min-w-0 flex items-center hover:bg-transparent pb-1"
+                        className="border-none w-max min-w-0 flex items-center hover:bg-transparent sm:pb-1"
                       >
                         <TableCell className="font-medium text-gray-700 p-0 font-syne-14-500">
                           {item.label} :
                         </TableCell>
-                        <TableCell className="text-gray-900 p-0 pl-1 cursor-help select-text font-karla-14-300 leading-none">
+                        <TableCell className="text-gray-900 p-0 pl-1 cursor-help select-text sm:font-karla-14-300 font-karla-12-300 leading-none">
                           <Tooltip
                             pointerTouch={
                               item.label.toLocaleLowerCase().includes("email")
@@ -82,15 +86,15 @@ const InfoAndSkills = () => {
         </div>
       </main>
 
-      <main className="container pt-20 flex flex-col items-left gap-10">
+      <main className="container md:pt-20 pt-10 flex flex-col items-left sm:gap-10 gap-7">
         <h4 className="font-syne-14-500 text-gray-800">Technologies I Use</h4>
         <CustomMarquee
-          speedInSecond={50}
-          itemsPerSlide={10}
-          direction="left"
-          disableOnInteraction
-          itemInteractionEffect={false}
           slideEffect
+          direction="left"
+          speedInSecond={50}
+          itemsPerSlide={isLgUp ? 10 : isSmUp ? 7 : 5}
+          disableOnInteraction={isLgUp ? true : false}
+          itemInteractionEffect={false}
           content={personalSkills.map((item, idx) => (
             <div key={idx} className="w-max h-max text-center">
               <Image
@@ -98,7 +102,7 @@ const InfoAndSkills = () => {
                 alt={item.label}
                 width={50}
                 height={50}
-                className="w-[50px] h-auto inline-block"
+                className="md:w-[50px] w-8 h-auto inline-block"
               />
               <p className="font-syne-12-500 pt-2">{item.label}</p>
             </div>

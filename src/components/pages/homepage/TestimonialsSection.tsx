@@ -2,8 +2,12 @@ import CustomSwiper from "@/components/generic/CustomSwiper";
 import { testimonials } from "@/components/pages/homepage/content";
 import Image from "next/image";
 import Quotes from "@/assets/svg/Quotes";
+import { useBreakpoint } from "@/hooks/useBreakpoint";
+import { cn } from "@/lib/utils/clsxUtils";
 
 export default function TestimonialsSection() {
+  const isMdUp = useBreakpoint("md", "up");
+
   return (
     <section className="bg-section-deep-white">
       <div className="container">
@@ -24,15 +28,22 @@ export default function TestimonialsSection() {
             </p>
           </div>
 
-          <div className="pt-16">
+          <div className="sm:pt-16 pt-10">
             <CustomSwiper
               navigation
-              className="w-full"
+              className={cn("w-full", !isMdUp && "flex flex-col-reverse")}
               speed={350}
               pagination={false}
-              slideSpacing={32}
-              // navigationStyle="border-theme-secondary text-black bg-theme-secondary hover:bg-theme-secondary hover:text-black"
-              // navigationStyle="border-theme-primary text-white bg-theme-primary hover:bg-theme-primary hover:text-white"
+              slideSpacing={isMdUp ? 32 : 10}
+              navigationInside={isMdUp ? true : false}
+              navIconSize={isMdUp ? 18 : 12}
+              navBtnVariant={isMdUp ? "outlined" : "dark"}
+              navigationStyle={cn(
+                "lowercase text-[10px] font-normal font-RalewayFont gap-[2px] items-center leading-normal",
+                !isMdUp
+                  ? "w-max h-max rounded-sm py-1 px-3"
+                  : "w-10 h-10 rounded-full"
+              )}
               breakpoints={{
                 0: {
                   slidesPerView: 1,
@@ -44,7 +55,8 @@ export default function TestimonialsSection() {
                 <div
                   key={i}
                   role="group"
-                  className="flex items-center gap-12 md:w-[calc(100%_-_250px)] w-[calc(100%_-_100px)] m-auto h-full"
+                  className="flex xs:items-center md:gap-12 xs:gap-8 gap-5 md:w-[calc(100%_-_250px)] w-full
+                  m-auto h-full flex-col xs:flex-row pr-16 md:pr-0"
                 >
                   <div className="flex-shrink-0 overflow-hidden rounded-lg">
                     <Image
@@ -52,24 +64,24 @@ export default function TestimonialsSection() {
                       alt={item.name}
                       width={200}
                       height={200}
-                      className="md:w-[200px] w-[120px] h-auto object-cover"
+                      className="md:w-[200px] w-[80px] xs:w-[120px] sm:w-[140px] h-auto object-cover rounded-lg"
                     />
                   </div>
 
-                  <div className="py-4">
-                    <p className="text-gray-800 text-lg leading-relaxed max-w-xl relative italic">
+                  <div className="py-2">
+                    <p className="text-gray-800 md:text-lg text-[14px] leading-relaxed max-w-xl italic relative">
+                      <Quotes className="md:w-8 w-7 h-max absolute top-1 left-1 -translate-y-[75%] xs:-translate-y-1/2 xs:-translate-x-1/2" />
                       “{item.text}”
-                      <Quotes className="w-12 h-16 absolute top-0 left-0 -translate-y-1/2 -translate-x-1/2" />
                     </p>
 
-                    <div className="pt-10">
-                      <div className="flex items-center gap-4">
-                        <div className="w-[70px] h-[2px] bg-black" />
-                        <p className="text-black font-semibold font-syne-16-500">
+                    <div className="md:pt-10 xs:pt-7 pt-5">
+                      <div className="flex items-center xs:gap-4 gap-2">
+                        <div className="xs:w-[70px] w-10 h-[2px] bg-black" />
+                        <p className="text-black font-semibold md:font-syne-16-500 xs:font-syne-14-500 font-syne-12-500 leading-none">
                           {item.name}
                         </p>
                       </div>
-                      <p className="font-raleway-14-500 italic text-gray-500">
+                      <p className="md:font-raleway-14-500 font-raleway-12-500 italic text-gray-500">
                         {item.role}
                       </p>
                     </div>

@@ -20,12 +20,7 @@ const ProgressBar = ({
   return (
     <>
       <div className={cn("text-white", className)}>
-        <label
-          className={cn(
-            "flex items-center justify-between font-karla-14-300",
-            titleStyle
-          )}
-        >
+        <label className={cn("flex items-center justify-between", titleStyle)}>
           {title} <span className="font-karla-14-300">{safeProgress}%</span>
         </label>
         <div
