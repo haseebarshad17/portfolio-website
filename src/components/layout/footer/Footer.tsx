@@ -15,14 +15,17 @@ const Footer = () => {
 
   return (
     <>
-      <footer className="bg-black section-padding pb-10" id="contact">
+      <footer
+        className="bg-black section-padding lg:pb-[70px] md:pb-[50px] sm:pb-10 pb-5"
+        id="contact"
+      >
         <div className="container">
           <main className="flex lg:gap-20 sm:gap-10 gap-8 flex-col lg:flex-row">
             <div className="w-max">
               <Logo
                 width={90}
                 height={90}
-                className="lg:w-[90px] md:w-[70px] w-[55px] h-auto lg:pb-8 pb-5"
+                className="lg:w-[90px] md:w-[70px] w-[55px] h-auto lg:pb-8 md:pb-5 pb-3"
               />
               <form className="flex flex-col sm:gap-3 gap-2">
                 <label className="md:font-raleway-14-300 sm:font-raleway-12-300 text-[10px] font-RalewayFont font-light italic text-section-light-white">

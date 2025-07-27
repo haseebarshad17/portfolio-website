@@ -18,7 +18,7 @@ const AboutSection = ({
   return (
     <>
       <section className={cn("section-padding", className)}>
-        <main className="container grid lg:grid-cols-2 grid-cols-1 lg:gap-10 sm:gap-5 gap-3">
+        <main className="container lg:grid lg:grid-cols-2 flex flex-col-reverse lg:gap-10 sm:gap-5 gap-3">
           {/* <div className="border border-white p-5 flex flex-col justify-between h-full">
             <div className="text-white">
               <h2 className="font-KarlaFont font-semibold text-[100px] md:text-[150px] leading-none drop-shadow-lg">
@@ -33,7 +33,7 @@ const AboutSection = ({
                 <span className="font-raleway-16-300">working</span>
               </div>
             </div>
-          </div> */}
+          </div>  */}
 
           {/* <div className="bg-white/5 border border-white/10 rounded-md p-6 h-full flex flex-col justify-between text-white shadow-md">
             <div>
@@ -99,7 +99,7 @@ const AboutSection = ({
                   best websites
                 </span>
               </h3>
-              <p className="font-karla-14-300 leading-[1.6] text-white/75">
+              <p className="sm:font-karla-14-300 font-karla-12-300 md:leading-[1.6] leading-[1.3] text-white/70">
                 ensure seamless cross-browser compatibility and responsive
                 design, delivering optimal user experiences across all devices.
                 We prioritize accessibility and usability, guaranteeing that
@@ -109,7 +109,7 @@ const AboutSection = ({
                 needs.
               </p>
             </div>
-            <div className="flex flex-col gap-4 pt-10">
+            <div className="flex flex-col sm:gap-4 gap-2 pt-10">
               {aboutProgressContent.length &&
                 aboutProgressContent.map((item, i) => (
                   <ProgressBar
@@ -118,7 +118,7 @@ const AboutSection = ({
                     title={item.title}
                     titleStyle="sm:font-karla-14-300 font-karla-12-300 leading-none"
                     progressbarStyle="sm:h-2 h-1 rounded-none"
-                    className="text-white/90"
+                    className="text-white/90 leading-none"
                   />
                 ))}
             </div>

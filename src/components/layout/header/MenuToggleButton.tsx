@@ -16,7 +16,7 @@ const MenuToggleButton = ({
     <div
       onClick={() => setIsMenuTriggered((prev) => !prev)}
       className={cn(
-        "rounded-full overflow-hidden cursor-pointer w-11 h-11",
+        "rounded-full overflow-hidden cursor-pointer w-11 h-11 scale-[0.65] sm:scale-[0.75] md:scale-[0.85] lg;scale-[1]",
         className
       )}
     >
