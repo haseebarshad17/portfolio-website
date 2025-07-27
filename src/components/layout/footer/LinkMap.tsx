@@ -43,12 +43,13 @@ const LinkMap = ({
               key={i}
               href={item.href}
               className={cn(
-                "group w-max block border-b border-transparent duration-300 ease-out",
+                "group w-max block border-b border-transparent duration-300 ease-out leading-none",
                 item.content && `hover:border-white ${contentLinkWrapperStyle}`
               )}
             >
               <li
                 className={cn(
+                  "inline-block leading-none",
                   linkStyle,
                   checkActive?.length && activeLink && activeStyle
                 )}

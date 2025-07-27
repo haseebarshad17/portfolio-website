@@ -3,9 +3,9 @@ import { cn } from "@/lib/utils/clsxUtils";
 import { tv, type VariantProps } from "tailwind-variants";
 import Link from "next/link";
 
-const buttonVariants = tv({
+export const buttonVariants = tv({
   base: `
-  relative inline-flex items-center justify-center rounded-md transition-all
+  relative inline-flex items-center justify-center transition-all
   duration-150 ease-out focus:outline-none active:scale-[0.95] disabled:pointer-events-none 
   disabled:opacity-50 min-w-max outline-none
 `,
@@ -18,6 +18,7 @@ const buttonVariants = tv({
       faded: "bg-opacity-50 text-theme-primary bg-theme-primary",
       transparent: "bg-transparent text-secondary",
       outlined: "border border-black text-black bg-transparent rounded-full",
+      dark: "bg-black text-white hover:bg-black/75",
     },
     size: {
       sm: "w-[50px] h-[20px] font-karla-12-300",
@@ -60,9 +61,9 @@ const Button = ({
 }: ButtonProps) => {
   const ButtonContent = () => (
     <>
-      {leftEl && <span>{leftEl}</span>}
-      {children ?? "Button"}
-      {rightEl && <span>{rightEl}</span>}
+      {leftEl && <span className="inline-block leading-none">{leftEl}</span>}
+      {children ?? <text>Button</text>}
+      {rightEl && <span className="inline-block leading-none">{rightEl}</span>}
     </>
   );
 

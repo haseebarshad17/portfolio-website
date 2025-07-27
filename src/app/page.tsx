@@ -19,11 +19,13 @@ import InfoAndSkills from "@/components/pages/homepage/InfoAndSkills";
 import WorksShowcasing from "@/components/pages/homepage/WorksShowcasing";
 import TestimonialsSection from "@/components/pages/homepage/TestimonialsSection";
 import CTASection from "@/components/pages/homepage/CTASection";
+import { useBreakpoint } from "@/hooks/useBreakpoint";
 const Jarallax = dynamic(() => import("@/components/generic/Jarallax"), {
   ssr: false,
 });
 
 const HomePage = () => {
+  const isMdDown = useBreakpoint("md", "down");
   const animatedText = useTextLengthAnimation({
     TextArray: [
       "Haseeb Arshad",
@@ -44,7 +46,8 @@ const HomePage = () => {
     <>
       <Jarallax speed={0.4} className="min-h-[85dvh] jarallax">
         <JarallaxImage
-          src="/images/main.jpg"
+          src={isMdDown ? "/images/about2.webp" : "/images/main.jpg"}
+          // src={"/images/main.jpg"}
           alt="hero-background-image"
           priority
         />

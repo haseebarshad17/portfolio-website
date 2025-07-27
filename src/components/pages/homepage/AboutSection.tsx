@@ -18,7 +18,7 @@ const AboutSection = ({
   return (
     <>
       <section className={cn("section-padding", className)}>
-        <main className="container grid lg:grid-cols-2 grid-cols-1 gap-10">
+        <main className="container grid lg:grid-cols-2 grid-cols-1 lg:gap-10 sm:gap-5 gap-3">
           {/* <div className="border border-white p-5 flex flex-col justify-between h-full">
             <div className="text-white">
               <h2 className="font-KarlaFont font-semibold text-[100px] md:text-[150px] leading-none drop-shadow-lg">
@@ -65,14 +65,14 @@ const AboutSection = ({
           </div> */}
 
           <div
-            className="bg-white/5 border border-white/10 rounded-md p-6 flex flex-col justify-between 
-            h-full text-white min-h-[320px]"
+            className="bg-white/5 border border-white/10 rounded-md sm:p-6 px-3 py-4 flex flex-col justify-between 
+            h-full text-white sm:min-h-[250px] min-h-[200px]"
           >
             <div>
-              <h4 className="text-2xl font-semibold font-SyneFont pb-2">
+              <h4 className="md:text-2xl sm:text-lg text-[16px] font-semibold font-SyneFont pb-2">
                 Creative Developer
               </h4>
-              <p className="text-white/80 font-raleway-14-300 leading-relaxed">
+              <p className="text-white/80 sm:font-raleway-14-300 font-raleway-12-300 leading-relaxed">
                 With over 3 years of hands-on experience, I specialize in
                 crafting responsive, accessible, and high-performance websites
                 that blend creativity with usability.
@@ -82,7 +82,7 @@ const AboutSection = ({
             <div className="mt-6">
               <div className="flex items-center gap-4">
                 <div className="text-5xl font-KarlaFont font-semibold">3+</div>
-                <div className="text-sm uppercase tracking-wider font-raleway-14-500 text-white/80">
+                <div className="uppercase tracking-wider sm:font-raleway-14-500 font-raleway-12-500 text-white/80">
                   Years of
                   <br />
                   Experience
@@ -99,7 +99,7 @@ const AboutSection = ({
                   best websites
                 </span>
               </h3>
-              <p className="font-karla-14-300 leading-[1.6] text-white/85">
+              <p className="font-karla-14-300 leading-[1.6] text-white/75">
                 ensure seamless cross-browser compatibility and responsive
                 design, delivering optimal user experiences across all devices.
                 We prioritize accessibility and usability, guaranteeing that
@@ -116,7 +116,8 @@ const AboutSection = ({
                     key={i}
                     progress={item.progress}
                     title={item.title}
-                    progressbarStyle="h-2 rounded-none"
+                    titleStyle="sm:font-karla-14-300 font-karla-12-300 leading-none"
+                    progressbarStyle="sm:h-2 h-1 rounded-none"
                     className="text-white/90"
                   />
                 ))}

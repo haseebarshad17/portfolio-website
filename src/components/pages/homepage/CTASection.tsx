@@ -1,5 +1,6 @@
 import Button from "@/components/ui/button";
 import Separator from "@/components/ui/separator";
+import { useBreakpoint } from "@/hooks/useBreakpoint";
 import { cn } from "@/lib/utils/clsxUtils";
 import { MessageCircleMore, Rocket } from "lucide-react";
 
@@ -8,6 +9,8 @@ type CTASectionProptype = {
 };
 
 const CTASection = ({ className }: CTASectionProptype) => {
+  const isMdUp = useBreakpoint("md", "up");
+
   return (
     <section className={cn("bg-section-deep-white text-black", className)}>
       <main className="container">
@@ -28,29 +31,41 @@ const CTASection = ({ className }: CTASectionProptype) => {
             way.
           </p>
 
-          <div className="pt-10 gap-2">
+          <div className="sm:pt-10 pt-5 gap-2">
             <Button
-              size="lg"
+              size={isMdUp ? "lg" : "sm"}
               variant="secondary"
-              rightEl={<Rocket size={16} strokeWidth={1.2} />}
-              className="gap-2 px-5 font-raleway-12-500 rounded-md"
+              rightEl={<Rocket size={isMdUp ? 16 : 12} strokeWidth={1.2} />}
+              className={cn(
+                "gap-2",
+                isMdUp
+                  ? "px-5 font-raleway-12-500 rounded-md"
+                  : "text-[10px] font-RalewayFont font-medium w-max h-max py-[6px] px-4 rounded-sm"
+              )}
             >
               Start a project
             </Button>
             <Button
-              size="lg"
+              size={isMdUp ? "lg" : "sm"}
               variant="transparent"
-              rightEl={<MessageCircleMore size={16} strokeWidth={1.2} />}
-              className="gap-2 px-5 font-raleway-12-500 rounded-md"
+              rightEl={
+                <MessageCircleMore size={isMdUp ? 16 : 12} strokeWidth={1.2} />
+              }
+              className={cn(
+                "gap-2",
+                isMdUp
+                  ? "px-5 font-raleway-12-500 rounded-md"
+                  : "text-[10px] font-RalewayFont font-medium w-max h-max py-[6px] px-4 rounded-sm"
+              )}
             >
               Let's Talk
             </Button>
           </div>
 
-          <ul className="pt-4 flex items-center flex-wrap gap-4 font-syne-14-300 text-gray-600">
-            <li>✓ Free consultation</li>
-            <li>✓ Fast delivery</li>
-            <li>✓ Custom design & development</li>
+          <ul className="pt-4 flex items-center flex-wrap sm:font-syne-14-300 font-syne-12-300 text-gray-600">
+            <li className="pr-4 pb-1">✓ Free consultation</li>
+            <li className="pr-4 pb-1">✓ Fast delivery</li>
+            <li className="pr-4 pb-1">✓ Custom design & development</li>
           </ul>
         </div>
       </main>
