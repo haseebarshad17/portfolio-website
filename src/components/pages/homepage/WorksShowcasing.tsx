@@ -46,7 +46,7 @@ const WorksShowcasing = ({ className }: WorksShowcasingProptype) => {
             </Button>
           </div>
 
-          <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 lg:gap-10 gap-5 pt-10">
+          <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 lg:gap-10 gap-5 md:pt-10 pt-6">
             {worksShowCase.length &&
               worksShowCase.map((work, i) => (
                 <WorkCard

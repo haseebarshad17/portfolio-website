@@ -31,7 +31,7 @@ const LearningAndExperience = ({
 
   return (
     <>
-      <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
+      <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 md:mb-10 mb-6">
         <div>
           <h3 className="heading font-SyneFont text-white leading-none tracking-tight font-medium">
             Exploring Learning <br />
@@ -59,7 +59,7 @@ const LearningAndExperience = ({
 
       <div
         className={cn(
-          "md:pt-12 sm:pt-8 pt-3 grid lg:grid-cols-2 grid-cols-1 lg:gap-5 gap-8 text-black",
+          "md:pt-12 sm:pt-8 pt-3 grid lg:grid-cols-2 grid-cols-1 gap-5 text-black",
           className
         )}
       >
@@ -73,7 +73,7 @@ const LearningAndExperience = ({
               key={idx}
             >
               <h4
-                className="absolute top-0 sm:left-5 left-3 -translate-y-1/2 md:text-3xl sm:text-2xl text-lg font-RalewayFont
+                className="absolute top-0 sm:left-5 left-3 -translate-y-1/2 text-2xl sm:text-3xl font-RalewayFont
                 leading-none font-medium bg-gradient-to-r from-theme-primary to-white  bg-clip-text text-transparent"
               >
                 {lxDataItem.heading}

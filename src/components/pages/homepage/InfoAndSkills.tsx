@@ -4,6 +4,13 @@ import Tooltip from "@/components/ui/tooltip";
 import { personalInfoDetails, personalSkills } from "./content";
 import CustomMarquee from "@/components/generic/CustomMarquee";
 import { useBreakpoint } from "@/hooks/useBreakpoint";
+import {
+  Menubar,
+  MenubarContent,
+  MenubarLabel,
+  MenubarMenu,
+} from "@/components/ui/menubar";
+import { MenubarTrigger } from "@radix-ui/react-menubar";
 
 const InfoAndSkills = () => {
   const isLgUp = useBreakpoint("lg", "up");
@@ -63,19 +70,37 @@ const InfoAndSkills = () => {
                           {item.label} :
                         </TableCell>
                         <TableCell className="text-gray-900 p-0 pl-1 cursor-help select-text sm:font-karla-14-300 font-karla-12-300 leading-none">
-                          <Tooltip
-                            pointerTouch={
-                              item.label.toLocaleLowerCase().includes("email")
-                                ? true
-                                : false
-                            }
-                            content={item.value}
-                            className="bg-deep-gray text-white"
-                          >
-                            <span className="truncate max-w-[160px] inline-block leading-none">
-                              {item.value}
-                            </span>
-                          </Tooltip>
+                          {isLgUp ? (
+                            <Tooltip
+                              pointerTouch={item.label
+                                .toLowerCase()
+                                .includes("email")}
+                              content={item.value}
+                              className="bg-deep-gray text-white"
+                            >
+                              <span className="truncate max-w-[160px] inline-block leading-none sm:font-karla-14-300 font-karla-12-300">
+                                {item.value}
+                              </span>
+                            </Tooltip>
+                          ) : (
+                            <Menubar asChild>
+                              <MenubarMenu>
+                                <MenubarTrigger className="truncate max-w-[160px] inline-block">
+                                  {item.value}
+                                </MenubarTrigger>
+                                <MenubarContent
+                                  align="start"
+                                  side="top"
+                                  sideOffset={0}
+                                  className="rounded-none border-none"
+                                >
+                                  <MenubarLabel className="w-max min-w-0 px-2 py-1 bg-black text-white leading-none sm:font-karla-14-300 font-karla-12-300 rounded-xs">
+                                    {item.value}
+                                  </MenubarLabel>
+                                </MenubarContent>
+                              </MenubarMenu>
+                            </Menubar>
+                          )}
                         </TableCell>
                       </TableRow>
                     ))}
@@ -92,8 +117,8 @@ const InfoAndSkills = () => {
           slideEffect
           direction="left"
           speedInSecond={50}
-          itemsPerSlide={isLgUp ? 10 : isSmUp ? 7 : 5}
-          disableOnInteraction={isLgUp ? true : false}
+          itemsPerSlide={isLgUp ? 10 : isSmUp ? 7 : 4}
+          disableOnInteraction
           itemInteractionEffect={false}
           content={personalSkills.map((item, idx) => (
             <div key={idx} className="w-max h-max text-center">

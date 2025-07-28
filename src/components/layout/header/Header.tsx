@@ -28,7 +28,7 @@ const Header = () => {
     <>
       <header
         className={cn(
-          "fixed z-30 top-0 left-0 right-0 w-full h-max lg:px-10 px-4 sm:py-5 py-2 duration-300 ease-out",
+          "fixed z-50 top-0 left-0 right-0 w-full h-max lg:px-10 md:px-6 px-3 md:py-5 py-4 duration-300 ease-out",
           isMenuTriggered
             ? "translate-y-0 opacity-100 bg-transparent backdrop-blur-none shadow-none"
             : [
@@ -47,7 +47,7 @@ const Header = () => {
             <Logo
               width={90}
               height={90}
-              className="ease duration-300 xl:w-[90px] md:w-[70px] w-[60px] h-auto"
+              className="w-12 xs:w-[60px] md:w-[75px] xl:w-[85px] h-auto"
             />
             <div className="hidden lg:flex items-center gap-[15px] pl-[100px]">
               <Link
