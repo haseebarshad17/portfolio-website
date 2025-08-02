@@ -44,7 +44,7 @@ const HomePage = () => {
 
   return (
     <>
-      <Jarallax speed={0.4} className="min-h-[85dvh] jarallax">
+      <Jarallax speed={0.4} className="min-h-0 jarallax">
         <JarallaxImage
           src={isMdDown ? "/images/main-mobile.webp" : "/images/main.jpg"}
           alt="young man in standing pose (background)"
@@ -52,7 +52,7 @@ const HomePage = () => {
         />
         <HeroSection animatedText={animatedText} />
       </Jarallax>
-      <Jarallax speed={0.4} className="jarallax">
+      <Jarallax speed={0.4} className="jarallax min-h-0">
         <JarallaxImage
           src={isMdDown ? "/images/about-mobile.webp" : "/images/about.webp"}
           alt="hand statue indicating rings"
