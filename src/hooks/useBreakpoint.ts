@@ -1,5 +1,6 @@
 "use client";
-import { useMediaQuery } from "usehooks-ts";
+
+import { useEffect, useState } from "react";
 import resolveConfig from "tailwindcss/resolveConfig";
 import tailwindConfig from "@/../../tailwind.config";
 
@@ -15,20 +16,33 @@ const breakpoints = fullConfig?.theme?.screens ?? {
 type BreakpointKey = keyof typeof breakpoints;
 type Direction = "up" | "down";
 
-function toPx(value: string | undefined): string {
-  if (!value) return "0px";
-  return value;
+function toPx(value: string | undefined): number {
+  if (!value) return 0;
+  return parseInt(value.replace("px", ""));
 }
 
 export function useBreakpoint<K extends BreakpointKey>(
   breakpointKey: K,
   direction: Direction = "up"
 ): boolean {
-  const rawValue = breakpoints[breakpointKey];
-  const pxValue = toPx(rawValue as string);
+  const [matches, setMatches] = useState(false);
 
-  const query =
-    direction === "up" ? `(min-width: ${pxValue})` : `(max-width: ${pxValue})`;
+  useEffect(() => {
+    if (typeof window === "undefined") return;
 
-  return useMediaQuery(query);
+    const rawValue = breakpoints[breakpointKey];
+    const pxValue = toPx(rawValue as string);
+
+    const check = () => {
+      const width = window.innerWidth;
+      const result = direction === "up" ? width >= pxValue : width <= pxValue;
+      setMatches(result);
+    };
+    check();
+
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, [breakpointKey, direction]);
+
+  return matches;
 }
