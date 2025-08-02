@@ -1,83 +1,90 @@
 "use client";
-import Link from "next/link";
-import { AnimatePresence, motion } from "framer-motion";
-import { usePathname } from "next/navigation";
-import { cn } from "@/lib/utils/clsxUtils";
+import { motion } from "framer-motion";
+import {
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerThumb,
+  DrawerTitle,
+} from "@/components/ui/drawer";
 import Logo from "@/components/generic/Logo";
-import useScrollLock from "@/hooks/useScrollLock";
+import { cn } from "@/lib/utils/clsxUtils";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useBreakpoint } from "@/hooks/useBreakpoint";
 
 type MobileMenuProptype = {
-  menuLinks: { href: string; label: string }[];
-  setIsMenuTriggered: (value: boolean) => void;
-  isMenuTriggered: boolean;
+  className?: string;
+  menuLinks: {
+    href: string;
+    label: string;
+  }[];
 };
 
-const MobileMenu = ({
-  isMenuTriggered,
-  setIsMenuTriggered,
-  menuLinks,
-}: MobileMenuProptype) => {
-  const pathname = usePathname();
-  useScrollLock(isMenuTriggered);
+const MobileMenu = ({ menuLinks, className }: MobileMenuProptype) => {
+  const currentPath = usePathname();
+  const isLgUp = useBreakpoint("lg", "up");
+  const isMdUp = useBreakpoint("md", "up");
 
   return (
-    <div className="fixed inset-0 z-full pointer-events-none">
-      <AnimatePresence>
-        {isMenuTriggered && (
-          <motion.div
-            key="mobile-menu"
-            initial={{ x: "-100%" }}
-            animate={{ x: 0 }}
-            exit={{ x: "-100%" }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="bg-deep-gray w-[85vw] h-screen pointer-events-auto shadow-xl 
-             pl-20 pt-16 flex flex-col"
-          >
-            <Logo width={90} height={90} className="-translate-x-1/2" />
-            <ul className="text-section-light-white flex flex-1 items-center -mt-4">
-              <div className="flex flex-col gap-[5px]">
-                {menuLinks.length &&
-                  menuLinks.map((link, i) => {
-                    const isActiveLink = pathname === link.href;
-
-                    return (
-                      <motion.li
-                        key={i}
-                        className="group relative w-max"
-                        initial={{ x: -200, opacity: 0 }}
-                        animate={{ x: 0, opacity: 1 }}
-                        exit={{ x: -200, opacity: 0 }}
-                        transition={{
-                          duration: 0.4,
-                          ease: "easeInOut",
-                          delay: i * 0.06,
-                        }}
-                      >
-                        <Link
-                          href={link.href ?? "/"}
-                          onClick={() => setIsMenuTriggered(false)}
-                          className="font-RalewayFont capitalize text-2xl inline-block relative pb-[2px]"
+    <>
+      <DrawerContent
+        className={cn("rounded-t-md bg-black/90 border-none", className)}
+        shouldShowOverlay={false}
+      >
+        <DrawerThumb
+          thumbSize={isLgUp ? "lg" : isMdUp ? "md" : "sm"}
+          wrapperStyle="py-3"
+        />
+        <div className="container md:py-10 py-8">
+          <div className="md:pb-8 pb-5">
+            <Logo
+              width={90}
+              height={90}
+              className="xl:w-[90px] lg:w-[70px] md:w-[60px] w-[55px] h-auto"
+            />
+          </div>
+          <nav className="lg:pl-16 md:pl-10 pl-8 pb-10">
+            <ul className="flex flex-col">
+              {menuLinks.length &&
+                menuLinks.map((item, i) => {
+                  const isLinkActive = item.href === currentPath;
+                  return (
+                    <motion.li
+                      key={i}
+                      className="w-max block leading-none group"
+                      initial={{ x: -150, opacity: 0 }}
+                      animate={{ x: 0, opacity: 1 }}
+                      exit={{ x: -150, opacity: 0 }}
+                      transition={{
+                        duration: 0.3,
+                        delay: i * 0.05,
+                        ease: "easeOut",
+                      }}
+                    >
+                      <Link href={item.href} className="leading-none relative">
+                        <DrawerClose
+                          className="font-RalewayFont font-normal capitalize lg:text-lg md:text-[16px] text-[14px] inline-block  
+                          leading-none ease duration-300 group-hover:pl-3 pb-2 lg:leading-none"
                         >
-                          {link.label}
-                          <span
-                            className={cn(
-                              `absolute left-0 bottom-0 h-[0.6px] w-full 
-                              bg-theme-secondary transform 
-                               scale-x-0 group-hover:scale-x-100 
-                               transition-transform duration-300 ease-in-out origin-left`,
-                              isActiveLink && "scale-x-100"
-                            )}
-                          />
-                        </Link>
-                      </motion.li>
-                    );
-                  })}
-              </div>
+                          {item.label}
+                        </DrawerClose>
+                        <span
+                          className={cn(
+                            `absolute left-0 -bottom-px h-[.6px] w-full bg-theme-secondary transform scale-x-0 
+                              group-hover:scale-x-100 transition-transform duration-300 ease-in-out origin-left`,
+                            isLinkActive && "scale-x-100"
+                          )}
+                        />
+                      </Link>
+                    </motion.li>
+                  );
+                })}
             </ul>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
+          </nav>
+        </div>
+      </DrawerContent>
+    </>
   );
 };
 

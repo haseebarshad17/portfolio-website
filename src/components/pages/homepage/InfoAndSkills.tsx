@@ -11,6 +11,11 @@ import {
   MenubarMenu,
 } from "@/components/ui/menubar";
 import { MenubarTrigger } from "@radix-ui/react-menubar";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 
 const InfoAndSkills = () => {
   const isLgUp = useBreakpoint("lg", "up");
@@ -83,23 +88,20 @@ const InfoAndSkills = () => {
                               </span>
                             </Tooltip>
                           ) : (
-                            <Menubar asChild>
-                              <MenubarMenu>
-                                <MenubarTrigger className="truncate max-w-[160px] inline-block">
+                            <>
+                              <Popover>
+                                <PopoverTrigger className="truncate max-w-[160px] inline-block">
                                   {item.value}
-                                </MenubarTrigger>
-                                <MenubarContent
-                                  align="start"
+                                </PopoverTrigger>
+                                <PopoverContent
+                                  align="center"
                                   side="top"
-                                  sideOffset={0}
-                                  className="rounded-none border-none"
+                                  className="w-max min-w-0 px-2 py-1 bg-black text-white leading-none sm:font-karla-14-300 font-karla-12-300 rounded-xs"
                                 >
-                                  <MenubarLabel className="w-max min-w-0 px-2 py-1 bg-black text-white leading-none sm:font-karla-14-300 font-karla-12-300 rounded-xs">
-                                    {item.value}
-                                  </MenubarLabel>
-                                </MenubarContent>
-                              </MenubarMenu>
-                            </Menubar>
+                                  {item.value}
+                                </PopoverContent>
+                              </Popover>
+                            </>
                           )}
                         </TableCell>
                       </TableRow>

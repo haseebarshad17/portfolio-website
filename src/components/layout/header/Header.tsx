@@ -1,13 +1,15 @@
 "use client";
 import { useState } from "react";
 import MobileMenu from "@/components/layout/header/MobileMenu";
+import Logo from "@/components/generic/Logo";
+import { DrawerTrigger, Drawer } from "@/components/ui/drawer";
+import Separator from "@/components/ui/separator";
+import { useScroll } from "@/hooks/useScroll";
 import { menuLinks } from "@/components/layout/header/content";
 import Link from "next/link";
-import Logo from "@/components/generic/Logo";
-import MenuToggleButton from "@/components/layout/header/MenuToggleButton";
-import { useScroll } from "@/hooks/useScroll";
 import { cn } from "@/lib/utils/clsxUtils";
-import Separator from "@/components/ui/separator";
+import MenuIcon from "./MenuIcon";
+import useScrollLock from "@/hooks/useScrollLock";
 
 const Header = () => {
   const [isMenuTriggered, setIsMenuTriggered] = useState<boolean>(false);
@@ -23,6 +25,7 @@ const Header = () => {
   const { isScrolled, getScrollbarDirection } = useScroll();
   const scrollPastThreshold = isScrolled(120);
   const scrollbarThumbDirection = getScrollbarDirection();
+  useScrollLock(isMenuTriggered);
 
   return (
     <>
@@ -30,7 +33,7 @@ const Header = () => {
         className={cn(
           "fixed z-50 top-0 left-0 right-0 w-full h-max lg:px-10 md:px-6 px-3 md:py-5 py-4 duration-300 ease-out",
           isMenuTriggered
-            ? "translate-y-0 opacity-100 bg-transparent backdrop-blur-none shadow-none"
+            ? "-translate-y-full opacity-100 bg-transparent backdrop-blur-none shadow-none"
             : [
                 "bg-transparent",
                 scrollPastThreshold &&
@@ -47,7 +50,7 @@ const Header = () => {
             <Logo
               width={90}
               height={90}
-              className="w-12 xs:w-[60px] md:w-[75px] xl:w-[85px] h-auto"
+              className="xl:w-[90px] lg:w-[70px] md:w-[60px] w-[55px] h-auto"
             />
             <div className="hidden lg:flex items-center gap-[15px] pl-[100px]">
               <Link
@@ -79,17 +82,18 @@ const Header = () => {
             </div>
           </nav>
 
-          <div>
-            <MenuToggleButton
-              isMenuTriggered={isMenuTriggered}
-              setIsMenuTriggered={setIsMenuTriggered}
+          <Drawer shouldScaleBackground onOpenChange={setIsMenuTriggered}>
+            <DrawerTrigger
+              children={
+                <MenuIcon
+                  className="cursor-pointer pointer-events-auto"
+                  isMenuTriggered={isMenuTriggered}
+                />
+              }
+              className="scale-[.60] sm:scale-[.70] md:scale-[.80] lg;scale-[.95]"
             />
-            <MobileMenu
-              menuLinks={menuLinks}
-              isMenuTriggered={isMenuTriggered}
-              setIsMenuTriggered={setIsMenuTriggered}
-            />
-          </div>
+            <MobileMenu menuLinks={menuLinks} />
+          </Drawer>
         </div>
       </header>
     </>
