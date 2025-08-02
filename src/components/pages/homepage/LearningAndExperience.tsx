@@ -33,7 +33,7 @@ const LearningAndExperience = ({
     <>
       <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 md:mb-10 mb-6">
         <div>
-          <h3 className="heading font-SyneFont text-white leading-none tracking-tight font-medium">
+          <h3 className="heading font-SyneFont md:text-white text-black/60 leading-none tracking-tight font-medium">
             Exploring Learning <br />
             <span className="text-theme-primary heading-break font-normal">
               and growing
