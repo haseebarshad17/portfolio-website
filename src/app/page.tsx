@@ -20,6 +20,7 @@ import WorksShowcasing from "@/components/pages/homepage/WorksShowcasing";
 import TestimonialsSection from "@/components/pages/homepage/TestimonialsSection";
 import CTASection from "@/components/pages/homepage/CTASection";
 import { useBreakpoint } from "@/hooks/useBreakpoint";
+import { cn } from "@/lib/utils/clsxUtils";
 const Jarallax = dynamic(() => import("@/components/generic/Jarallax"), {
   ssr: false,
 });
@@ -63,8 +64,12 @@ const HomePage = () => {
       </Jarallax>
 
       <section
-        className="section-padding bg-cover bg-no-repeat bg-center 
-        md:bg-[url('/images/resume.webp')] bg-[url('/images/resume-mobile.webp')]"
+        className={cn(
+          "section-padding bg-cover bg-no-repeat bg-center",
+          isMdDown
+            ? "bg-[url('/images/resume-mobile.webp')]"
+            : "bg-[url('/images/resume.webp')]"
+        )}
       >
         <main className="container">
           <LearningAndExperience
