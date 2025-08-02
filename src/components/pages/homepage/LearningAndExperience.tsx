@@ -67,7 +67,7 @@ const LearningAndExperience = ({
           learningAndExperienceData.map((lxDataItem, idx) => (
             <div
               className={cn(
-                "sm:p-5 p-3 bg-light-gray/30 backdrop-blur-md shadow-md h-max relative rounded-xs"
+                "sm:p-5 p-3 bg-light-gray/30 backdrop-blur-md shadow-sm h-max relative rounded-xs"
                 // idx == 1 && "mt-[60px]"
               )}
               key={idx}

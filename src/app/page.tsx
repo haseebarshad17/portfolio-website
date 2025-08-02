@@ -46,21 +46,26 @@ const HomePage = () => {
     <>
       <Jarallax speed={0.4} className="min-h-[85dvh] jarallax">
         <JarallaxImage
-          src={isMdDown ? "/images/about2.webp" : "/images/main.jpg"}
-          // src={"/images/main.jpg"}
-          alt="hero-background-image"
+          src={isMdDown ? "/images/main-mobile.webp" : "/images/main.jpg"}
+          alt="young man in standing pose (background)"
           priority
         />
         <HeroSection animatedText={animatedText} />
       </Jarallax>
       <Jarallax speed={0.4} className="jarallax">
-        <JarallaxImage src="/images/about.webp" alt="about-background-image" />
+        <JarallaxImage
+          src={isMdDown ? "/images/about-mobile.webp" : "/images/about.webp"}
+          alt="hand statue indicating rings"
+        />
         <Overlay color="#000000" alpha={40} gradientType="x">
           <AboutSection aboutProgressContent={aboutProgress} />
         </Overlay>
       </Jarallax>
 
-      <section className="section-padding bg-[url('/images/resume.webp')] bg-cover bg-no-repeat bg-center">
+      <section
+        className="section-padding bg-cover bg-no-repeat bg-center 
+        md:bg-[url('/images/resume.webp')] bg-[url('/images/resume-mobile.webp')]"
+      >
         <main className="container">
           <LearningAndExperience
             learningDetailsData={learningDetails}
