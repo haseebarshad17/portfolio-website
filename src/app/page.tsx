@@ -65,7 +65,7 @@ const HomePage = () => {
 
       <section
         className={cn(
-          "section-padding bg-cover bg-no-repeat bg-center",
+          "section-padding bg-cover bg-no-repeat bg-center ",
           isMdDown
             ? "bg-[url('/images/resume-mobile.webp')]"
             : "bg-[url('/images/resume.webp')]"
