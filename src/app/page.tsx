@@ -45,7 +45,7 @@ const HomePage = () => {
         speed={0.4}
         background={
           <JarallaxImage
-            src={isMdDown ? "/images/mb.jpg" : "/images/main.jpg"}
+            src={isMdDown ? "/images/main-mobile.jpg" : "/images/main.jpg"}
             alt="young man in standing pose (background)"
             priority
           />
@@ -59,7 +59,7 @@ const HomePage = () => {
         isDisabled={isMdDown}
         background={
           <JarallaxImage
-            src={isMdDown ? "/images/am.jpg" : "/images/about.webp"}
+            src={isMdDown ? "/images/about-mobile.jpg" : "/images/about.webp"}
             alt="hand statue indicating rings"
           />
         }
