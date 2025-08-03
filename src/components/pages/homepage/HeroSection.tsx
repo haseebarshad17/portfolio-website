@@ -26,7 +26,7 @@ export const HeroSection = ({ animatedText }: { animatedText: string }) => {
                 {animatedText}
               </span>
               <span
-                className="leading-none w-[5px] absolute top-1/2 -translate-y-1/2 bg-theme-secondary 
+                className="leading-none lg:w-[5px] md:w-1 w-[3px] absolute top-1/2 -translate-y-1/2 bg-theme-secondary 
                 animate-carret-blink right-0 h-full"
               />
             </div>
