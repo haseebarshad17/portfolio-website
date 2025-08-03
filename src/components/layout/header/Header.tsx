@@ -90,7 +90,7 @@ const Header = () => {
                   isMenuTriggered={isMenuTriggered}
                 />
               }
-              className="scale-[.60] sm:scale-[.70] md:scale-[.80] lg;scale-[.95]"
+              className="scale-[.85] sm:scale-[.90] md:scale-[.95] lg;scale-[.1]"
             />
             <MobileMenu menuLinks={menuLinks} />
           </Drawer>

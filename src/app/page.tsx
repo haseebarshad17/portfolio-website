@@ -30,13 +30,9 @@ const HomePage = () => {
   const animatedText = useTextLengthAnimation({
     TextArray: [
       "Haseeb Arshad",
-      "Frontend Dev..",
-      "React 18+ Expert",
-      "Next 15+ Pro",
-      "UI Engineer",
-      "JS Dev..",
-      "TS Coder",
-      "Pixel-Perfect",
+      "Frontend Developer",
+      "UI/UX Expert",
+      "React Next Engineer",
     ],
     typingSpeed: 150,
     deletingSpeed: 150,
@@ -47,10 +43,9 @@ const HomePage = () => {
     <>
       <Jarallax
         speed={0.4}
-        isDisabled={isMdDown}
         background={
           <JarallaxImage
-            src={isMdDown ? "/images/main-mobile.webp" : "/images/main.jpg"}
+            src={isMdDown ? "/images/mb.jpg" : "/images/main.jpg"}
             alt="young man in standing pose (background)"
             priority
           />
@@ -64,12 +59,16 @@ const HomePage = () => {
         isDisabled={isMdDown}
         background={
           <JarallaxImage
-            src={isMdDown ? "/images/about-mobile.webp" : "/images/about.webp"}
+            src={isMdDown ? "/images/am.jpg" : "/images/about.webp"}
             alt="hand statue indicating rings"
           />
         }
         children={
-          <Overlay color="#000000" alpha={40} gradientType="x">
+          <Overlay
+            alpha={40}
+            color="#000000"
+            gradientType={isMdDown ? "linear" : "x"}
+          >
             <AboutSection aboutProgressContent={aboutProgress} />
           </Overlay>
         }

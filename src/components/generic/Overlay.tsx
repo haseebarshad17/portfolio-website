@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils/clsxUtils";
 import { ReactNode, CSSProperties } from "react";
 
-type GradientType = "radial" | "x" | "y";
+type GradientType = "radial" | "x" | "y" | "y-mirror" | "x-mirror" | "linear";
 
 type OverlayProps = {
   className?: string;
@@ -71,6 +71,12 @@ const Overlay = ({
     backgroundImage = `linear-gradient(to right, ${colorWithAlpha}, ${transparentColor})`;
   } else if (gradientType === "y") {
     backgroundImage = `linear-gradient(to bottom, ${colorWithAlpha}, ${transparentColor})`;
+  } else if (gradientType === "y-mirror") {
+    backgroundImage = `linear-gradient(to bottom, ${transparentColor}, ${colorWithAlpha})`;
+  } else if (gradientType === "x-mirror") {
+    backgroundImage = `linear-gradient(to bottom, ${transparentColor}, ${colorWithAlpha})`;
+  } else if (gradientType === "linear") {
+    backgroundImage = `linear-gradient(to bottom, ${colorWithAlpha}, ${colorWithAlpha})`;
   }
 
   return (
