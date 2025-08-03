@@ -15,15 +15,13 @@ const JarallaxImage = ({
   ...props
 }: JarallaxImagePropType) => {
   return (
-    <div className="relative w-full h-full">
-      <Image
-        fill
-        src={src}
-        alt={alt}
-        {...props}
-        className={cn("jarallax-img w-full h-max", className)}
-      />
-    </div>
+    <Image
+      fill
+      src={src}
+      alt={alt}
+      {...props}
+      className={cn("jarallax-img w-full h-full object-cover", className)}
+    />
   );
 };
 

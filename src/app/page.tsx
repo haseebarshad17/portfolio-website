@@ -45,23 +45,36 @@ const HomePage = () => {
 
   return (
     <>
-      <Jarallax speed={0.4} className="min-h-0 jarallax">
-        <JarallaxImage
-          src={isMdDown ? "/images/main-mobile.webp" : "/images/main.jpg"}
-          alt="young man in standing pose (background)"
-          priority
-        />
-        <HeroSection animatedText={animatedText} />
-      </Jarallax>
-      <Jarallax speed={0.4} className="jarallax min-h-0">
-        <JarallaxImage
-          src={isMdDown ? "/images/about-mobile.webp" : "/images/about.webp"}
-          alt="hand statue indicating rings"
-        />
-        <Overlay color="#000000" alpha={40} gradientType="x">
-          <AboutSection aboutProgressContent={aboutProgress} />
-        </Overlay>
-      </Jarallax>
+      <Jarallax
+        speed={0.4}
+        isDisabled={isMdDown}
+        background={
+          <JarallaxImage
+            src={isMdDown ? "/images/main-mobile.webp" : "/images/main.jpg"}
+            alt="young man in standing pose (background)"
+            priority
+          />
+        }
+        children={<HeroSection animatedText={animatedText} />}
+        className="min-h-0 jarallax"
+      />
+
+      <Jarallax
+        speed={0.4}
+        isDisabled={isMdDown}
+        background={
+          <JarallaxImage
+            src={isMdDown ? "/images/about-mobile.webp" : "/images/about.webp"}
+            alt="hand statue indicating rings"
+          />
+        }
+        children={
+          <Overlay color="#000000" alpha={40} gradientType="x">
+            <AboutSection aboutProgressContent={aboutProgress} />
+          </Overlay>
+        }
+        className="min-h-0 jarallax"
+      />
 
       <section
         className={cn(
