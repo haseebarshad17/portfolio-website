@@ -16,7 +16,7 @@ const Footer = () => {
   return (
     <>
       <footer
-        className="bg-black section-padding lg:pb-[70px] md:pb-[50px] sm:pb-10 pb-5"
+        className="bg-black section-padding lg:pb-[70px] md:pb-[50px] sm:pb-10 pb-8"
         id="contact"
       >
         <div className="container">
