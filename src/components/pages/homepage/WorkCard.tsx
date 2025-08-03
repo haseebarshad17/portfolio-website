@@ -40,7 +40,7 @@ const WorkCard = ({
         </div>
       </div>
 
-      <div className="flex items-center justify-between gap-5 px-3 pt-6">
+      <div className="flex items-center justify-between gap-5 px-3 md:pt-6 pt-3">
         <div>
           <span
             className="inline-block bg-transparent text-black font-syne-12-500 px-3 py-1 

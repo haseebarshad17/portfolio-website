@@ -59,7 +59,7 @@ const LearningAndExperience = ({
 
       <div
         className={cn(
-          "md:pt-12 sm:pt-8 pt-3 grid lg:grid-cols-2 grid-cols-1 gap-5 text-black",
+          "md:pt-12 sm:pt-8 pt-3 grid lg:grid-cols-2 grid-cols-1 lg:gap-5 gap-8 text-black",
           className
         )}
       >
@@ -67,14 +67,14 @@ const LearningAndExperience = ({
           learningAndExperienceData.map((lxDataItem, idx) => (
             <div
               className={cn(
-                "sm:p-5 p-3 bg-light-gray/30 backdrop-blur-md shadow-sm h-max relative rounded-xs"
+                "sm:p-5 p-3 bg-light-gray/30 backdrop-blur-md shadow-lg md:border-none border border-black/10 h-max relative rounded-xs"
                 // idx == 1 && "mt-[60px]"
               )}
               key={idx}
             >
               <h4
-                className="absolute top-0 sm:left-5 left-3 -translate-y-1/2 text-2xl sm:text-3xl font-RalewayFont
-                leading-none font-medium bg-gradient-to-r from-theme-primary to-white  bg-clip-text text-transparent"
+                className="absolute top-0 sm:left-5 left-3 -translate-y-1/2 text-[26px] sm:text-[34px] font-RalewayFont
+                leading-none font-medium bg-gradient-to-r from-theme-primary to-white bg-clip-text text-transparent"
               >
                 {lxDataItem.heading}
               </h4>

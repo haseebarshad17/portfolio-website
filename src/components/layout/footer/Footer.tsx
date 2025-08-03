@@ -58,9 +58,9 @@ const Footer = () => {
               />
               <LinkMap
                 linkData={getInTouchLinks}
-                linkStyle="capitalize text-section-light-white/55 relative md:font-raleway-14-300 sm:font-raleway-12-300 
-                inline-block w-max group-hover:pl-[10px] group-hover:text-section-light-white text-[10px] font-RalewayFont
-                ease-out duration-300 md:mb-2 mb-1 font-light"
+                linkStyle="capitalize text-section-light-white/55 relative md:font-raleway-14-300 font-raleway-12-300 
+                inline-block w-max group-hover:pl-[10px] group-hover:text-section-light-white ease-out 
+                duration-300 md:mb-2 mb-1"
               />
             </div>
           </main>
