@@ -30,9 +30,10 @@ const HomePage = () => {
   const animatedText = useTextLengthAnimation({
     TextArray: [
       "Haseeb Arshad",
-      "Frontend Developer",
+      "Frontend Dev",
       "UI/UX Expert",
-      "React Next Engineer",
+      "React Engineer",
+      "Next Pro",
     ],
     typingSpeed: 150,
     deletingSpeed: 150,
