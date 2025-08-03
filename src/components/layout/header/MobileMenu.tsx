@@ -29,7 +29,10 @@ const MobileMenu = ({ menuLinks, className }: MobileMenuProptype) => {
   return (
     <>
       <DrawerContent
-        className={cn("rounded-t-md bg-black/90 border-none", className)}
+        className={cn(
+          "rounded-t-md bg-deep-gray/80 backdrop-blur-md border-none",
+          className
+        )}
         shouldShowOverlay={false}
       >
         <DrawerThumb
