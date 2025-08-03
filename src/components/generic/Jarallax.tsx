@@ -1,27 +1,31 @@
 "use client";
 import { jarallax } from "jarallax";
-import React, { useRef, useEffect, ReactElement, ReactNode } from "react";
+import React, { useRef, useEffect, ReactNode } from "react";
 import "jarallax/dist/jarallax.min.css";
 import { cn } from "@/lib/utils/clsxUtils";
 
 type JarallaxProptype = {
   className?: string;
-  children: ReactElement | ReactNode;
+  children: ReactNode;
+  background: ReactNode;
   speed?: number;
+  isDisabled?: boolean;
 };
 
 export default function Jarallax({
   className,
   children,
   speed = 0.4,
+  background,
+  isDisabled,
 }: JarallaxProptype) {
-  const elementRef = useRef<HTMLDivElement | null>(null);
+  const elementRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     if (elementRef.current) {
       jarallax(elementRef.current, {
         speed,
-        disableParallax: false,
+        disableParallax: isDisabled,
         type: "scroll",
       });
     }
@@ -29,11 +33,16 @@ export default function Jarallax({
     return () => {
       if (elementRef.current) jarallax(elementRef.current, "destroy");
     };
-  }, [speed]);
+  }, [speed, isDisabled]);
 
   return (
-    <div ref={elementRef} className={cn("jarallax", className)} data-jarallax>
-      {children}
-    </div>
+    <section
+      ref={elementRef}
+      data-jarallax
+      className={cn("jarallax", className)}
+    >
+      {background}
+      <main className="z-10 relative">{children}</main>
+    </section>
   );
 }
