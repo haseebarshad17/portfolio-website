@@ -4,26 +4,57 @@ import { Play } from "lucide-react";
 
 type WatchVideoIconProptype = {
   className?: string;
+  seperatorStyle?: string;
+  iconWrapperStyle?: string;
+  iconStyle?: string;
+  iconTitleStyle?: string;
+  iconSize?: number;
+  playIconSize?: number;
 };
 
-const WatchVideoIcon = ({ className }: WatchVideoIconProptype) => {
+const WatchVideoIcon = ({
+  className,
+  seperatorStyle,
+  iconWrapperStyle,
+  iconStyle,
+  iconTitleStyle,
+  iconSize,
+  playIconSize,
+}: WatchVideoIconProptype) => {
   return (
     <div className={cn("flex items-center gap-3", className)}>
-      <Separator orientation="horizontal" className="bg-white h-px w-20" />
-      <div className="flex items-center gap-3 group w-max cursor-pointer">
+      <Separator
+        orientation="horizontal"
+        className={cn("bg-white h-px w-20", seperatorStyle)}
+      />
+      <div
+        className={cn(
+          "flex items-center gap-3 group w-max cursor-pointer",
+          iconWrapperStyle
+        )}
+      >
         <span
-          className="bg-transparent border border-white rounded-full w-[75px] h-[75px] flex 
-          items-center justify-center leading-none group-hover:border-theme-primary ease duration-300"
+          style={{
+            width: iconSize,
+            height: iconSize,
+          }}
+          className={cn(
+            `bg-transparent border border-white rounded-full flex items-center justify-center leading-none 
+            group-hover:border-theme-primary ease duration-300`,
+            iconStyle
+          )}
         >
           <Play
-            size={18}
+            size={playIconSize ?? 18}
             strokeWidth={1}
             className="text-white leading-none group-hover:text-theme-primary ease duration-300"
           />
         </span>
         <span
-          className="font-raleway-14-300 leading-none text-section-light-white 
-          group-hover:text-theme-primary ease duration-300 capitalize"
+          className={cn(
+            "leading-none text-section-light-white group-hover:text-theme-primary ease duration-300 capitalize",
+            iconTitleStyle
+          )}
         >
           watch video
         </span>
