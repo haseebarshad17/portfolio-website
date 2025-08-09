@@ -16,6 +16,7 @@ export default function HeroSection({
   className,
 }: HeroSectionProptype) {
   const isMdUp = useBreakpoint("md", "up");
+  const isXsUp = useBreakpoint("xs", "up");
 
   return (
     <div
@@ -29,12 +30,12 @@ export default function HeroSection({
           "absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80 -z-10",
           isMdUp
             ? "from-black/30 via-black/40 to-black/30"
-            : "from-black/40 via-black/55 to-black/80"
+            : "from-black/50 via-black/70 to-black/90"
         )}
       />
       <motion.div
-        className="absolute top-10 left-5 w-20 h-20 rounded-full bg-theme-secondary/50 blur-3xl -z-10"
-        animate={{ y: [0, 120, 0] }}
+        className="absolute top-10 left-5 w-16 h-16 rounded-full bg-theme-secondary/50 blur-3xl -z-10 md:scale-100 scale-90"
+        animate={{ y: [0, isMdUp ? 200 : 100, 0] }}
         transition={{ repeat: Infinity, duration: 12, ease: "easeIn" }}
       />
 
@@ -47,8 +48,8 @@ export default function HeroSection({
         </span>
 
         <h1
-          className="xl:text-[58px] lg:text-[54px] text-[50px] font-medium 
-            font-SyneFont text-white leading-none pr-10"
+          className="xl:text-[58px] lg:text-[54px] text-[50px] font-medium md:shadow-none
+            font-SyneFont text-white leading-none pr-10 shadow-lg"
         >
           <div className="flex items-center md:leading-[120%] leading-none">
             <span className="font-RalewayFont text-theme-primary">Howdy,</span>
@@ -70,10 +71,12 @@ export default function HeroSection({
           </div>
         </h1>
 
-        <p className="text-white/80 lg:font-raleway-16-300 md:font-raleway-14-300 font-raleway-12-300 mb-5 max-w-md pr-14">
-          A creative front-end developer passionate about building interactive,
-          accessible, and high-performance web experiences with a focus on
-          modern design trends.
+        <p className="text-white/80 lg:font-raleway-16-300 md:font-raleway-14-300 font-raleway-12-300  mb-5 md:max-w-lg xs:max-w-md max-w-xs pr-5">
+          {isMdUp
+            ? `A creative front-end developer passionate about crafting interactive, accessible, and high-performance web experiences, blending modern design trends with precision and creativity at every stage.`
+            : isXsUp
+              ? `Creative front-end developer crafting fast, accessible, and engaging web experiences with a modern touch while ensuring design consistency, reliability, and smooth performance.`
+              : `Front-end developer building engaging, accessible websites that are easy to use and appealing.`}{" "}
         </p>
 
         <div className="flex flex-wrap md:gap-3 gap-2 mb-6">
