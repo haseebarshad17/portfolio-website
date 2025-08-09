@@ -25,7 +25,7 @@ const Header = () => {
   const emailDomain = match?.[3] || "";
 
   const { isScrolled, getScrollbarDirection } = useScroll();
-  const scrollPastThreshold = isScrolled(isLgDown ? 5 : 40);
+  const scrollPastThreshold = isScrolled(isLgDown ? 3 : 40);
   const scrollbarThumbDirection = getScrollbarDirection();
   useScrollLock(isMenuTriggered);
 

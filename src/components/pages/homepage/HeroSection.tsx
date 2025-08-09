@@ -47,10 +47,10 @@ export default function HeroSection({
         </span>
 
         <h1
-          className="xl:text-[58px] lg:text-[54px] md:text-[50px] text-[46px] font-medium 
-            font-SyneFont text-white leading-none"
+          className="xl:text-[58px] lg:text-[54px] md:text-[50px] text-[48px] font-medium 
+            font-SyneFont text-white leading-none pr-10"
         >
-          <div className="flex items-center leading-[120%]">
+          <div className="flex items-center md:leading-[120%] leading-none">
             <span className="font-RalewayFont text-theme-primary">Howdy,</span>
             <span className="font-SyneFont pl-[7px] text-white">I'm</span>
           </div>
