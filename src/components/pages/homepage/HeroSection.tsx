@@ -34,7 +34,7 @@ export default function HeroSection({
         )}
       />
       <motion.div
-        className="absolute top-10 left-5 w-16 h-16 rounded-full bg-theme-secondary/50 blur-3xl -z-10 md:scale-100 scale-90"
+        className="absolute top-10 left-5 w-16 h-16 rounded-full bg-theme-secondary/70 blur-3xl -z-10"
         animate={{ y: [0, isMdUp ? 200 : 100, 0] }}
         transition={{ repeat: Infinity, duration: 12, ease: "easeIn" }}
       />

@@ -44,7 +44,7 @@ const HomePage = () => {
     <>
       <Jarallax
         speed={0.4}
-        isDisabled={isMdDown}
+        // isDisabled={isMdDown}
         background={
           <JarallaxImage
             src={isMdDown ? "/images/main-mobile.jpg" : "/images/main.jpg"}
