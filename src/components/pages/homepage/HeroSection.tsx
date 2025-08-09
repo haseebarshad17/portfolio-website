@@ -21,7 +21,7 @@ export default function HeroSection({
   return (
     <div
       className={cn(
-        "relative w-full h-max flex flex-col lg:pt-[220px] md:pt-[180px] pt-[150px]",
+        "relative w-full h-max flex flex-col lg:pt-[220px] pt-[180px]",
         className
       )}
     >
@@ -39,7 +39,7 @@ export default function HeroSection({
         transition={{ repeat: Infinity, duration: 12, ease: "easeIn" }}
       />
 
-      <div className="container relative md:pb-28 pb-24">
+      <div className="container relative md:pb-28 pb-28">
         <span
           className="uppercase md:font-syne-12-300 sm:tracking-[3px] sm:text-theme-primary text-white sm:pb-1 pb-2 
           inline-block leading-normal text-[10px] font-light font-RalewayFont"
@@ -48,7 +48,7 @@ export default function HeroSection({
         </span>
 
         <h1
-          className="xl:text-[58px] lg:text-[54px] text-[50px] font-medium md:shadow-none
+          className="xl:text-[58px]  text-[54px] font-medium md:shadow-none
             font-SyneFont text-white leading-none pr-10 shadow-lg"
         >
           <div className="flex items-center md:leading-[120%] leading-none">
