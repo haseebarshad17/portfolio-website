@@ -10,9 +10,11 @@ import Link from "next/link";
 import { cn } from "@/lib/utils/clsxUtils";
 import MenuIcon from "./MenuIcon";
 import useScrollLock from "@/hooks/useScrollLock";
+import { useBreakpoint } from "@/hooks/useBreakpoint";
 
 const Header = () => {
   const [isMenuTriggered, setIsMenuTriggered] = useState<boolean>(false);
+  const isLgDown = useBreakpoint("lg", "down");
 
   const email = process.env.NEXT_PUBLIC_EMAIL || "";
   const phone = process.env.NEXT_PUBLIC_PHONE || "";
@@ -23,7 +25,7 @@ const Header = () => {
   const emailDomain = match?.[3] || "";
 
   const { isScrolled, getScrollbarDirection } = useScroll();
-  const scrollPastThreshold = isScrolled(40);
+  const scrollPastThreshold = isScrolled(isLgDown ? 5 : 40);
   const scrollbarThumbDirection = getScrollbarDirection();
   useScrollLock(isMenuTriggered);
 

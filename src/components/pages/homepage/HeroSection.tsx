@@ -16,7 +16,6 @@ export default function HeroSection({
   className,
 }: HeroSectionProptype) {
   const isMdUp = useBreakpoint("md", "up");
-  const isSMUp = useBreakpoint("sm", "up");
 
   return (
     <div
@@ -48,7 +47,7 @@ export default function HeroSection({
         </span>
 
         <h1
-          className="xl:text-[58px] lg:text-[54px] md:text-[50px] sm:text-[46px] text-[38px] font-medium 
+          className="xl:text-[58px] lg:text-[54px] md:text-[50px] text-[46px] font-medium 
             font-SyneFont text-white leading-none"
         >
           <div className="flex items-center leading-[120%]">
