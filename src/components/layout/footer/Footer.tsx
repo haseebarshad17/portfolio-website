@@ -4,7 +4,7 @@ import {
   discriptiveContent,
   getInTouchLinks,
   pageLinks,
-  socialLinks,
+  footerSocialLinks,
 } from "@/components/layout/footer/content";
 import Logo from "@/components/generic/Logo";
 import LinkMap from "@/components/layout/footer/LinkMap";
@@ -69,9 +69,11 @@ const Footer = () => {
             <div className="max-w-[380px]">
               <div className="flex flex-col justify-between h-full">
                 <LinkMap
-                  linkData={socialLinks}
-                  linkStyle="inline-flex items-center justify-center duration-300 ease-out group-hover:-translate-y-2"
-                  className="flex gap-3 text-white w-max"
+                  linkData={footerSocialLinks}
+                  linkStyle="inline-flex items-center justify-center duration-300 ease-out"
+                  className="flex items-center text-white w-max"
+                  iconStyle="w-5 h-5 text-white group-hover:-translate-y-2 duration-300 ease-out"
+                  contentLinkWrapperStyle="px-[6px]"
                 />
                 <p className="w-max md:font-syne-14-300 font-syne-12-300 capitalize lg:text-white text-white/70 sm:pt-3 pt-2 lg:pt-0">
                   @copyright 2022 haseeb-arshad all right reserved

@@ -25,7 +25,7 @@ export const buttonVariants = tv({
       md: "w-[70px] h-[30px] font-karla-14-300",
       lg: "w-[120px] h-10 font-karla-14-500",
       full: "w-full h-10 font-karla-14-500",
-      max: "w-max h-max font-karla-12-300 p-0 pe-0 m-0 me-0 rounded-full bg-transparent",
+      max: "w-max h-max font-karla-12-300",
     },
   },
   defaultVariants: {

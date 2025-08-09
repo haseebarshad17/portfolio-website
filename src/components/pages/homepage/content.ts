@@ -1,3 +1,9 @@
+import Facebook from "@/assets/svg/Facebook";
+import Github from "@/assets/svg/Github";
+import Instagram from "@/assets/svg/Instagram";
+import LinkedIn from "@/assets/svg/Linkedin";
+import Twitter from "@/assets/svg/Twitter";
+
 type aboutProgressType = {
   title: string;
   progress: number;
@@ -273,5 +279,33 @@ export const testimonials = [
     role: "Growth Designer, Pinterest",
     text: "It elevated our storytelling and design sprints — super sleek and powerful!",
     image: "/avatar/7.webp",
+  },
+];
+
+export const socialLinks = [
+  {
+    href: "https://social-platform.com/userId",
+    label: "whatsapp",
+    content: Github,
+  },
+  {
+    href: "https://social-platform.com/userId",
+    label: "whatsapp",
+    content: Facebook,
+  },
+  {
+    href: "https://social-platform.com/userId",
+    label: "whatsapp",
+    content: Instagram,
+  },
+  {
+    href: "https://social-platform.com/userId",
+    label: "whatsapp",
+    content: LinkedIn,
+  },
+  {
+    href: "https://social-platform.com/userId",
+    label: "Twitter",
+    content: Twitter,
   },
 ];
