@@ -8,6 +8,7 @@ type LinkMapProptype = {
   className?: ClassNameValue;
   linkStyle?: ClassNameValue;
   contentLinkWrapperStyle?: ClassNameValue;
+  iconStyle?: ClassNameValue;
   linkData: {
     content?: any;
     label: string;
@@ -22,6 +23,7 @@ const LinkMap = ({
   className,
   linkStyle,
   contentLinkWrapperStyle,
+  iconStyle,
 }: LinkMapProptype) => {
   return (
     <ul className={cn("", className)}>
@@ -44,18 +46,20 @@ const LinkMap = ({
               href={item.href}
               className={cn(
                 "group w-max block border-b border-transparent duration-300 ease-out leading-none",
-                item.content && `hover:border-white ${contentLinkWrapperStyle}`
+                contentLinkWrapperStyle
               )}
             >
               <li
                 className={cn(
                   "inline-block leading-none",
                   linkStyle,
-                  checkActive?.length && activeLink && activeStyle
+                  checkActive?.length && activeLink && activeStyle,
+                  item.content &&
+                    "group-hover:border-white border-b border-transparent duration-300 ease-out"
                 )}
               >
                 {item.content ? (
-                  <item.content size={20} strokeWidth={1} />
+                  <item.content className={cn(iconStyle)} />
                 ) : (
                   <>{item.label}</>
                 )}

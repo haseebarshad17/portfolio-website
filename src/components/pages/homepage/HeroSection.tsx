@@ -1,53 +1,136 @@
-import { useBreakpoint } from "@/hooks/useBreakpoint";
+import { motion } from "framer-motion";
 import WatchVideoIcon from "./WatchVideoIcon";
+import { useBreakpoint } from "@/hooks/useBreakpoint";
+import Button from "@/components/ui/button";
+import { socialLinks } from "./content";
+import { cn } from "@/lib/utils/clsxUtils";
+import { ClassValue } from "clsx";
 
-export const HeroSection = ({ animatedText }: { animatedText: string }) => {
-  const isLgUp = useBreakpoint("lg", "up");
+type HeroSectionProptype = {
+  animatedText: string;
+  className?: ClassValue;
+};
+
+export default function HeroSection({
+  animatedText,
+  className,
+}: HeroSectionProptype) {
   const isMdUp = useBreakpoint("md", "up");
-  const isSmUp = useBreakpoint("sm", "up");
+  const isXsUp = useBreakpoint("xs", "up");
 
   return (
-    <>
-      <div className="container xl:pt-[260px] md:pt-[200px] sm:pt-[170px] pt-[140px] md:pb-[100px] pb-[70px]">
-        <div className="w-full pr-20">
-          <h1
-            className="xl:text-[58px] lg:text-[54px] md:text-[50px] sm:text-[46px] text-[38px] font-medium 
-            font-SyneFont text-white leading-none"
+    <div
+      className={cn(
+        "relative w-full h-max flex flex-col lg:pt-[220px] pt-[180px]",
+        className
+      )}
+    >
+      <div
+        className={cn(
+          "absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80 -z-10",
+          isMdUp
+            ? "from-black/30 via-black/40 to-black/30"
+            : "from-black/50 via-black/70 to-black/90"
+        )}
+      />
+      <motion.div
+        className="absolute top-10 left-5 w-16 h-16 rounded-full bg-theme-secondary/70 blur-3xl -z-10"
+        animate={{ y: [0, isMdUp ? 200 : 100, 0] }}
+        transition={{ repeat: Infinity, duration: 12, ease: "easeIn" }}
+      />
+
+      <div className="container relative md:pb-28 pb-28">
+        <span
+          className="uppercase md:font-syne-12-300 sm:tracking-[3px] sm:text-theme-primary text-white sm:pb-1 pb-2 
+          inline-block leading-normal text-[10px] font-light font-RalewayFont"
+        >
+          Crafting Digital <br className="sm:hidden" /> Experiences
+        </span>
+
+        <h1
+          className="xl:text-[58px]  text-[54px] font-medium md:shadow-none
+            font-SyneFont text-white leading-none pr-10 shadow-lg"
+        >
+          <div className="flex items-center md:leading-[120%] leading-none">
+            <span className="font-RalewayFont text-theme-primary">Howdy,</span>
+            <span className="font-SyneFont pl-[7px] text-white">I'm</span>
+          </div>
+
+          <div className="relative overflow-hidden whitespace-nowrap max-w-full w-max h-max">
+            <span
+              children="placeholder"
+              className="w-0 overflow-hidden inline-block leading-none"
+            />
+            <span className="inline-block truncate align-top max-w-full pr-3 leading-none">
+              {animatedText}
+            </span>
+            <span
+              className="leading-none lg:w-[5px] md:w-1 w-[3px] absolute top-[40%] -translate-y-1/2
+              bg-theme-secondary animate-carret-blink right-0 h-[calc((100%)-10px)]"
+            />
+          </div>
+        </h1>
+
+        <p className="text-white/80 lg:font-raleway-16-300 md:font-raleway-14-300 font-raleway-12-300  mb-5 md:max-w-lg xs:max-w-md max-w-xs pr-5">
+          {isMdUp
+            ? `A creative front-end developer passionate about crafting interactive, accessible, and high-performance web experiences, blending modern design trends with precision and creativity at every stage.`
+            : isXsUp
+              ? `Creative front-end developer crafting fast, accessible, and engaging web experiences with a modern touch while ensuring design consistency, reliability, and smooth performance.`
+              : `Front-end developer building engaging, accessible websites that are easy to use and appealing.`}{" "}
+        </p>
+
+        <div className="flex flex-wrap md:gap-3 gap-2 mb-6">
+          <Button
+            size="max"
+            variant="primary"
+            href="#works"
+            className="bg-theme-primary rounded-full hover:bg-theme-primary/80 border border-theme-primary
+            text-[10px] md:font-raleway-12-300 font-RalewayFont font-light sm:px-6 sm:py-2 px-4 py-[6px]"
           >
-            <div className="flex items-center">
-              <span className="font-RalewayFont text-theme-primary">
-                Howdy,
-              </span>
-              <span className="font-SyneFont pl-[7px] text-white">I'm</span>
-            </div>
-
-            <div className="relative overflow-hidden whitespace-nowrap max-w-full w-max">
-              <span className="inline-block truncate align-top max-w-full pr-3 leading-none">
-                {animatedText}
-              </span>
-              <span
-                className="leading-none lg:w-[5px] md:w-1 w-[3px] absolute top-1/2 -translate-y-1/2 bg-theme-secondary 
-                animate-carret-blink right-0 h-full"
-              />
-            </div>
-          </h1>
-
-          <p className="font-RalewayFont font-thin xl:text-[21px] md:text-[18px] sm:text-[16px] text-[14px] pt-2 text-white">
-            frontend developer - UI/UX Expert
-          </p>
+            View Projects
+          </Button>
+          <Button
+            size="max"
+            variant="outlined"
+            href="#contact"
+            className="bg-white/10 border border-white/20 rounded-full hover:bg-white/20 text-white
+            text-[10px] md:font-raleway-12-300 font-RalewayFont font-light sm:px-6 sm:py-2 px-4 py-[6px]"
+          >
+            Contact Me
+          </Button>
         </div>
 
         <WatchVideoIcon
-          iconSize={isLgUp ? 70 : isMdUp ? 60 : isSmUp ? 50 : 42}
-          playIconSize={isLgUp ? 16 : isMdUp ? 14 : isSmUp ? 12 : 10}
-          className="pt-5 gap-2"
-          seperatorStyle="w-3 md:w-8 lg:w-10"
-          iconWrapperStyle="gap-2"
-          iconTitleStyle="text-[10px] sm:text-[12px]"
+          iconSize={40}
+          playIconSize={12}
+          seperatorStyle="w-4"
+          iconWrapperStyle="gap-1.5"
+          iconTitleStyle="text-[11px]"
         />
       </div>
-    </>
-  );
-};
 
-export default HeroSection;
+      <div className="container">
+        <div className="relative">
+          <div className="absolute bottom-0 left-0 z-20 -mb-1">
+            <div className="bg-white/5 backdrop-blur-md border-x border-t border-white/10 rounded-t-lg md:px-5 px-3 py-3 flex items-center shadow-lg w-fit">
+              {socialLinks.map((item, i) => (
+                <a
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="ease duration-300 group px-[6px] leading-none"
+                >
+                  {
+                    <span className="leading-none inline-block border-b border-transparent group-hover:border-white ease duration-300">
+                      <item.content className="md:w-5 md:h-5 w-4 h-4 text-white group-hover:-translate-y-2 duration-300 ease-out" />
+                    </span>
+                  }
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

@@ -14,7 +14,7 @@ import { useBreakpoint } from "@/hooks/useBreakpoint";
 
 const Header = () => {
   const [isMenuTriggered, setIsMenuTriggered] = useState<boolean>(false);
-  const isMdDown = useBreakpoint("md", "down");
+  const isLgDown = useBreakpoint("lg", "down");
 
   const email = process.env.NEXT_PUBLIC_EMAIL || "";
   const phone = process.env.NEXT_PUBLIC_PHONE || "";
@@ -25,7 +25,7 @@ const Header = () => {
   const emailDomain = match?.[3] || "";
 
   const { isScrolled, getScrollbarDirection } = useScroll();
-  const scrollPastThreshold = isScrolled(isMdDown ? 42 : 120);
+  const scrollPastThreshold = isScrolled(isLgDown ? 3 : 40);
   const scrollbarThumbDirection = getScrollbarDirection();
   useScrollLock(isMenuTriggered);
 

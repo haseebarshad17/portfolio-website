@@ -3,6 +3,14 @@ import type { Config } from "tailwindcss";
 const primary = process.env.NEXT_PUBLIC_PRIMARY_THEME_COLOR ?? "#C32865";
 const secondary = process.env.NEXT_PUBLIC_SECONDARY_THEME_COLOR ?? "#ffa500";
 
+export const TwConfigScreens = {
+  xs: "480px",
+  sm: "640px",
+  md: "768px",
+  lg: "992px",
+  xl: "1170px",
+};
+
 const config: Config = {
   darkMode: ["class"],
   content: [
@@ -11,13 +19,7 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    screens: {
-      xs: "480px",
-      sm: "640px",
-      md: "768px",
-      lg: "992px",
-      xl: "1170px",
-    },
+    screens: { ...TwConfigScreens },
 
     extend: {
       fontFamily: {

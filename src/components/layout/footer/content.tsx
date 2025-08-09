@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import { Facebook, Instagram, Linkedin, Twitch } from "lucide-react";
+import { socialLinks } from "@/components/pages/homepage/content";
 
 type linkDataType = {
   content?: ReactNode | any;
@@ -40,29 +41,6 @@ export const getInTouchLinks: linkDataType[] = [
   },
 ];
 
-export const socialLinks: linkDataType[] = [
-  {
-    href: "https://social-platform.com/userId",
-    label: "whatsapp",
-    content: Facebook,
-  },
-  {
-    href: "https://social-platform.com/userId",
-    label: "whatsapp",
-    content: Instagram,
-  },
-  {
-    href: "https://social-platform.com/userId",
-    label: "whatsapp",
-    content: Linkedin,
-  },
-  {
-    href: "https://social-platform.com/userId",
-    label: "whatsapp",
-    content: Twitch,
-  },
-];
-
 export const discriptiveContent = [
   {
     title: "Lahore, pakistan",
@@ -73,3 +51,5 @@ export const discriptiveContent = [
     discription: "street no 473 chakwal punjab, pakistan 48800",
   },
 ];
+
+export const footerSocialLinks: linkDataType[] = socialLinks;
