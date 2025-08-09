@@ -29,7 +29,7 @@ export default function HeroSection({
           "absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80 -z-10",
           isMdUp
             ? "from-black/30 via-black/30 to-black/40"
-            : "from-black/70 via-black/50 to-black/80"
+            : "from-black/50 via-black/80 to-black/80"
         )}
       />
       <motion.div
