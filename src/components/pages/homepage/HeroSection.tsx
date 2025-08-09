@@ -28,8 +28,8 @@ export default function HeroSection({
         className={cn(
           "absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80 -z-10",
           isMdUp
-            ? "from-black/30 via-black/30 to-black/40"
-            : "from-black/50 via-black/80 to-black/80"
+            ? "from-black/30 via-black/40 to-black/30"
+            : "from-black/40 via-black/55 to-black/80"
         )}
       />
       <motion.div
@@ -47,7 +47,7 @@ export default function HeroSection({
         </span>
 
         <h1
-          className="xl:text-[58px] lg:text-[54px] md:text-[50px] text-[48px] font-medium 
+          className="xl:text-[58px] lg:text-[54px] text-[50px] font-medium 
             font-SyneFont text-white leading-none pr-10"
         >
           <div className="flex items-center md:leading-[120%] leading-none">
