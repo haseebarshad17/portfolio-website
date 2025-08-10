@@ -42,27 +42,43 @@ const HomePage = () => {
 
   return (
     <>
-      <Jarallax
-        speed={0.4}
-        isDisabled={false}
-        background={
-          <JarallaxImage
-            src={isMdDown ? "/images/main-mobile.jpg" : "/images/main.jpg"}
-            alt="young man in standing pose (background)"
-            priority
+      <div>
+        {!isMdDown ? (
+          <Jarallax
+            speed={0.4}
+            isParallaxEnable={!isMdDown}
+            background={
+              <JarallaxImage
+                src={"/images/main.jpg"}
+                alt="young man in standing pose (background)"
+                priority
+              />
+            }
+            children={<HeroSection animatedText={animatedText} />}
+            className="min-h-0 jarallax"
           />
-        }
-        children={<HeroSection animatedText={animatedText} />}
-        className="min-h-0 jarallax"
-      />
+        ) : (
+          <div className="relative">
+            <div
+              className="absolute inset-0 -z-20 opacity-30 md:hidden"
+              style={{
+                background: `linear-gradient(to right, #7e22ce, #ec4899, #ef4444), 
+                 linear-gradient(to bottom, rgba(255,255,255,0), rgba(0,0,0,0.7))`,
+                backgroundBlendMode: "multiply",
+              }}
+            />
+            <HeroSection animatedText={animatedText} />
+          </div>
+        )}
+      </div>
 
       <Jarallax
         speed={0.4}
-        isDisabled={isMdDown}
+        isParallaxEnable={!isMdDown}
         background={
           <JarallaxImage
             src={isMdDown ? "/images/about-mobile.jpg" : "/images/about.webp"}
-            alt="hand statue indicating rings"
+            alt="golden rings with ceramic hand"
           />
         }
         children={

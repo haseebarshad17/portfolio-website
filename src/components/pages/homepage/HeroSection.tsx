@@ -44,7 +44,7 @@ export default function HeroSection({
           className="uppercase md:font-syne-12-300 sm:tracking-[3px] sm:text-theme-primary text-white sm:pb-1 pb-2 
           inline-block leading-normal text-[10px] font-light font-RalewayFont"
         >
-          Crafting Digital <br className="sm:hidden" /> Experiences
+          Crafting Digital Experiences
         </span>
 
         <h1
@@ -76,7 +76,7 @@ export default function HeroSection({
             ? `A creative front-end developer passionate about crafting interactive, accessible, and high-performance web experiences, blending modern design trends with precision and creativity at every stage.`
             : isXsUp
               ? `Creative front-end developer crafting fast, accessible, and engaging web experiences with a modern touch while ensuring design consistency, reliability, and smooth performance.`
-              : `Front-end developer building engaging, accessible websites that are easy to use and appealing.`}{" "}
+              : `Front-end developer building engaging, accessible websites that are easy to use and appealing.`}
         </p>
 
         <div className="flex flex-wrap md:gap-3 gap-2 mb-6">
@@ -115,6 +115,7 @@ export default function HeroSection({
             <div className="bg-white/5 backdrop-blur-md border-x border-t border-white/10 rounded-t-lg md:px-5 px-3 py-3 flex items-center shadow-lg w-fit">
               {socialLinks.map((item, i) => (
                 <a
+                  key={i}
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"

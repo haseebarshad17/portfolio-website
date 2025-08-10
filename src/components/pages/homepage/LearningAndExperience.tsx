@@ -5,6 +5,7 @@ import Separator from "@/components/ui/separator";
 import Button from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
 import { useBreakpoint } from "@/hooks/useBreakpoint";
+import { ReadMore } from "@/components/generic/ReadMore";
 
 type LearningAndExperienceProptype = {
   className?: string;
@@ -18,6 +19,7 @@ const LearningAndExperience = ({
   experienceDetailsData,
 }: LearningAndExperienceProptype) => {
   const isSmUp = useBreakpoint("sm", "up");
+  const isMdUp = useBreakpoint("md", "up");
   const [learningAndExperienceData, setLearningAndExperienceData] = useState<
     Array<learningAndExperienceType>
   >([]);
@@ -87,9 +89,11 @@ const LearningAndExperience = ({
                     <label className="md:font-syne-14-500 font-syne-12-500 block text-black/90 leading-none">
                       {item.institute}
                     </label>
-                    <p className="md:font-raleway-14-500 font-raleway-12-500 py-2 text-black/70 italic">
-                      {item.description}
-                    </p>
+                    <ReadMore
+                      initialHeight={55}
+                      text={item.description}
+                      fadeClassName="bg-none"
+                    />
                     <strong className="block md:font-karla-14-500 font-karla-12-500 text-black">
                       {item.date}
                     </strong>
@@ -104,15 +108,16 @@ const LearningAndExperience = ({
                 ))}
 
               <Button
-                size={isSmUp ? "md" : "sm"}
+                size={"max"}
                 href="/"
                 variant="primary"
-                children="complete resume"
+                children="view resume"
+                rightEl={<ChevronRight size={14} strokeWidth={1.5} />}
                 className={cn(
-                  "w-max rounded-xs mt-6",
-                  isSmUp
-                    ? "px-5 font-syne-12-500"
-                    : "px-3 h-max py-1 text-[10px] font-SyneFont font-medium"
+                  "rounded-xs mt-6 gap-1",
+                  isMdUp
+                    ? "px-5 py-2 font-syne-12-500"
+                    : "px-3 py-[6px] text-[10px] font-medium font-RalewayFont"
                 )}
               />
             </div>

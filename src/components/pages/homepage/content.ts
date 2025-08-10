@@ -198,40 +198,40 @@ export const personalSkills = [
 
 export const worksShowCase = [
   {
-    href: "/",
+    href: "/portfolio/modern-branding-1",
     imgSrc: "/works/2.webp",
     subtitle: "Branding",
-    title: "projext title is getting bigger i size due to lorem ispusm dollar",
+    title: "Strategic Brand Launch: Elevating Corporate Identity",
   },
   {
-    href: "/",
+    href: "/portfolio/minimalist-package-design",
     imgSrc: "/works/2.webp",
-    subtitle: "Branding",
-    title: "projext title is getting bigger i size due to lorem ispusm dollar",
+    subtitle: "Packaging Design",
+    title: "Minimalist Packaging: Clean & Sustainable Concept",
   },
   {
-    href: "/",
+    href: "/portfolio/ui-ux-redesign",
     imgSrc: "/works/2.webp",
-    subtitle: "Branding",
-    title: "projext title is getting bigger i size due to lorem ispusm dollar",
+    subtitle: "UI/UX Design",
+    title: "UX Overhaul: Intuitive Navigation for E-Commerce Platform",
   },
   {
-    href: "/",
+    href: "/portfolio/visual-identity-project",
     imgSrc: "/works/2.webp",
-    subtitle: "Branding",
-    title: "projext title is getting bigger i size due to lorem ispusm dollar",
+    subtitle: "Identity",
+    title: "Cohesive Visual Identity: Distinct and Memorable",
   },
   {
-    href: "/",
+    href: "/portfolio/print-collateral-set",
     imgSrc: "/works/2.webp",
-    subtitle: "Branding",
-    title: "projext title is getting bigger i size due to lorem ispusm dollar",
+    subtitle: "Print Collateral",
+    title: "Elegant Printed Media: Brochure & Poster Series",
   },
   {
-    href: "/",
+    href: "/portfolio/social-media-branding",
     imgSrc: "/works/2.webp",
-    subtitle: "Branding",
-    title: "projext title is getting bigger i size due to lorem ispusm dollar",
+    subtitle: "Digital Branding",
+    title: "Dynamic Social Campaign Graphics with Cohesive Theme",
   },
 ];
 

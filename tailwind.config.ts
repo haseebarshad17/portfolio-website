@@ -19,9 +19,10 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    screens: { ...TwConfigScreens },
-
     extend: {
+      screens: {
+        ...TwConfigScreens,
+      },
       fontFamily: {
         SyneFont: "var(--font-syne)",
         KarlaFont: "var(--font-karla)",
@@ -30,14 +31,10 @@ const config: Config = {
       colors: {
         white: "#FFFFFF",
         black: "#000000",
-
         "theme-primary": primary,
         "theme-secondary": secondary,
-        "deep-oreange": "rgb(255, 60, 0)",
-
         "section-light-white": "#F0F0F0",
         "section-deep-white": "#E2E2E2",
-
         "light-gray": "#E2E2E2",
         "regular-gray": "#C0C0C0",
         "deep-gray": "#242424",
@@ -50,14 +47,13 @@ const config: Config = {
         xl: "16px",
       },
       zIndex: {
+        "10": "10",
+        "20": "20",
+        "30": "30",
+        "40": "40",
+        "50": "50",
         full: "100",
-        10: "10",
-        20: "20",
-        30: "30",
-        40: "40",
-        50: "50",
       },
-
       boxShadow: {
         xs: "1px 2px 18px 1px rgba(0, 0, 0, 0.05)",
         sm: "1px 2px 15px 1px rgba(0, 0, 0, 0.05)",
@@ -70,16 +66,21 @@ const config: Config = {
         md: "2px 2px 7px rgba(0, 0, 0, 0.3)",
         lg: "2px 2px 7px rgba(0, 0, 0, 0.4)",
       },
-
       animation: {
         "carret-blink": "carret-blink 1s infinite",
         "marquee-left": "marquee-left linear infinite",
         "marquee-right": "marquee-right linear infinite",
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
       },
       keyframes: {
         "carret-blink": {
-          "0%, 100%": { opacity: "1" },
-          "50%": { opacity: "0" },
+          "0%, 100%": {
+            opacity: "1",
+          },
+          "50%": {
+            opacity: "0",
+          },
         },
         "marquee-left": {
           "0%": {
@@ -95,6 +96,22 @@ const config: Config = {
           },
           "100%": {
             transform: "translateX(0%)",
+          },
+        },
+        "accordion-down": {
+          from: {
+            height: "0",
+          },
+          to: {
+            height: "var(--radix-accordion-content-height)",
+          },
+        },
+        "accordion-up": {
+          from: {
+            height: "var(--radix-accordion-content-height)",
+          },
+          to: {
+            height: "0",
           },
         },
       },

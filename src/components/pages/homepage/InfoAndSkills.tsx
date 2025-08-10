@@ -74,7 +74,7 @@ const InfoAndSkills = () => {
                         <TableCell className="font-medium text-gray-700 p-0 font-syne-14-500">
                           {item.label} :
                         </TableCell>
-                        <TableCell className="text-gray-900 p-0 pl-1 cursor-help select-text sm:font-karla-14-300 font-karla-12-300 leading-none">
+                        <TableCell className="text-gray-900 p-0 pl-1 cursor-help select-text font-karla-14-300 leading-none">
                           {isLgUp ? (
                             <Tooltip
                               pointerTouch={item.label

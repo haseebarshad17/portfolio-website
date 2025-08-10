@@ -112,36 +112,44 @@ export default function CustomSwiper({
           ) : (
             <>
               <div className="flex justify-start gap-2 my-4">
-                <Button
-                  variant={navBtnVariant ?? "primary"}
-                  onClick={() => swiperInstance?.slidePrev()}
-                  isDisabled={isBeginning}
-                  leftEl={
-                    <ChevronLeft size={navIconSize ?? 18} strokeWidth={1.5} />
-                  }
-                  className={cn(
-                    "px-4 gap-2 transition rounded-sm",
-                    isBeginning && "opacity-40 pointer-events-none",
-                    navigationStyle
-                  )}
-                >
-                  Prev
-                </Button>
-                <Button
-                  variant={navBtnVariant ?? "primary"}
-                  onClick={() => swiperInstance?.slideNext()}
-                  isDisabled={isBeginning}
-                  rightEl={
-                    <ChevronRight size={navIconSize ?? 18} strokeWidth={1.5} />
-                  }
-                  className={cn(
-                    "px-4 gap-2 transition rounded-sm",
-                    isEnd && "opacity-40 pointer-events-none",
-                    navigationStyle
-                  )}
-                >
-                  Next
-                </Button>
+                <div className="pointer-events-auto select-none">
+                  <Button
+                    variant={navBtnVariant ?? "outlined"}
+                    aria-label="Previous"
+                    onClick={() => swiperInstance?.slidePrev()}
+                    className={cn(
+                      "w-10 h-10 transition-colors duration-200 bg-transparent text-black border-black hover:bg-black hover:text-white",
+                      isBeginning && "opacity-30 pointer-events-none",
+                      navigationStyle
+                    )}
+                    children={
+                      <MoveLeft
+                        size={navIconSize ?? 18}
+                        strokeWidth={1}
+                        className="ease duration-300"
+                      />
+                    }
+                  />
+                </div>
+                <div className="pointer-events-auto select-none">
+                  <Button
+                    variant={navBtnVariant ?? "outlined"}
+                    aria-label="Next"
+                    onClick={() => swiperInstance?.slideNext()}
+                    className={cn(
+                      "w-10 h-10 transition-colors duration-200 bg-transparent text-black border-black hover:bg-black hover:text-white",
+                      isEnd && "opacity-30 pointer-events-none",
+                      navigationStyle
+                    )}
+                    children={
+                      <MoveRight
+                        size={navIconSize ?? 18}
+                        strokeWidth={1}
+                        className="ease duration-300"
+                      />
+                    }
+                  />
+                </div>
               </div>
             </>
           )}
