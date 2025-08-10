@@ -49,7 +49,7 @@ const WorkCard = ({
             {subtitle}
           </span>
           <h5 className="md:font-raleway-16-500 sm:font-raleway-14-500 font-raleway-12-500 text-black capitalize">
-            projext title is getting bigger i size due to lorem ispusm dollar
+            {title}
           </h5>
         </div>
         <span className="block">
