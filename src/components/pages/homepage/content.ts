@@ -199,39 +199,39 @@ export const personalSkills = [
 export const worksShowCase = [
   {
     href: "/portfolio/modern-branding-1",
-    imgSrc: "/works/2.webp",
+    imgSrc: "/works/work1.webp",
     subtitle: "Branding",
-    title: "Strategic Brand Launch: Elevating Corporate Identity",
+    title: "Fashion Product Catalog Store Template | E-Commerce",
   },
   {
     href: "/portfolio/minimalist-package-design",
-    imgSrc: "/works/2.webp",
+    imgSrc: "/works/work2.webp",
     subtitle: "Packaging Design",
-    title: "Minimalist Packaging: Clean & Sustainable Concept",
+    title: "Elegant Glint: influental brands - UI/UX template",
   },
   {
     href: "/portfolio/ui-ux-redesign",
-    imgSrc: "/works/2.webp",
+    imgSrc: "/works/work3.webp",
     subtitle: "UI/UX Design",
-    title: "UX Overhaul: Intuitive Navigation for E-Commerce Platform",
+    title: "UX Overhaul: Intuitive Navigation for Chroma | Landing page",
   },
   {
     href: "/portfolio/visual-identity-project",
-    imgSrc: "/works/2.webp",
+    imgSrc: "/works/work4.webp",
     subtitle: "Identity",
-    title: "Cohesive Visual Identity: Distinct and Memorable",
+    title: "Deenify Hub: Distinct and Memorable - Quranic App",
   },
   {
     href: "/portfolio/print-collateral-set",
-    imgSrc: "/works/2.webp",
+    imgSrc: "/works/work5.webp",
     subtitle: "Print Collateral",
-    title: "Elegant Printed Media: Brochure & Poster Series",
+    title: "eBay Listing Template Design for Luxury Bags | e-commerce",
   },
   {
     href: "/portfolio/social-media-branding",
-    imgSrc: "/works/2.webp",
+    imgSrc: "/works/work6.webp",
     subtitle: "Digital Branding",
-    title: "Dynamic Social Campaign Graphics with Cohesive Theme",
+    title: "Quran, Hadith, Dua's, Guides, Prayer times & much more - Next Api",
   },
 ];
 
