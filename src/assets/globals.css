@@ -41,7 +41,7 @@
         @apply italic md:pl-2 heading font-normal
     }
     .heading-description {
-       @apply md:font-raleway-14-500 font-raleway-12-500 text-gray-600 max-w-xl leading-relaxed  pt-4  
+       @apply md:font-raleway-14-500 font-raleway-12-500 text-gray-600 max-w-xl  sm:leading-relaxed leading-[1.425]  sm:pt-4 pt-3  
     }
     .no-scrollbar {
         scrollbar-width: 0px;

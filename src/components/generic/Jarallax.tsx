@@ -9,7 +9,7 @@ type JarallaxProptype = {
   children: ReactNode;
   background: ReactNode;
   speed?: number;
-  isDisabled?: boolean;
+  isParallaxEnable?: boolean;
 };
 
 export default function Jarallax({
@@ -17,23 +17,23 @@ export default function Jarallax({
   children,
   speed = 0.4,
   background,
-  isDisabled,
+  isParallaxEnable = true,
 }: JarallaxProptype) {
   const elementRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
-    if (elementRef.current) {
-      jarallax(elementRef.current, {
-        speed,
-        disableParallax: isDisabled,
-        type: "scroll",
-      });
-    }
+    if (!elementRef.current) return;
+
+    jarallax(elementRef.current, {
+      speed,
+      disableParallax: !isParallaxEnable,
+      type: "scroll",
+    });
 
     return () => {
       if (elementRef.current) jarallax(elementRef.current, "destroy");
     };
-  }, [speed, isDisabled]);
+  }, [speed, isParallaxEnable]);
 
   return (
     <section

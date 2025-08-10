@@ -99,7 +99,7 @@ const AboutSection = ({
                   best websites
                 </span>
               </h3>
-              <p className="sm:font-karla-14-300 font-karla-12-300 md:leading-[1.6] leading-[1.3] text-white/70">
+              <p className="font-karla-14-300 md:leading-[1.6] leading-[1.3] text-white/70">
                 ensure seamless cross-browser compatibility and responsive
                 design, delivering optimal user experiences across all devices.
                 We prioritize accessibility and usability, guaranteeing that

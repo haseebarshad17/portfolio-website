@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils/clsxUtils";
 
 export default function TestimonialsSection() {
   const isMdUp = useBreakpoint("md", "up");
+  const isSmUp = useBreakpoint("sm", "up");
 
   return (
     <section className="bg-section-deep-white">
@@ -37,12 +38,10 @@ export default function TestimonialsSection() {
               slideSpacing={isMdUp ? 32 : 10}
               navigationInside={isMdUp ? true : false}
               navIconSize={isMdUp ? 18 : 12}
-              navBtnVariant={isMdUp ? "outlined" : "dark"}
+              navBtnVariant={"outlined"}
               navigationStyle={cn(
-                "lowercase text-[10px] font-normal font-RalewayFont gap-[2px] items-center leading-normal",
-                !isMdUp
-                  ? "w-max h-max rounded-sm py-1 px-3"
-                  : "w-10 h-10 rounded-full"
+                "lowercase text-[10px] font-normal font-RalewayFont",
+                isMdUp ? "w-10 h-10" : isSmUp ? "w-8 h-8" : "w-7 h-7"
               )}
               breakpoints={{
                 0: {
