@@ -63,7 +63,7 @@ export default function TestimonialsSection() {
                       alt={item.name}
                       width={200}
                       height={200}
-                      className="md:w-[200px] w-[80px] xs:w-[120px] sm:w-[140px] h-auto object-cover rounded-lg"
+                      className="md:w-[200px] xs:w-[120px] w-[140px] h-auto object-cover rounded-lg"
                     />
                   </div>
 
