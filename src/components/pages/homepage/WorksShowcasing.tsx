@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils/clsxUtils";
 import { ChevronRight } from "lucide-react";
 import { worksShowCase } from "./content";
 import { useBreakpoint } from "@/hooks/useBreakpoint";
+import Separator from "@/components/ui/separator";
 
 type WorksShowcasingProptype = {
   className?: string;
@@ -46,6 +47,10 @@ const WorksShowcasing = ({ className }: WorksShowcasingProptype) => {
             </Button>
           </div>
 
+          <Separator
+            orientation="horizontal"
+            className="w-full h-px bg-regular-gray/30 mt-5"
+          />
           <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 lg:gap-10 gap-5 md:pt-10 pt-6">
             {worksShowCase.length &&
               worksShowCase.map((work, i) => (

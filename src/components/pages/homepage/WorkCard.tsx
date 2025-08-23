@@ -44,7 +44,7 @@ const WorkCard = ({
         <div>
           <span
             className="inline-block bg-transparent text-black font-syne-12-500 px-3 py-1 
-            rounded-full capitalize group-hover:bg-theme-secondary ease-out duration-500 mb-2"
+            rounded-full capitalize group-hover:bg-theme-secondary ease-out duration-500 mb-2 border border-black/10 group-hover:border-theme-secondary"
           >
             {subtitle}
           </span>
