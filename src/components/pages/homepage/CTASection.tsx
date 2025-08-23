@@ -50,10 +50,8 @@ const CTASection = ({ className }: CTASectionProptype) => {
                 <MessageCircleMore size={isMdUp ? 16 : 12} strokeWidth={1.2} />
               }
               className={cn(
-                "gap-2",
-                isMdUp
-                  ? "px-5 font-raleway-12-500 rounded-md"
-                  : "text-[10px] font-RalewayFont font-medium w-max h-max py-[6px] px-4 rounded-sm"
+                "gap-2 font-raleway-12-500 px-5",
+                isMdUp ? "rounded-md" : "h-max py-[6px] rounded-sm"
               )}
             >
               Let's Talk
