@@ -31,22 +31,20 @@ const CTASection = ({ className }: CTASectionProptype) => {
             way.
           </p>
 
-          <div className="sm:pt-10 pt-5 gap-2">
+          <div className="pt-10 gap-2">
             <Button
-              size={isMdUp ? "lg" : "sm"}
+              size={"lg"}
               variant="secondary"
               rightEl={<Rocket size={isMdUp ? 16 : 12} strokeWidth={1.2} />}
               className={cn(
-                "gap-2",
-                isMdUp
-                  ? "px-5 font-raleway-12-500 rounded-md"
-                  : "text-[10px] font-RalewayFont font-medium w-max h-max py-[6px] px-4 rounded-sm"
+                "gap-2 font-raleway-12-500 px-5",
+                isMdUp ? "rounded-md" : "h-max py-[6px] rounded-sm"
               )}
             >
               Start a project
             </Button>
             <Button
-              size={isMdUp ? "lg" : "sm"}
+              size={"lg"}
               variant="transparent"
               rightEl={
                 <MessageCircleMore size={isMdUp ? 16 : 12} strokeWidth={1.2} />
