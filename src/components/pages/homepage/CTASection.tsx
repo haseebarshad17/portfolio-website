@@ -38,7 +38,7 @@ const CTASection = ({ className }: CTASectionProptype) => {
               rightEl={<Rocket size={isMdUp ? 16 : 12} strokeWidth={1.2} />}
               className={cn(
                 "gap-2 font-raleway-12-500 px-5",
-                isMdUp ? "rounded-md" : "h-max py-[6px] rounded-sm"
+                isMdUp ? "rounded-md" : "rounded-sm"
               )}
             >
               Start a project
@@ -51,7 +51,7 @@ const CTASection = ({ className }: CTASectionProptype) => {
               }
               className={cn(
                 "gap-2 font-raleway-12-500 px-5",
-                isMdUp ? "rounded-md" : "h-max py-[6px] rounded-sm"
+                isMdUp ? "rounded-md" : "rounded-sm"
               )}
             >
               Let's Talk
