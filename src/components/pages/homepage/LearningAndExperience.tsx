@@ -83,7 +83,7 @@ const LearningAndExperience = ({
               {lxDataItem.data.length &&
                 lxDataItem.data.map((item, idxx) => (
                   <div key={idxx} className="capitalize pt-4 text-black">
-                    <h6 className="font-KarlaFont md:text-lg text-[16px] font-medium leading-none">
+                    <h6 className="font-KarlaFont text-lg font-medium leading-none">
                       {item.title}
                     </h6>
                     <label className="md:font-syne-14-500 font-syne-12-500 block text-black/90 leading-none">
