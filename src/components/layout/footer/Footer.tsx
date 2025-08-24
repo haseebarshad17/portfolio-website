@@ -74,6 +74,7 @@ const Footer = () => {
                   className="flex items-center text-white w-max"
                   iconStyle="w-5 h-5 text-white group-hover:-translate-y-2 duration-300 ease-out"
                   contentLinkWrapperStyle="px-[6px]"
+                  ancorTarget="_blank"
                 />
                 <p className="w-max md:font-syne-14-300 font-syne-12-300 capitalize lg:text-white text-white/70 sm:pt-3 pt-2 lg:pt-0">
                   @copyright 2022 haseeb-arshad all right reserved

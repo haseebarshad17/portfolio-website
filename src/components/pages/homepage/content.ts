@@ -284,28 +284,28 @@ export const testimonials = [
 
 export const socialLinks = [
   {
-    href: "https://social-platform.com/userId",
-    label: "whatsapp",
+    href: "https://github.com/haseebarshad17",
+    label: "Github",
     content: Github,
   },
   {
-    href: "https://social-platform.com/userId",
-    label: "whatsapp",
+    href: "https://www.facebook.com/haseebarshad17",
+    label: "Facebook",
     content: Facebook,
   },
   {
-    href: "https://social-platform.com/userId",
-    label: "whatsapp",
+    href: "https://www.instagram.com/haseebarshad1712",
+    label: "Instagram",
     content: Instagram,
   },
   {
-    href: "https://social-platform.com/userId",
-    label: "whatsapp",
+    href: "https://www.linkedin.com/in/haseebarshad17",
+    label: "LinkedIn",
     content: LinkedIn,
   },
   {
-    href: "https://social-platform.com/userId",
-    label: "Twitter",
+    href: "https://x.com/haseeb1712",
+    label: "Twitter X",
     content: Twitter,
   },
 ];

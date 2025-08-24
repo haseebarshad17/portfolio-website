@@ -9,6 +9,7 @@ type LinkMapProptype = {
   linkStyle?: ClassNameValue;
   contentLinkWrapperStyle?: ClassNameValue;
   iconStyle?: ClassNameValue;
+  ancorTarget?: "_blank" | "_self" | "_parent" | "_top";
   linkData: {
     content?: any;
     label: string;
@@ -24,6 +25,7 @@ const LinkMap = ({
   linkStyle,
   contentLinkWrapperStyle,
   iconStyle,
+  ancorTarget = "_self",
 }: LinkMapProptype) => {
   return (
     <ul className={cn("", className)}>
@@ -48,6 +50,7 @@ const LinkMap = ({
                 "group w-max block border-b border-transparent duration-300 ease-out leading-none",
                 contentLinkWrapperStyle
               )}
+              target={ancorTarget}
             >
               <li
                 className={cn(
