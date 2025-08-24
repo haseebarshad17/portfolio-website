@@ -34,10 +34,10 @@ const Footer = () => {
                 <Input
                   placeholder="enter your email"
                   isSubmitButtonInside={true}
-                  submitButtonSize={isSmUp ? 35 : 25}
+                  submitButtonSize={isSmUp ? 35 : 32}
                   submitButtonIcon={<Send size={15} strokeWidth={1} />}
                   inputStyle="md:px-5 px-3 placeholder:font-raleway-12-300 sm:placeholder:font-raleway-14-500"
-                  className="sm:w-[320px] w-[220px]"
+                  className="sm:w-[320px] w-[250px]"
                   variant="default"
                   type="email"
                   size="sm"
@@ -53,7 +53,7 @@ const Footer = () => {
                 activeStyle="text-theme-secondary pl-[10px] after:w-full after:h-[2px] after:bg-white 
                 after:absolute after:top-1/2 after:left-0 after:-translate-y-1/2"
                 linkStyle="font-SyneFont capitalize font-semibold text-section-light-white relative
-                md:text-xl sm:text-[16px] text-[14px] inline-block w-max group-hover:pl-[10px] group-hover:text-theme-secondary 
+                md:text-xl text-[16px] inline-block w-max group-hover:pl-[10px] group-hover:text-theme-secondary 
                 ease-out duration-300 md:py-[2px] py-1"
               />
               <LinkMap
