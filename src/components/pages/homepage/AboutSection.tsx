@@ -93,10 +93,10 @@ const AboutSection = ({
 
           <div className="py-5">
             <div>
-              <h3 className="font-SyneFont pb-3 heading text-theme-primary font-medium">
-                Delivering <br />
+              <h3 className="font-RalewayFont pb-3 heading text-theme-primary font-medium tracking-wider">
+                Websites That <br />
                 <span className="heading-break text-section-light-white font-RalewayFont">
-                  best websites
+                  Speak Loud
                 </span>
               </h3>
               <p className="font-karla-14-300 md:leading-[1.6] leading-[1.3] text-white/70">
