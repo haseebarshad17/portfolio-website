@@ -39,10 +39,21 @@ const PreLoader: React.FC<{ onComplete?: () => void }> = ({ onComplete }) => {
   const [finalExit, setFinalExit] = useState(false);
   const [done, setDone] = useState(false);
 
+  // ✅ Dynamically measure hidden text with ResizeObserver
   useEffect(() => {
     if (!hiddenTextRef.current) return;
-    const rect = hiddenTextRef.current.getBoundingClientRect();
-    setTargetWidth(Math.ceil(rect.width + 32));
+    const element = hiddenTextRef.current;
+
+    const updateWidth = () => {
+      const rect = element.getBoundingClientRect();
+      setTargetWidth(Math.ceil(rect.width + 32)); // padding included
+    };
+
+    updateWidth();
+    const resizeObserver = new ResizeObserver(updateWidth);
+    resizeObserver.observe(element);
+
+    return () => resizeObserver.disconnect();
   }, []);
 
   const wait = (ms: number) => new Promise((res) => setTimeout(res, ms));
@@ -118,7 +129,7 @@ const PreLoader: React.FC<{ onComplete?: () => void }> = ({ onComplete }) => {
       initial={{ opacity: 1 }}
       animate={{ opacity: finalExit ? 0 : 1 }}
       transition={TRANSITIONS.overlayFade}
-      className="fixed inset-0 bg-black text-white z-full flex items-center justify-center"
+      className="fixed inset-0 bg-black text-white z-[9999] flex items-center justify-center"
     >
       {/* Words */}
       <motion.div
@@ -141,7 +152,7 @@ const PreLoader: React.FC<{ onComplete?: () => void }> = ({ onComplete }) => {
       {/* hidden measure */}
       <div
         ref={hiddenTextRef}
-        className="absolute opacity-0 pointer-events-none select-none font-RalewayFont text-lg font-medium whitespace-nowrap"
+        className="absolute opacity-0 pointer-events-none select-none font-RalewayFont text-[clamp(18px,4vw,32px)] font-medium whitespace-nowrap"
         aria-hidden
       >
         haseeb arshad
@@ -162,7 +173,7 @@ const PreLoader: React.FC<{ onComplete?: () => void }> = ({ onComplete }) => {
             }}
             className="flex items-center justify-center"
           >
-            <div className="bg-theme-secondary py-1.5 px-3 sm:py-2 sm:px-4 text-black font-light text-[clamp(14px,2.5vw,18px)] font-RalewayFont whitespace-nowrap">
+            <div className="bg-theme-secondary py-1.5 px-3 sm:py-2 sm:px-4 text-black font-light text-[clamp(18px,4vw,32px)] font-RalewayFont whitespace-nowrap">
               <span className="opacity-0">haseeb arshad</span>
             </div>
           </motion.div>
@@ -172,9 +183,9 @@ const PreLoader: React.FC<{ onComplete?: () => void }> = ({ onComplete }) => {
         {showFinalText && (
           <motion.p
             initial={{ opacity: 0, y: 0 }}
-            animate={finalExit ? { opacity: 0, y: -30 } : { opacity: 1, y: 0 }}
+            animate={finalExit ? { opacity: 0, y: -60 } : { opacity: 1, y: 0 }}
             transition={TRANSITIONS.finalText}
-            className="absolute text-white font-RalewayFont text-[clamp(14px,3vw,18px)] font-light capitalize"
+            className="absolute text-white font-RalewayFont text-[clamp(18px,4vw,32px)] font-light capitalize"
           >
             Haseeb Arshad
           </motion.p>
