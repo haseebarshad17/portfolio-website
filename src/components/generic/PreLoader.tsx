@@ -1,4 +1,3 @@
-// PreLoader.tsx
 import React, { useEffect, useRef, useState } from "react";
 import {
   motion,
@@ -10,19 +9,19 @@ import {
 } from "framer-motion";
 
 const TRANSITIONS = {
-  wordIn: { duration: 0.45, ease: "easeOut" } as Transition,
-  wordOut: { duration: 0.45, ease: "easeInOut" } as Transition,
-  boxExpand: { duration: 0.45, ease: "easeOut" } as Transition,
-  boxRecenter: { duration: 0.35, ease: "easeOut" } as Transition,
+  wordIn: { duration: 0.35, ease: "easeOut" } as Transition,
+  wordOut: { duration: 0.35, ease: "easeInOut" } as Transition,
+  boxExpand: { duration: 0.4, ease: "easeOut" } as Transition,
+  boxRecenter: { duration: 0.3, ease: "easeOut" } as Transition,
   collapse: { duration: 0.55, ease: "easeInOut" } as Transition,
-  finalText: { duration: 0.5, ease: "easeInOut" } as Transition,
-  overlayFade: { duration: 0.6, ease: "easeInOut" } as Transition,
-  stagger: 0.25,
+  finalText: { duration: 0.45, ease: "easeInOut" } as Transition,
+  overlayFade: { duration: 0.5, ease: "easeInOut" } as Transition,
+  stagger: 0.2,
   delays: {
-    beforeExit: 500,
-    beforeCollapse: 250,
-    beforeFinalExit: 900,
-    afterExit: 600,
+    beforeExit: 400,
+    beforeCollapse: 200,
+    beforeFinalExit: 800,
+    afterExit: 500,
   },
 };
 
@@ -40,7 +39,6 @@ const PreLoader: React.FC<{ onComplete?: () => void }> = ({ onComplete }) => {
   const [finalExit, setFinalExit] = useState(false);
   const [done, setDone] = useState(false);
 
-  // measure text width once
   useEffect(() => {
     if (!hiddenTextRef.current) return;
     const rect = hiddenTextRef.current.getBoundingClientRect();
@@ -57,14 +55,10 @@ const PreLoader: React.FC<{ onComplete?: () => void }> = ({ onComplete }) => {
     });
 
     (async () => {
-      // words enter
       await containerControls.start("show");
-
-      // wait, then words exit
       await wait(TRANSITIONS.delays.beforeExit);
       await containerControls.start("exit");
 
-      // box expand + recenter
       const width = targetWidth || 220;
       await boxControls.start({
         x: 20,
@@ -76,11 +70,9 @@ const PreLoader: React.FC<{ onComplete?: () => void }> = ({ onComplete }) => {
         transition: TRANSITIONS.boxRecenter,
       });
 
-      // collapse
       await wait(TRANSITIONS.delays.beforeCollapse);
       animate(scaleX, 0, TRANSITIONS.collapse);
 
-      // final text exit
       await wait(TRANSITIONS.delays.beforeFinalExit);
       if (mounted) setFinalExit(true);
 
@@ -97,7 +89,6 @@ const PreLoader: React.FC<{ onComplete?: () => void }> = ({ onComplete }) => {
     };
   }, [targetWidth, containerControls, boxControls, scaleX, onComplete]);
 
-  // parent just handles stagger, no exit here!
   const parentVariant: Variants = {
     hidden: { opacity: 1 },
     show: {
@@ -107,7 +98,7 @@ const PreLoader: React.FC<{ onComplete?: () => void }> = ({ onComplete }) => {
   };
 
   const wordVariant: Variants = {
-    hidden: { opacity: 0, y: 40 },
+    hidden: { opacity: 0, y: 30 },
     show: {
       opacity: 1,
       y: 0,
@@ -115,7 +106,7 @@ const PreLoader: React.FC<{ onComplete?: () => void }> = ({ onComplete }) => {
     },
     exit: {
       opacity: 0,
-      y: -40,
+      y: -30,
       transition: TRANSITIONS.wordOut,
     },
   };
@@ -127,11 +118,11 @@ const PreLoader: React.FC<{ onComplete?: () => void }> = ({ onComplete }) => {
       initial={{ opacity: 1 }}
       animate={{ opacity: finalExit ? 0 : 1 }}
       transition={TRANSITIONS.overlayFade}
-      className="fixed inset-0 bg-black text-white z-[9999] flex items-center justify-center"
+      className="fixed inset-0 bg-black text-white z-full flex items-center justify-center"
     >
       {/* Words */}
       <motion.div
-        className="flex items-center font-RalewayFont text-[40px] capitalize gap-6 absolute"
+        className="flex items-center font-RalewayFont text-[clamp(14px,4vw,32px)] capitalize gap-4 sm:gap-6 absolute will-change-transform"
         variants={parentVariant}
         initial="hidden"
         animate={containerControls}
@@ -164,10 +155,14 @@ const PreLoader: React.FC<{ onComplete?: () => void }> = ({ onComplete }) => {
           style={{ overflow: "hidden", transformOrigin: "right center" }}
         >
           <motion.div
-            style={{ transformOrigin: "right center", scaleX }}
+            style={{
+              transformOrigin: "right center",
+              scaleX,
+              willChange: "transform",
+            }}
             className="flex items-center justify-center"
           >
-            <div className="bg-theme-secondary py-2 px-4 text-black font-light text-lg font-RalewayFont whitespace-nowrap">
+            <div className="bg-theme-secondary py-1.5 px-3 sm:py-2 sm:px-4 text-black font-light text-[clamp(14px,2.5vw,18px)] font-RalewayFont whitespace-nowrap">
               <span className="opacity-0">haseeb arshad</span>
             </div>
           </motion.div>
@@ -177,9 +172,9 @@ const PreLoader: React.FC<{ onComplete?: () => void }> = ({ onComplete }) => {
         {showFinalText && (
           <motion.p
             initial={{ opacity: 0, y: 0 }}
-            animate={finalExit ? { opacity: 0, y: -40 } : { opacity: 1, y: 0 }}
+            animate={finalExit ? { opacity: 0, y: -30 } : { opacity: 1, y: 0 }}
             transition={TRANSITIONS.finalText}
-            className="absolute text-white font-RalewayFont text-lg font-light capitalize"
+            className="absolute text-white font-RalewayFont text-[clamp(14px,3vw,18px)] font-light capitalize"
           >
             Haseeb Arshad
           </motion.p>
