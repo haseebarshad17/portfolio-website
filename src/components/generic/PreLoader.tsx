@@ -122,7 +122,7 @@ const PreLoader: React.FC<{ onComplete?: () => void }> = ({ onComplete }) => {
     >
       {/* Words */}
       <motion.div
-        className="flex items-center font-RalewayFont text-[clamp(14px,4vw,32px)] capitalize gap-4 sm:gap-6 absolute will-change-transform"
+        className="flex items-center font-RalewayFont text-[clamp(20px,5vw,40px)] capitalize gap-4 sm:gap-6 absolute will-change-transform"
         variants={parentVariant}
         initial="hidden"
         animate={containerControls}
