@@ -1,17 +1,27 @@
 "use client";
 import { ThemeProvider } from "next-themes";
-import { LegacyRef, ReactElement, ReactNode, Suspense, useRef } from "react";
+import {
+  LegacyRef,
+  ReactElement,
+  ReactNode,
+  Suspense,
+  useRef,
+  useState,
+} from "react";
 import { useScroll } from "@/hooks/useScroll";
 import Header from "@/components/layout/header/Header";
 import Footer from "@/components/layout/footer/Footer";
 import CustomScrollbar from "@/components/generic/CustomScrollbar";
 import Fallback from "@/components/generic/Fallback";
+import PreLoader from "../generic/PreLoader";
+import useScrollLock from "@/hooks/useScrollLock";
 
 type LayoutWrapperProptype = {
   readonly children: ReactNode | ReactElement;
 };
 
 const LayoutWrapper = ({ children }: LayoutWrapperProptype) => {
+  const [locked, setLocked] = useState(true);
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
   const { getScrollPercent } = useScroll();
 
@@ -19,6 +29,8 @@ const LayoutWrapper = ({ children }: LayoutWrapperProptype) => {
     ref: scrollContainerRef,
     initialHeight: "70px",
   });
+
+  useScrollLock(locked);
 
   return (
     <ThemeProvider
@@ -32,6 +44,7 @@ const LayoutWrapper = ({ children }: LayoutWrapperProptype) => {
           scrollProgress={scrollProgress as string}
           ref={scrollContainerRef as LegacyRef<HTMLDivElement> | undefined}
         >
+          <PreLoader onComplete={() => setLocked(false)} />
           <Header />
           {children}
           <Footer />
