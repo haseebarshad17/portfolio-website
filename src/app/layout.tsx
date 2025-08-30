@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { ReactElement, ReactNode } from "react";
+import { ReactNode } from "react";
 import { KarlaFont, RalewayFont, SyneFont } from "@/assets/font";
 import { LayoutMeta } from "@/assets/meta";
 import { cn } from "@/lib/utils/clsxUtils";
