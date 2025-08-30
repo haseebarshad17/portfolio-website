@@ -10,6 +10,7 @@ type JarallaxProptype = {
   background: ReactNode;
   speed?: number;
   isParallaxEnable?: boolean;
+  id?: string;
 };
 
 export default function Jarallax({
@@ -18,6 +19,7 @@ export default function Jarallax({
   speed = 0.4,
   background,
   isParallaxEnable = true,
+  id,
 }: JarallaxProptype) {
   const elementRef = useRef<HTMLElement | null>(null);
 
@@ -40,6 +42,7 @@ export default function Jarallax({
       ref={elementRef}
       data-jarallax
       className={cn("jarallax", className)}
+      id={id}
     >
       {background}
       <main className="z-10 relative">{children}</main>

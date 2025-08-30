@@ -22,7 +22,7 @@ const CustomScrollbar = forwardRef<HTMLDivElement, CustomScrollbarProptype>(
           <span
             style={{ height: scrollProgress }}
             className={cn(
-              "bg-theme-primary w-[3px] rounded-b-full block",
+              "bg-theme-primary w-[3px] rounded-b-full block ease-out duration-500",
               thumbStyle
             )}
           />
