@@ -91,6 +91,7 @@ const HomePage = () => {
           </Overlay>
         }
         className="min-h-0 jarallax"
+        id="about"
       />
 
       <section
@@ -100,6 +101,7 @@ const HomePage = () => {
             ? "bg-[url('/images/resume-mobile.webp')]"
             : "bg-[url('/images/resume.webp')]"
         )}
+        id="resume"
       >
         <main className="container">
           <LearningAndExperience
@@ -110,7 +112,9 @@ const HomePage = () => {
       </section>
 
       <InfoAndSkills />
-      <WorksShowcasing />
+      <div id="portfolio">
+        <WorksShowcasing />
+      </div>
       <TestimonialsSection />
       <CTASection />
     </>

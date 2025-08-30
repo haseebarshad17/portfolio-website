@@ -5,7 +5,7 @@ export const menuLinks = [
   },
   {
     href: "/about",
-    label: "about",
+    label: "#about",
   },
   {
     href: "/experience",
@@ -17,14 +17,14 @@ export const menuLinks = [
   },
   {
     href: "/works",
-    label: "works",
+    label: "#portfolio",
   },
   {
     href: "/resume",
-    label: "resume",
+    label: "#resume",
   },
   {
     href: "/contact",
-    label: "contact",
+    label: "#contact",
   },
 ];

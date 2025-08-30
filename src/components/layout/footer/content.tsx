@@ -15,24 +15,24 @@ export const pageLinks: linkDataType[] = [
   },
   {
     label: "about",
-    href: "/",
+    href: "#about",
   },
   {
     label: "resume",
-    href: "/",
+    href: "#resume",
   },
   {
     label: "portfolio",
-    href: "/",
+    href: "#portfolio",
   },
   {
     label: "contact",
-    href: "/",
+    href: "#contact",
   },
 ];
 
 export const getInTouchLinks: linkDataType[] = [
-  { label: "Hire Me", href: "https://upwork.com/userId" },
+  { label: "Hire Me", href: "https://upwork.com/userID" },
   { label: "Leave a Review", href: "https://upwork.com/userId/review" },
   { label: "My Hometown", href: "https://map.google.com/homeTown" },
   {
