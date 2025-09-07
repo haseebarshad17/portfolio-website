@@ -45,6 +45,7 @@ const Header = () => {
                   : "translate-y-0 opacity-100 duration-500 ease-out",
               ]
           // "hidden"
+          // "bg-deep-gray"
         )}
       >
         <div className="flex items-center justify-between">
