@@ -44,6 +44,8 @@ export interface ButtonProps
   isSelected?: boolean;
   isDisabled?: boolean;
   href?: string | undefined;
+  target?: "_blank" | "_self" | "_top" | "_parent";
+  download?: boolean;
 }
 
 const Button = ({
@@ -57,6 +59,8 @@ const Button = ({
   isDisabled,
   isSelected = false,
   href = undefined,
+  target,
+  download = false,
   ...props
 }: ButtonProps) => {
   const ButtonContent = () => (
@@ -83,8 +87,10 @@ const Button = ({
           <ButtonContent />
         </button>
       ) : (
-        <Link
+        <a
           href={href}
+          download={download}
+          target={target ?? "_parent"}
           className={cn(
             "flex items-center",
             buttonVariants({ variant, size }),
@@ -94,7 +100,7 @@ const Button = ({
           {...props}
         >
           <ButtonContent />
-        </Link>
+        </a>
       )}
     </>
   );
