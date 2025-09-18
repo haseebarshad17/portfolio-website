@@ -28,3 +28,11 @@ export const menuLinks = [
     label: "#contact",
   },
 ];
+
+export const headerDefaultVariantRoutes = [
+  "/resume",
+  "/about",
+  "/portfolio",
+  "/works",
+  "/contact",
+];
