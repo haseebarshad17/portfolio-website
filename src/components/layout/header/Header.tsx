@@ -1,20 +1,26 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import MobileMenu from "@/components/layout/header/MobileMenu";
 import Logo from "@/components/generic/Logo";
 import { DrawerTrigger, Drawer } from "@/components/ui/drawer";
 import Separator from "@/components/ui/separator";
 import { useScroll } from "@/hooks/useScroll";
-import { menuLinks } from "@/components/layout/header/content";
+import {
+  headerDefaultVariantRoutes,
+  menuLinks,
+} from "@/components/layout/header/content";
 import Link from "next/link";
 import { cn } from "@/lib/utils/clsxUtils";
 import MenuIcon from "./MenuIcon";
 import useScrollLock from "@/hooks/useScrollLock";
 import { useBreakpoint } from "@/hooks/useBreakpoint";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
   const [isMenuTriggered, setIsMenuTriggered] = useState<boolean>(false);
+  const [headerDefault, setHeaderDefault] = useState<boolean>(false);
   const isLgDown = useBreakpoint("lg", "down");
+  const pathName = usePathname() as string;
 
   const email = process.env.NEXT_PUBLIC_EMAIL || "";
   const phone = process.env.NEXT_PUBLIC_PHONE || "";
@@ -28,6 +34,11 @@ const Header = () => {
   const scrollPastThreshold = isScrolled(isLgDown ? 3 : 40);
   const scrollbarThumbDirection = getScrollbarDirection();
   useScrollLock(isMenuTriggered);
+
+  useEffect(() => {
+    if (headerDefaultVariantRoutes.includes(pathName)) setHeaderDefault(true);
+    else setHeaderDefault(false);
+  }, [pathName, headerDefaultVariantRoutes]);
 
   return (
     <>
@@ -43,9 +54,9 @@ const Header = () => {
                 scrollbarThumbDirection === "down"
                   ? "duration-700 ease-out"
                   : "translate-y-0 opacity-100 duration-500 ease-out",
-              ]
+              ],
+          { "bg-deep-gray": headerDefault }
           // "hidden"
-          // "bg-deep-gray"
         )}
       >
         <div className="flex items-center justify-between">
