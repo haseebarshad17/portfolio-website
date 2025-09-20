@@ -22,8 +22,8 @@ type LayoutWrapperProptype = {
 };
 
 const LayoutWrapper = ({ children }: LayoutWrapperProptype) => {
-  const [locked, setLocked] = useState(true);
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
+  const [locked, setLocked] = useState(true);
   const { getScrollPercent } = useScroll();
   const pathName = usePathname();
 
