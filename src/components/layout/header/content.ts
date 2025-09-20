@@ -4,8 +4,8 @@ export const menuLinks = [
     label: "home",
   },
   {
-    href: "/about",
-    label: "#about",
+    href: "#about",
+    label: "about",
   },
   {
     href: "/experience",
@@ -16,16 +16,16 @@ export const menuLinks = [
     label: "personal details",
   },
   {
-    href: "/works",
-    label: "#portfolio",
+    href: "#works",
+    label: "portfolio",
   },
   {
     href: "/resume",
-    label: "#resume",
+    label: "resume",
   },
   {
-    href: "/contact",
-    label: "#contact",
+    href: "#contact",
+    label: "contact",
   },
 ];
 

@@ -67,7 +67,7 @@ const MobileMenu = ({ menuLinks, className }: MobileMenuProptype) => {
                     >
                       <Link href={item.href} className="leading-none relative">
                         <DrawerClose
-                          className="font-RalewayFont font-normal capitalize lg:text-lg md:text-[16px] text-[14px] inline-block  
+                          className="font-RalewayFont font-normal capitalize text-xl inline-block  
                           leading-none ease duration-300 group-hover:pl-3 pb-2 lg:leading-none"
                         >
                           {item.label}
