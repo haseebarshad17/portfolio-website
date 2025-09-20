@@ -15,15 +15,17 @@ import CustomScrollbar from "@/components/generic/CustomScrollbar";
 import Fallback from "@/components/generic/Fallback";
 import PreLoader from "../generic/PreLoader";
 import useScrollLock from "@/hooks/useScrollLock";
+import { usePathname } from "next/navigation";
 
 type LayoutWrapperProptype = {
   readonly children: ReactNode | ReactElement;
 };
 
 const LayoutWrapper = ({ children }: LayoutWrapperProptype) => {
-  const [locked, setLocked] = useState(true);
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
+  const [locked, setLocked] = useState(true);
   const { getScrollPercent } = useScroll();
+  const pathName = usePathname();
 
   const scrollProgress = getScrollPercent({
     ref: scrollContainerRef,
@@ -31,6 +33,7 @@ const LayoutWrapper = ({ children }: LayoutWrapperProptype) => {
   });
 
   useScrollLock(locked);
+  const isHome = pathName === "/";
 
   return (
     <ThemeProvider
@@ -44,7 +47,7 @@ const LayoutWrapper = ({ children }: LayoutWrapperProptype) => {
           scrollProgress={scrollProgress as string}
           ref={scrollContainerRef as LegacyRef<HTMLDivElement> | undefined}
         >
-          <PreLoader onComplete={() => setLocked(false)} />
+          {isHome && <PreLoader onComplete={() => setLocked(false)} />}
           <Header />
           {children}
           <Footer />
