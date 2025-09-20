@@ -75,7 +75,7 @@ const LearningAndExperience = ({
               key={idx}
             >
               <h4
-                className="absolute top-0 sm:left-5 left-3 -translate-y-1/2 text-[26px] sm:text-[34px] font-RalewayFont
+                className="absolute top-0 sm:left-5 left-3 -translate-y-1/2 text-3xl font-RalewayFont
                 leading-none font-medium bg-gradient-to-r from-theme-primary to-white bg-clip-text text-transparent"
               >
                 {lxDataItem.heading}
@@ -115,9 +115,7 @@ const LearningAndExperience = ({
                 rightEl={<ChevronRight size={14} strokeWidth={1.5} />}
                 className={cn(
                   "rounded-xs mt-6 gap-1",
-                  isMdUp
-                    ? "px-5 py-2 font-syne-12-500"
-                    : "px-3 py-[6px] text-[10px] font-medium font-RalewayFont"
+                  "px-5 py-2 font-syne-12-500"
                 )}
               />
             </div>
