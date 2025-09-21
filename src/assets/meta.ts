@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 
 export const LayoutMeta: Metadata = {
-  title: "Haseeb | Frontend Developer Portfolio",
+  title: {
+    default: "Haseeb | Frontend Developer Portfolio",
+    template: "%s | Frontend Developer Portfolio",
+  },
   description:
     "Frontend developer Haseeb's portfolio with real-world projects, skills, and resume.",
   keywords: [

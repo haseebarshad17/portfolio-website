@@ -1,136 +1,6 @@
-// // app/resume/page.tsx
-
-// import Image from "next/image";
-// import { Card, CardContent } from "@/components/ui/card";
-// import Separator from "@/components/ui/separator";
-// import Button from "@/components/ui/button";
-// import { Download, Maximize2, Mail } from "lucide-react";
-// import {
-//   highlightsContent,
-//   journeyHighlightsContent,
-// } from "@/components/pages/resume/content";
-// import Highlight from "@/components/pages/resume/Highlight";
-// import JourneyHighlight from "@/components/pages/resume/JourneyHighlight";
-
-// const page = () => {
-//   return (
-//     <section className="relative bg-gradient-to-br from-gray-400 via-white to-gray-100 pt-[100px]">
-//       <main className="container section-padding grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
-//         <Card className="shadow-2xl rounded-xl overflow-hidden bg-white border border-gray-200">
-//           <CardContent className="p-4">
-//             <Image
-//               src="/other/resume.webp"
-//               alt="resume-haseeb-pdf"
-//               width={950}
-//               height={1600}
-//               className="w-full h-auto rounded-lg shadow-md"
-//             />
-//           </CardContent>
-//         </Card>
-
-//         <div className="flex flex-col gap-10">
-//           <div className="flex flex-col gap-3 pt-5">
-//             <h1 className="font-SyneFont leading-tight heading font-bold text-gray-900">
-//               Beyond a Document,
-//               <br />
-//               <span className="text-theme-primary font-bold heading-break">
-//                 It’s My Story
-//               </span>
-//             </h1>
-//             <p className="text-gray-600 heading-description font-RalewayFont leading-relaxed">
-//               My resume is not just credentials on paper — it reflects years of
-//               learning, refining craft, and building human-centered experiences
-//               that merge <b>design, technology, and clarity</b> into lasting
-//               impact.
-//             </p>
-//           </div>
-
-//           <Separator
-//             orientation="horizontal"
-//             className="w-full h-px bg-deep-gray/20"
-//           />
-//           <div className="grid grid-cols-2 gap-6">
-//             {highlightsContent.map(
-//               ({ icon: Icon, title, description, iconStyles }, idx) => (
-//                 <Highlight
-//                   key={idx}
-//                   title={title}
-//                   description={description}
-//                   icon={<Icon size={32} className={iconStyles} />}
-//                 />
-//               )
-//             )}
-//           </div>
-
-//           <Separator
-//             orientation="horizontal"
-//             className="w-full h-px bg-deep-gray/20"
-//           />
-//           <div className="flex flex-col gap-5">
-//             <h2 className="font-SyneFont text-2xl text-gray-900">
-//               Journey Highlights
-//             </h2>
-//             <div className="flex flex-col gap-6 border-l-2 border-gray-200 pl-6">
-//               {journeyHighlightsContent.length &&
-//                 journeyHighlightsContent.map((item, idx) => (
-//                   <JourneyHighlight
-//                     key={idx}
-//                     leftTtile={item.leftTitle}
-//                     rightTitle={item.rightTitle}
-//                     titleStyles={item.styles}
-//                     description={item.desription}
-//                   />
-//                 ))}
-//             </div>
-//           </div>
-
-//           <Separator
-//             orientation="horizontal"
-//             className="w-full h-px bg-deep-gray/20"
-//           />
-//           <div className="flex flex-wrap gap-4">
-//             <Button
-//               size="max"
-//               variant="primary"
-//               href="/other/resume.webp"
-//               className="rounded-full px-6 py-3"
-//               leftEl={<Download className="w-4 h-4 mr-2" />}
-//               download
-//             >
-//               Download
-//             </Button>
-
-//             <Button
-//               size="max"
-//               variant="outlined"
-//               href="/other/resume.webp"
-//               className="rounded-full px-6 py-3 text-gray-800 border-gray-300 hover:bg-gray-100"
-//               leftEl={<Maximize2 className="w-4 h-4 mr-2" />}
-//               target="_blank"
-//             >
-//               Fullscreen
-//             </Button>
-
-//             <Button
-//               size="max"
-//               variant="secondary"
-//               href={`mailto:${process.env.NEXT_PUBLIC_EMAIL ?? "haseebarshad1712@gmail.com"}`}
-//               className="rounded-full px-6 py-3"
-//               leftEl={<Mail className="w-4 h-4 mr-2" />}
-//             >
-//               Contact
-//             </Button>
-//           </div>
-//         </div>
-//       </main>
-//     </section>
-//   );
-// };
-
-// export default page;
-
 // app/resume/page.tsx
 
+import { Metadata } from "next";
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import Separator from "@/components/ui/separator";
@@ -142,6 +12,8 @@ import {
 } from "@/components/pages/resume/content";
 import Highlight from "@/components/pages/resume/Highlight";
 import JourneyHighlight from "@/components/pages/resume/JourneyHighlight";
+
+export const metadata: Metadata = { title: "Resume" };
 
 const Page = () => {
   return (
