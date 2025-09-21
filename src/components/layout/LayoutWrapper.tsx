@@ -5,6 +5,7 @@ import {
   ReactElement,
   ReactNode,
   Suspense,
+  useEffect,
   useRef,
   useState,
 } from "react";
@@ -34,6 +35,10 @@ const LayoutWrapper = ({ children }: LayoutWrapperProptype) => {
 
   useScrollLock(locked);
   const isHome = pathName === "/";
+
+  useEffect(() => {
+    if (!isHome) setLocked(false);
+  }, [isHome]);
 
   return (
     <ThemeProvider
