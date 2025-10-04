@@ -10,13 +10,13 @@ import {
   useState,
 } from "react";
 import { useScroll } from "@/hooks/useScroll";
+import { usePathname } from "next/navigation";
 import Header from "@/components/layout/header/Header";
 import Footer from "@/components/layout/footer/Footer";
 import CustomScrollbar from "@/components/generic/CustomScrollbar";
 import Fallback from "@/components/generic/Fallback";
 import PreLoader from "../generic/PreLoader";
 import useScrollLock from "@/hooks/useScrollLock";
-import { usePathname } from "next/navigation";
 
 type LayoutWrapperProptype = {
   readonly children: ReactNode | ReactElement;

@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils/clsxUtils";
-import { ReactNode, CSSProperties } from "react";
+import { ReactNode } from "react";
 
 type GradientType = "radial" | "x" | "y" | "y-mirror" | "x-mirror" | "linear";
 
