@@ -1,8 +1,8 @@
 import type { Metadata, Viewport } from "next";
-import { ReactNode } from "react";
-import { KarlaFont, RalewayFont, SyneFont } from "@/assets/font";
-import { LayoutMeta } from "@/assets/meta";
 import { cn } from "@/lib/utils/clsxUtils";
+import { ReactNode } from "react";
+import { LayoutMeta } from "@/assets/meta";
+import { KarlaFont, RalewayFont, SyneFont } from "@/assets/font";
 import LayoutWrapper from "@/components/layout/LayoutWrapper";
 import "@/assets/globals.css";
 

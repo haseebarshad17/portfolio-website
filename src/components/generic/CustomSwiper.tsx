@@ -2,11 +2,11 @@
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { cn } from "@/lib/utils/clsxUtils";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { MoveRight, MoveLeft } from "lucide-react";
 import { ReactNode, useEffect, useState } from "react";
-import { MoveRight, MoveLeft, ChevronRight, ChevronLeft } from "lucide-react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import Button from "@/components/ui/button";
 
 type Props = {

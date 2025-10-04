@@ -1,9 +1,8 @@
 "use client";
-
 import * as React from "react";
 import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
-import { Check, Circle } from "lucide-react";
 import { cn } from "@/lib/utils/clsxUtils";
+import { Check, Circle } from "lucide-react";
 
 // --- Root + Portal
 export const DropdownMenu = DropdownMenuPrimitive.Root;

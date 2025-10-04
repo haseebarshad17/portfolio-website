@@ -1,8 +1,8 @@
 "use client";
+import { cn } from "@/lib/utils/clsxUtils";
 import { jarallax } from "jarallax";
 import React, { useRef, useEffect, ReactNode } from "react";
 import "jarallax/dist/jarallax.min.css";
-import { cn } from "@/lib/utils/clsxUtils";
 
 type JarallaxProptype = {
   className?: string;
